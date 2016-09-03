@@ -1,0 +1,23 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "Hello, hopeful Think Brownstone development team member!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm run styles-compile-watch",
+    "build": "npm run styles-compile ",
+    "build-styles": "npm run styles-compile && npm run styles-post",
+    "styles-compile": "node_modules/.bin/node-sass scss/main.scss dist/main.css --output-style compact  --source-map true --source-map-embed true",
+    "styles-compile-watch": "node_modules/.bin/node-sass scss/main.scss dist/main.css --output-style compact  --source-map true --source-map-embed true -w",
+    "styles-post": "node_modules/.bin/postcss --use autoprefixer --autoprefixer.browsers '> 2%' -o dist/main.css dist/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "node-sass": "^3.8.0",
+    "postcss-cli": "^2.6.0"
+  }
+}

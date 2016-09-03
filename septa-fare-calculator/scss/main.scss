@@ -1,0 +1,36 @@
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+#septa-logo {
+  width: 100px;
+  height: 100px;
+}
+
+aside#septa-fare-calculator {
+
+  text-align: center;
+
+  margin: 2rem;
+  border: solid 2px #777;
+  header {
+    padding: 1rem 0;
+    color: #fff;
+  }
+
+  .septa-fare-section-dark {
+    background: #777;
+    color: #fff;
+  }
+
+  section.septa-fare-section {
+    padding: 2rem 0;
+    border-bottom: solid 1px #aaa;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <meta charset="UTF-8">
+  <title>SEPTA Regional Rail Fare Calculator</title>
+  <link rel="stylesheet" href="dist/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 </head>
-<body>
-	
+
+<body ng-app="septaFareCalculator">
+
+
+  <aside ng-controller="septaController" id="septa-fare-calculator">
+
+    <header class="septa-fare-section-dark">
+      <h1>
+        <img id="septa-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/SEPTA.svg" alt="">
+				Regional Rail Fares
+			</h1>
+    </header>
+
+    <section class="septa-fare-section">
+      <label for="zone">Where are you going?</label>
+      <div class="form-input">
+        <select ng-model="zone" ng-change="updateFare()" name="zone" id="zone">
+          <option value="1">Zone 1</option>
+          <option value="2">Zone 2</option>
+          <option value="3">Zone 3</option>
+          <option value="4">Zone 4</option>
+          <option value="5">Zone 5</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="septa-fare-section">
+      <label for="type">When are you riding?</label>
+      <div class="form-input">
+        <select ng-model="type" ng-change="updateFare()" name="type" id="type">
+          <option value="weekday">Weekday</option>
+          <option value="evening_weekend">Evening/Weekend</option>
+          <option value="anytime">Anytime</option>
+        </select>
+      </div>
+      <small>{{typeInfo}}</small>
+    </section>
+
+    <section class="septa-fare-section">
+      Where will you purchase the fare?
+      <div class="form-input">
+        <label>
+          <input type="radio" ng-model="purchase" ng-change="updateFare()" name="purchase" value="advance_purchase" checked />Station Kiosk</label>
+        <label>
+          <input type="radio" ng-model="purchase" ng-change="updateFare()" name="purchase" value="onboard_purchase" />Onboard</label>
+      </div>
+      <small>{{purchaseInfo}}</small>
+    </section>
+
+    <section class="septa-fare-section">
+      How many trips will you need?
+      <div class="form-input">
+        <input ng-change="updateFare()" type="number" name="trips" id="trips" ng-model="trips" value="1" />
+      </div>
+    </section>
+    <section class="septa-fare-section septa-fare-section-dark" id="total">
+      Your total cost is
+      <h2>{{total | currency}}</h2>
+    </section>
+
+
+  </aside>
+
+  <script src="js/septa.js"></script>
 </body>
+
 </html>
