@@ -1,0 +1,46 @@
+h1, p, li, input, select {
+  font-family: lato;
+  font-weight: 300;
+  margin: 0;
+}
+
+.help-text {
+  font-size: 0.85rem;
+  width: 25rem;
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.panels {
+  padding: 0;
+  margin: 0;
+}
+.panels li, header {
+  padding: 1rem 0.5rem;
+}
+
+.panels li {
+  list-style: none;
+  border-top: 1px solid #ccc;
+}
+
+.panels li > label {
+  font-size: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+select, input[type=text] {
+  display: block;
+  width: 15rem;
+  font-size: 1.25rem;
+}
+
+.total-fare {
+  font-size: 3rem;
+  color: #444;
+}
