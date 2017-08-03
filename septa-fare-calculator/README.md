@@ -1,16 +1,16 @@
 # SEPTA Rail Fare Calculator Challenge
 
-Hello, hopeful Think Brownstone development team member! 
+Hello, hopeful Think Brownstone development team member!
 
 Thank you for taking time to help us assess your front-end development skills. Part of the work we frequently are tasked with is combining complex business data with our design team's fresh new interfaces. Our development team makes these come to life with semantic, accessible HTML, CSS, and JavaScript. All of our philosophies are documented in [our standards](https://bitbucket.org/thinkbrownstone/tbi_dev-standards/src).
 
 Your challenge is to create an interactive widget for calculating SEPTA Regional Rail fare prices. (In case you're not familiar with Philadelphia's preeminent mass transit agency, here are all the railroads in map form.)
 
-![SEPTA Zone Map](img/zone-map.jpg) 
+![SEPTA Zone Map](src/img/zone-map.jpg)
 
 When you take regional rail in and out of the city, the fare price is affected by where you purchase the ticket, when you ride, and how far you travel. You can learn more about the details on [SEPTA's website](http://www.septa.org/fares/ticket/index.html) -- or trust that we've correctly compiled this information into this [JSON file](fares.json). We'd like you to make this information easier to understand by making an interactive fare purchase widget, illustrated in the screenshot below.
 
-![Widget mockup](img/widget.png)
+![Widget mockup](src/img/widget.png)
 
 ## Instructions
 * Visit our [careers page](https://www.thinkbrownstone.com/careers/) and apply for one of our open positions so we have your contact information along with your pull request.

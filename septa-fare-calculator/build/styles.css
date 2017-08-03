@@ -1,0 +1,51 @@
+.form-block {
+  border-style: solid;
+  border-width: medium;
+  border-color: #CCCCCC;
+  margin-top: 0px
+}
+
+.helper-text {
+  color: #8F8F8F
+}
+
+.header-block {
+  background-color: #595959
+}
+.title {
+  color: white;
+}
+
+#outter {
+  background-color: #DDDDDD;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+}
+
+#inner {
+  background-color: white;
+  border-style: solid;
+  border-width: thin;
+  max-width: 45%;
+  max-height: 60%;
+  margin: auto;
+  transform: translateY(5%);
+  position: relative;
+}
+
+#app {
+  max-width: 80%;
+  max-height: 80%;
+  text-align: center;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%
+}
+
+img {
+  display: inline-block;
+  margin: 0px;
+  height: 50px;
+  width: 50px;
+}
