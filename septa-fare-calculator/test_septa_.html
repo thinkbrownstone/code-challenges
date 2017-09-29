@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <script src="test_script.js"></script>
+	<div class="container">
+        <h1 id="logo"><a><img src="http://www.septa.org/site/images/logo.gif"/>Regional Rail Fares</a></h1>
+        <div id="calculator">
+            <form>
+                <label>
+                    Where are you going?<br>
+                    <select id="zone">
+                        <option value="Select">Select</option>
+                        <option value="CCP/1">CCP/1</option>
+                        <option value="Zone 2">Zone 2</option>
+                        <option value="Zone 3">Zone 3</option>
+                        <option value="Zone 4">Zone 4</option>
+                        <option value="NJ">NJ</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    When are you riding?<br>
+                    <select id="travel">
+                        <option value="Select">Select</option>
+                        <option value="weekday">Weekday</option>
+                        <option value="evening_weekend">Evening/Weekends</option>
+                        <option value="anytime">Anytime</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    Where will you purchase the fare?<br>
+                    <input type="radio" name="purchase" value="advance_purchase"> Station Kiosk<br>
+                    <input type="radio" name="purchase" value="onboard_purchase" checked> Onboard<br>
+                </label>
+                <br>
+                <label>
+                    How many rides will you need?<br>
+                    <input type="trips" id="trips">
+                </label>
+            </form>
+        </div>
+        <div id="totalFare" >
+            Your Fare will cost <span id="fare">0.00</span>
+        </div>
+	</div>
+</body>
+</html>
