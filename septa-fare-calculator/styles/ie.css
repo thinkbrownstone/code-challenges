@@ -1,0 +1,38 @@
+/* CSS Document */
+
+
+
+
+#top .login .prosearch
+{
+	background: repeat-y;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='./images/login.png', sizingMethod='noscale');
+}
+
+#top .login .prosearchgo
+{
+	background: repeat-y;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='./images/go_button.png', sizingMethod='noscale');
+}
+
+
+#top .menu .visa
+{
+	background: repeat-y;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='./images/menu_left.png', sizingMethod='noscale');
+}
+
+
+#top .menu .package
+{
+	background: repeat-y;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='./images/menu_right.png', sizingMethod='noscale');
+}
+
+#middle1
+{
+	background: repeat-y;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', src='./images/middle_back.png', sizingMethod='noscale');
+}
+
+

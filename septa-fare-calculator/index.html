@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SEPTA Regional Rail Fare Calculator</title>
+        <!-- Bootstrap core CSS -->
+        <link href="styles/navigation.css" rel="stylesheet">
+        <link href="styles/home.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="fares.json"></script>
+        <script type="text/javascript" src="septa.js"></script>
+    </head>
+    <body class="body">
+        <form method="post" id="form_fare" class="mainrow">
+            <div class="row banner_img"><h1><img src="img/icon.png">Regional Rail Fares</h1></div>
+            <div class="row">
+                <h1>Where are you going?</h1>
+                <select name="zone" id="zone" class="form_control"></select>
+            </div>
+            <div class="row">
+                <h1>When are you riding?</h1>
+                <select class="form_control" id="ride_time" name="ride_time"></select><br/>
+                <label id="helper_text">Helper text that explains the options above</label>
+            </div>
+            <div class="row">
+                <h1>Where will you purchase the fare?</h1>
+                <input type="radio" name="purchase_place" id="advance_purchase" class="radio_control" value="advance_purchase"> <label for="advance_purchase">Station Kiosk</label><br>
+                <input type="radio" name="purchase_place" id="onboard_purchase" class="radio_control" value="onboard_purchase"> <label for="onboard_purchase">Onboard</label><br>
+            </div>
+            <div class="row">
+                <h1>How many rides will you need?</h1>
+                <input type="text" class="form_control input_size" name="rides" id="rides">
+            </div>
+            <div class="row costing">
+                <h1>Your fares will cost</h1>
+                <label class="fares">$0.00</label>
+            </div>
+        </form>
+    </body>
 </html>
