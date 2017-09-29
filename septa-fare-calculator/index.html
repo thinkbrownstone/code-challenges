@@ -3,8 +3,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" type="text/css" href="public/stylesheets/main.css">
 </head>
 <body>
-	
+	<header></header>
+	<nav></nav>
+	<main>
+		<h1 class = "centerText">Rail Fare Calculator</h1>
+		<div id="zoneSelectBlock">
+			<label for="selectZone">Please Select The Zone Where You Want To Go</label>
+			<select name = "selectZone" id = "selectZone"> 
+				<option value = "1" label="CCP/1 OR Zone1" selected="selected" >CCP/1</option>
+				<option value = "2" label="Zone2">Zone2</option>
+				<option value = "3" label="Zone3" >Zone3</option>
+				<option value = "4" label="Zone4">Zone4</option>
+				<option value = "5" label="NJ">NJ</option>
+			</select>
+		</div>
+
+		<div id="spanSelectBlock">
+			<label for="selectSpan">When Do You Want To Go</label>
+			<select name = "selectSpan" id = "selectSpan"> 
+				<option value = "weekday" label="Weekday" selected="selected">Weekday</option>
+				<option value = "evening_weekend" label="Evening Weekend">Evening Weekend</option>
+				<option value = "anytime" label="Anytime" >Anytime</option>
+			</select>
+			<div class="centerText limits" id="anytimeInformation"></div>
+			<details>
+				<summary>Information Regarding Your Current Selection On Travel Time</summary>
+				<p id="aboutSpan"></p>
+			</details>
+		</div>
+
+		<div id="purchasePlaceSelectBlock">
+			<fieldset id="ticketPurchasePlace">
+			<legend >Where Will Purchase Your Ticket(s) </legend>
+				<label for= "station">Purchase at Station</label>
+				<input id="station" type="radio" name="ticket-purchase-place" value="advance_purchase" checked="checked">
+				<label for= "onboard">Purchase Onboard</label>
+				<input id="onboard" type="radio" name="ticket-purchase-place" value="onboard_purchase"> 
+			</fieldset>
+			<details>
+					<summary>Information Regarding Your Current Selection On Purchase Place</summary>
+					<p id="aboutPlace"></p>
+			</details> 
+		</div>
+
+		<div id="numberOfRideSelectBlock">
+			<label for="rideSelection">How Many Rides </label>
+			<input type="number" min="1" max="10" name="rideSelection" value="1" id="rideSelection">
+		</div>
+
+		<div id="calculatedFare"></div>
+		<div id= "Information"></div>
+		<div id = "suggestion" class = "limits"></div>
+
+	</main>
+	<aside></aside>
+	<footer></footer>
+	<script type="text/javascript" src = "public/scripts/app.js"></script>
 </body>
 </html>

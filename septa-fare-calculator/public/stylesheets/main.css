@@ -1,0 +1,210 @@
+/*CSS Normalization Starts Here */
+
+
+/**
+ * 1. Assign default font-family sans-serif
+ * 2. iOS and IE text size  Prevention
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * eliminate default body margin
+ */
+body {
+  margin: 0; }
+
+/*Custom Code */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5){
+
+   html,body
+  {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden; 
+
+  }
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**defining correct display properties.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+legend
+ {
+  display: block; }
+
+/**
+ * 1. Remove border
+ * 2. Remove padding.
+ */
+ fieldset, legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0 0 0.5em;
+  color: inherit; }
+
+/*CSS Normalization Ends Here */
+
+/*setting up the body background color*/
+body{
+  background: #d6d4db;
+}
+
+
+main{
+  max-width: 960px;
+  margin: 50px auto 0;
+  background: #d6d4db;
+  height: 800px;
+}
+
+/* main tag settings for the gradient starts here*/
+/** Gradient Source undefined **/
+main{
+    position: relative;
+    border-top: 3px solid black;
+    padding: 15px; 
+}  
+
+main:before, main:after {
+  content: "";
+  position: absolute;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+  background-image: -webkit-linear-gradient(#000, transparent);
+  background-image: -moz-linear-gradient(#000, transparent);
+  background-image: -o-linear-gradient(#000, transparent);
+  background-image: linear-gradient(#000, transparent);
+  top: -3px;
+  bottom: -3px;
+  width: 3px;
+}
+main:before {
+  left: -3px;
+}
+main:after {
+  right: -3px;
+} 
+
+/* main tag settings for the gradient ends here*/
+
+/*Set same styles for each type of block inside main, aligning in the middle of the  */
+#zoneSelectBlock, #spanSelectBlock, #purchasePlaceSelectBlock , #numberOfRideSelectBlock{
+  margin: 2% auto;
+  text-align: center;
+}
+
+/*label,input and select element styles*/
+#zoneSelectBlock label, #zoneSelectBlock select,
+#spanSelectBlock label, #spanSelectBlock select, 
+#purchasePlaceSelectBlock legend, 
+#numberOfRideSelectBlock label, #numberOfRideSelectBlock input, 
+#suggestion{
+  margin : 2% auto ;
+ font-weight: 600;
+ text-align:  center;
+}
+
+
+.limits{
+  color: red;
+}
+/*styles for details tag*/
+#purchasePlaceSelectBlock details{
+	margin: 2% auto;
+}
+
+/*1 styles for displaying fare
+  2 styles for input number
+  3 styles for select tag
+  4 styles for heading  */
+/*1*/
+#calculatedFare{
+  width: 50%;
+  height: 8%;
+  font-weight: 800;
+  font-size: 40px; 
+  border: 2px solid #232323;
+  padding: 2%;
+  margin: 50px auto 2%;
+  text-align:  center;
+}
+/*2*/
+input[type="number"] {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  height: 24px;
+  width: 17.59%;
+}
+/*3*/
+select {
+  display: block;
+  text-align: center;
+  margin: auto;
+  height: 30px;
+  width: 18%;
+}
+/*4*/
+h1{
+  border-bottom: 1.5px solid #232323;
+  padding-bottom: 10px;
+  width: 50%; 
+  margin: 20px auto 0; 
+}
+
+.centerText{
+  text-align: center;
+}
+
+
+/*style applied when the 
+1 width of the screen is 960 px
+2 height of screen is 850px*/
+@media(max-width: 960px){
+  main{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media(max-height: 850px){
+  main{
+    height: 50%;
+  }
+}
