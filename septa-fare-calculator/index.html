@@ -1,10 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <meta charset="UTF-8">
+  <title>SEPTA Regional Rail Fare Calculator</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+          type="text/javascript"></script>
+  <script src="calculator.js"></script>
 </head>
-<body>
-	
+<body class="page-regional-rail-fare">
+<div class="container">
+  <div class="container-inner">
+    <div class="header">
+      <div class="header-inner">
+        <div class="logo"><a href="/"><img src="img/logo.png"/></a></div>
+        <h1 class="title">Regional Rail Fare</h1>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="regional-rail-fair">
+      <div class="row region-rail-fair">
+        <form id="rail-fare-form" name="rail-fare-form" class="rale-fare-form">
+          <div class="form-select form-element">
+            <div class="form-select-label label-wrapper">Where are you going?
+            </div>
+            <select id="where-are-you-going" name="where-are-you-going"
+                    class="select-list">
+            </select>
+          </div>
+          <div class="form-select form-element">
+            <div class="form-select-label label-wrapper">When are you riding?
+            </div>
+            <select id="when-are-you-riding" name="when-are-you-riding"
+                    class="select-list">
+              <option value="weekday">Weekday</option>
+              <option value="evening_weekend">Evening Weekend</option>
+              <option value="anytime">Anytime</option>
+            </select>
+            <div class="helper-text">Helper text that explains the options
+              above
+            </div>
+          </div>
+          <div class="form-radio form-element">
+            <div class="form-radio-label label-wrapper">Where will you purchase
+              the fare?
+            </div>
+            <div class="form-radio-wrapper">
+              <input type="radio" name="where-purchase" id="advance_purchase"
+                     value="advance_purchase" checked="checked">
+              <label for="advance_purchase">Station Kiosk</label><br/>
+              <input type="radio" name="where-purchase" id="onboard_purchase"
+                     value="onboard_purchase">
+              <label for="onboard_purchase">Onboard</label><br/>
+            </div>
+          </div>
+          <div class="form-radio form-element">
+            <div class="form-radio-label label-wrapper">How many rides will you
+              need?
+            </div>
+            <input type="text" name="how-many-rides" id="how-many-rides"
+                   value="1" class="text-box text-box-how-many-rides"/>
+          </div>
+        </form>
+        <div id="result-container" class="result-container">
+          <div class="result-tile">Your fare will cost</div>
+          <div class="result-value">$0.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

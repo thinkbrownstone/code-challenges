@@ -1,0 +1,101 @@
+/*  */
+body {
+  font-family: verdana;
+  color: #4d4d4d;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+.container {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.container-inner {
+  border: 2px solid #ccc;
+}
+
+/* Header section */
+.header {
+  background: #595959;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.header-inner {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.logo {
+  float: left;
+  margin-right: 25px;
+}
+
+.title {
+  margin: 0;
+}
+
+/* Form section */
+.region-rail-fair {
+  text-align: center;
+}
+
+.form-element {
+  padding: 30px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.label-wrapper {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.select-list, .text-box {
+  width: 80%;
+  padding: 15px;
+  font-size: 18px;
+  border: 1px solid #bfbfbf;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.form-radio label {
+  font-size: 24px;
+}
+
+.form-radio-wrapper {
+  text-align: left;
+  width: 32%;
+  margin: 0 auto;
+}
+
+.text-box-how-many-rides {
+  width: 20%;
+}
+
+/* Result section */
+.result-container {
+  background: #595959;
+  color: #fff;
+  padding: 25px 0;
+}
+
+.result-value {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.result-tile {
+  font-size: 22px;
+}
+
+.helper-text {
+  color: #808080;
+  margin-top: 15px;
+}
