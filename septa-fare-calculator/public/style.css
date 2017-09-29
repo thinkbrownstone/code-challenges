@@ -1,0 +1,43 @@
+
+.calculator-container{
+	border: solid .1em lightgrey;
+	width: 30em;
+    height: 40em;
+    margin: 0em auto;
+}
+select{
+	font-size: 2em;
+    width: 8em;
+    margin-top: 1em;
+}
+.question{
+	color: #228B22;
+	font-size: 2em;
+}
+.zones{
+	color: #228B22;
+    text-align: center;
+}
+.q-zones {}
+.zone-select{
+	color: #228B22;
+}
+.when{
+	margin-top: 1em;
+	text-align: center;
+}
+.q-when{}
+.when-select{
+	color: #228B22;
+}
+.purchase{
+	margin-top: 1em;
+	text-align: center;
+}
+.q-purchase{}
+.purchase-name{}
+.total{
+	color: green;
+	font-size: 2em;
+	text-align: center;
+}
