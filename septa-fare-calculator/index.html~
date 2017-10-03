@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
+        <meta name="description" content="septa fare calculator">
+        <meta name="author" content="Donna Miller">   
+	<title>SEPTA Regional Rail Fare Calculator</title>
+	
+	<!-- Septa Fare calculator CSS -->
+        <link href="css/septafc.css" rel="stylesheet">		
+</head>
+  
+<body>    
+    <div id="septafc">         
+        <div class="fare-header-container">
+           <h3>Regional Rails Fares</h3>
+         </div>  
+         
+         <div class="fare-container">
+           <div id="farezone">
+             <fieldset>
+               <p>
+                 <label for="sfzone"><b>Where are you going?</b></label>
+                 <br><br>
+                 <select id="sfzone" onchange="fare_recalc();">
+                 </select>
+               </p>
+             </fieldset>
+           </div>
+         </div>
+         
+         <div class="fare-container">
+           <div id="faretype">
+            <fieldset>
+               <p>
+                 <label for="sftype"><b>When are you riding?</b></label>
+                 <br><br>
+                 <select id="sftype" onchange="fare_recalc();">
+                 </select>
+               </p>
+             </fieldset>
+             <div class="helper-text" id="type-helptext"></div>
+           </div>
+         </div>
+         
+         <div class="fare-radio-container" >
+           <div id="farepurchase">
+            <fieldset>
+              <legend><b>Where will you purchase the fare?<b></legend><br>
+                <p class="fare-radio-btn">
+                  <input type="radio" name="sfpurchase" id="advance_purchase" value="advance_purchase" onchange="fare_recalc();">
+                  <label for="kiosk">Station Kiosk</label>
+                </p>
+                <p class="fare-radio-btn">
+                  <input type="radio" name="sfpurchase" id="onboard_purchase" value="onboard_purchase" onchange="fare_recalc();">
+                  <label for="onboard">Onboard</label>
+                </p>
+                <div class="helper-text" id="purchase-helptext"></div>
+            </fieldset> 
+           </div>
+         </div>
+         
+         <div class="fare-container">
+           <fieldset>
+             <p><label for="fareqty"><b>How many rides will you need?</b></label><br><br>
+             <input type="number" id="fareqty" min="0" value="0" onchange="fare_recalc();"></p>
+           </fieldset>
+         </div>
+         
+         <div class="fare-footer-container">
+            <p><b>You fare will cost</b></p>           
+            <div class="fare-total" id="totalfare"><b>$0.00</b></div>
+         </div>
+    </div>  
+
+      
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/jquery-1.12.2.min.js"></script>
+    <!-- Septa Fare Calculator js -->
+    <script src="js/septafc.js"></script>     
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+#septafc {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.8em;
+}
+
+#septafc label {
+  width: 5em;	
+  margin-bottom: 0.625em;
+  color: #555555;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+  font-weight: normal;
+  text-align: center;
+}
+
+#septafc legend, fieldset {
+  border:none;	
+  color: #555555;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+}	
+
+#septafc select {
+  width: 8.9em;
+  height: 1.25em;
+  color: #555555;
+  font-family: "Times New Roman", Times, serif; 
+  font-size: 1.1em;
+}
+
+#septafc input[type="number"] {
+  width: 4em;
+  height: 2em;
+  color: #555555;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+#septafc .fare-container {
+  width: 18em;
+  height: 9em;	
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  padding: 1.25em 0.625em 0.125em 0.625em;  
+  background-color:#FDFDFD;
+  color: #575757;
+  
+  text-align:center;
+} 
+
+#septafc .fare-radio-container {
+  width: 18em;
+  height: 9em;	
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  padding: 1.25em 0.625em 0.125em 0.625em; 
+  background-color:#FDFDFD;
+  color: #575757;
+  
+} 
+
+#septafc .fare-header-container {
+  width: 18em;
+  height: 1.6em; 	
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  padding: 0 0.625em 1.875em 0.625em;  
+  background-color: #555555;
+  color: white;  
+  text-align: center;
+}  
+
+#septafc .fare-footer-container {
+  width: 18em;
+  height: 6em;	
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  padding: 1.25em 0.625em 0.125em 0.625em;  
+  background-color: #555555;
+  color: white;
+  text-align: center;
+}
+
+#septafc .helper-text {
+  font-size: .5em;
+  font-weight: normal;
+}	
+
+#septafc .fare-radio-btn {	
+  margin:0 0 0 3em;  
+  padding: 0;
+}
+
+#septafc .fare-total {
+  font-size: 2.65em;
+} 
+
+
+
+
+
