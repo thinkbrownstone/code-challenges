@@ -1,0 +1,40 @@
+
+#septacalc {
+	border: 1px solid #CCCCCC;
+	font-family: sans-serif;
+	font-size: 1em;
+	width: 300px;
+	margin: 0px auto;
+}
+
+#septacalc > div {
+	border: 1px solid #666666;
+	padding: 10px;
+	text-align: center;
+	color: #555555;
+}
+
+#septacalc div.title {
+	background-color: #555555;
+	color: white;
+	font-size: 1.5em;
+}
+
+#septacalc div.fare {
+	background-color: #606060;
+	color: white;
+}
+
+#septacalc .left-justified {
+	text-align: left;
+	display: inline-block;
+}
+
+#septacalc .helper {
+	font-size:0.7em;
+	color: #777777;
+}
+
+#septacalc_trips {
+	width: 60px;
+}

@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="utf-8">
+		<title>SEPTA Regional Rail Fare Calculator</title>
+		<link rel='stylesheet' href='septacalc.css'/>
+    </head>
+	<body>
+
+		<div id='septacalc'>
+			<div class='title'>
+				Regional Rail Fares
+			</div>
+			<div>
+				Where are you going?<br/>
+				<select id='septacalc_zone'>
+					<option value='CCP/1'>Center City Philadelphia</option>
+					<option value='Zone 2'>Zone 2</option>
+					<option value='Zone 3'>Zone 3</option>
+					<option value='Zone 4'>Zone 4</option>
+					<option value='NJ'>New Jersey</option>
+				</select>
+			</div>
+			<div>
+				When are you riding?<br/>
+				<select id='septacalc_type'>
+					<option value='weekday'>Weekdays</option>
+					<option value='evening_weekend'>Evenings &amp; Weekends</option>
+				</select><br/>
+				<span class='helper' id='septacalc_type_info'/>
+			</div>
+			<div>
+				Where will you purchase the fare?<br/>
+				<div class='left-justified'>
+					<input type='radio' name='septacalc_purchase' value='advance_purchase' checked/>Station Kiosk<br/>
+					<input type='radio' name='septacalc_purchase' value='onboard_purchase'/>Onboard
+				</div>
+				<br/>
+				<span class='helper' id='septacalc_purchase_info'/>
+			</div>
+			<div>
+				How many rides will you need?<br/>
+				<input type='text' id='septacalc_trips' value='1'/>
+			</div>
+			<div class='fare'>
+				Your fare will cost<br/>
+				<span id='septacalc_fare'></span>
+			</div>
+		</div>
+
+	</body>
+
+	<!--Javascript-->
+	<!--placed at the end of the page to speed up DOM loading -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script type="text/javascript" src="septacalc.js"></script>
+
 </html>
