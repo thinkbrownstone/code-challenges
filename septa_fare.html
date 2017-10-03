@@ -1,0 +1,101 @@
+<!DOCTYPE html> <!-- FRAN MADE THIS! -->
+<html lang="en">
+
+<head>
+  <title>Septa Fare Calculator</title>
+  
+  <style>
+  
+	#test{
+	text-align:center;
+	border-style: solid;
+	width: 50%;
+	margin: 1em auto;
+	background-color:red;
+	
+
+}
+
+#big_wrapper{
+	
+	background-color:yellow;
+	width: 90%;
+	margin: 1em auto;
+	
+	
+}
+
+#title{
+	
+	border-style:hidden hidden solid hidden;
+	padding-bottom:10px;
+}
+  
+  </style>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+</head>
+<body>
+ 
+<div id="big_wrapper"> 
+
+ <div id='test'>
+ 
+ <h3 id='title'>Septa Fare Calculator</h3>
+ 
+  <p>
+    <label for="DLState">Where are you Going?: </label>
+    <select id="dropdown">
+	<option id="select"></option>
+	
+	
+	</select>
+  </p>
+  
+    <p>
+    <label for="DLState">When are you Going?: </label>
+    <select id="DLState"></select>
+  </p>
+  
+    <p>
+    <label for="DLState">Where will you purchase the fare?: </label>
+    <select id="DLState"></select>
+  </p>
+  
+      <p>
+    <label for="DLState">Where will you purchase the fare?: </label>
+    <select id="DLState"></select>
+  </p>
+  
+    <script>
+	
+	   $.ajax({
+	   
+			url:'fare.json',
+			dataType: 'json',
+			type: 'get',
+			cache: false,
+			
+			success: function(data){
+				$(data.zones).each(function(index,value){
+						console.log(value.name);
+				
+				});
+			
+			}	   
+	   });
+
+    </script>
+	
+	
+
+  
+  
+  </div>
+  
+  </div>
+ 
+
+</body>
+</html>
