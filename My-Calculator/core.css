@@ -1,0 +1,173 @@
+	.bigDiv
+	{
+	width:100%; height:auto
+	}	
+	
+	.sizeDiv
+	{
+	width:640px; margin:0px auto;
+	padding:20px 10px 20px 10px;
+	}
+
+	body
+	{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#4D4D4D;
+	}
+
+	div
+	{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	}
+
+	input
+	{
+	cursor:pointer;
+	}	
+	
+	select
+	{
+	cursor:pointer;	
+	}
+	
+	.mLabel
+	{
+	cursor:pointer;
+	}
+	
+	.containgDiv
+	{
+		width:100%; height:auto;	
+		border:4px #CCC solid;
+	}
+	
+	.containgDivHead
+	{
+		width:100%; height:auto; background-color:#595959; padding:15px 25px 25px 25px;
+	}
+	
+	.containgDivBody
+	{
+		width:100%; height:auto; background-color:white; padding:10px 0px 0px 0px;	
+	}
+	
+	.innerHeaderTXT
+	{
+		font-size:2.6em; color:white; margin:5px 0px 0px 0px; font-weight:bold;
+	}
+	
+	.innerBodyTXT
+	{
+		font-size:2em; text-align:center; margin:0px 0px 10px 0px;
+		font-weight:500;
+	}
+	
+	.mForm
+	{
+	display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	}
+
+	.mTrips
+	{
+	text-align:center;
+	}
+	
+	.mIMGresponsive
+	{
+	display: block;
+    max-width: 100%;
+    height: auto;
+	}
+	
+	.dropDown
+	{
+		height:75px;
+		font-size:1.5em;
+	}
+	
+	.QuestionDiv
+	{
+		padding:25px;
+		border-bottom:1px #E6E6E6 solid;
+	}
+	
+	.radioDiv
+	{
+		width:50%; margin:0px auto;
+		padding:10px 10px 0px 10px;	
+		font-size: 1.75em;
+	}
+	
+	.inputTxtDIV
+	{
+		width:19%; margin:0px auto;
+	}
+	
+	.containgDivFooters
+	{
+		width:100%; padding:25px; background-color:#595959; color:white;
+		min-height:175px;	
+	}
+	
+	.innerFooterTXT
+	{
+		text-align:center;
+		font-size:1.9em;
+		font-weight:600;
+		margin-top:0px;
+	}
+	
+	.innerFooterTXTresults
+	{
+		text-align:center;
+		font-size: 5.65em;
+		font-weight:900px;
+	    margin: -20px 0px 0px 0px;
+	}
+	
+	.logoIMG
+	{
+		float:left;
+		height:50px;	
+		margin-right:25px;
+	}
+	
+	.helperTXT
+	{
+		text-align:center; margin-top:10px; 
+	}
+
+	.helperTXTsize
+	{
+		min-height:70px;
+		color:#808080;
+		font-size:1.27em;
+		margin-bottom:0px;
+	}
+
+	.highlightedTXT
+	{
+		background-color:yellow;	
+	}
+	
+	.highlightedINPUT
+	{
+		border: 5px red solid;
+	}
