@@ -1,0 +1,73 @@
+/* style by element - shouldn't since this is a widget */
+
+
+/* style by ID (and any sub ele) */
+#fc-main{
+	margin: 0 auto;
+	padding: 0;
+	width: 300px;
+	border: 2px solid #CCC;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#fc-header{
+	background-color: #585858;
+	color: #FFF;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+#fc-when-info{
+	font-size: 0.8em;
+	color: #585858;
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 75%;
+	text-align: left;
+}
+#fc-results{
+	background-color: #585858;
+	color: #FFF;
+	font-size: 1.1em;
+	text-align: center;
+}
+#fare{
+	font-size:1.7em;
+}
+
+/* style by class (any and sub ele) */
+.fc-round{
+	padding: 0.5em;
+	border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
+}
+.fc-field{
+	text-align: center;
+	padding: 1em 0.5em;
+	border-bottom: 1px solid #424242;
+}
+.fc-field-label {
+	display: block;
+	font-size: 1.1em;
+	margin-bottom: 0.75em;
+}
+.fc-field select{
+	min-width: 80%;
+	font-size: 1.1em;
+	padding: 6px 2px;
+}
+.fc-field fieldset{
+	border: 0;
+	text-align: left;
+	margin: auto;
+	margin-top: -10px;
+	width: 50%;
+}
+.fc-field fieldset div{
+	margin: 10px 0px;
+}
+.fc-field label{
+	font-size: 1.1em;
+	cursor: pointer;
+}

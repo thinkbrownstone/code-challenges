@@ -3,8 +3,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="fare-calculator.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	
+	<div id="fc-main" ng-app="fareCalculator" ng-controller="fcController">
+		<div id="fc-header">
+			<!--<img src="logo-septa-sm.png" />-->
+			Regional Rail Fares
+		</div>
+		<div class="fc-field" ng-if="fareData.isEmpty()">
+			Failed to load fare data.
+		</div>
+		<div id="fc-body" ng-if="!fareData.isEmpty()">
+			<div class="fc-field">
+				<div class="fc-field-label">Where are you going?</div>
+				<select id="fc-where" ng-model="fcMain.fcWhere" ng-change="calculate()">
+					<option ng-repeat="z in zones" value="{{z.zone}}">{{z.name}}</option>
+				</select>
+			</div>
+			<div class="fc-field">
+				<div class="fc-field-label">When are you riding?</div>
+				<select id="fc-when" ng-model="fcMain.fcWhen" ng-change="calculate()">
+					<option value="weekday">Weekdays</option>
+					<option value="evening_weekend">Evening/ Weekend/ Holiday</option>
+				</select>
+				<div id="fc-when-info">{{fcMain.fcWhenInfo}}</div>
+			</div>
+			<div class="fc-field">
+				<div class="fc-field-label">Where will you purchase the fare?</div>
+				<fieldset>
+					<div>
+						<input type="radio" name="fc-purchase" id="fc-purchase-1" ng-model="fcMain.fcPurchase" value="advance_purchase" ng-change="calculate()" />
+							<label for="fc-purchase-1" title="{{fareData.info.advance_purchase}}"> Station Kiosk</label>
+					</div>
+					<div>
+						<input type="radio" name="fc-purchase" id="fc-purchase-2" ng-model="fcMain.fcPurchase" value="onboard_purchase" ng-change="calculate()" />
+							<label for="fc-purchase-2" title="{{fareData.info.onboard_purchase}}"> Onboard</label>
+					</div>
+				</fieldset>
+			</div>
+			<div class="fc-field">
+				<div class="fc-field-label">How many rides will you need?</div>
+					<fieldset style="text-align: center;">
+						<div>
+							<input type="number" name="fc-rides" id="fc-rides" class="fc-round" ng-model="fcMain.fcRides" value="1" min="1" max="999" ng-change="calculate()" />
+						</div>
+				</fieldset>
+			</div>
+		</div>
+		<div id="fc-results">
+			<div ng-if="fare === null">Please fill out all fields to calculate fare.</div>
+			<div ng-if="fare !== null">
+				Your fare will cost
+				<div id="fare" ng-bind="fare"></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
