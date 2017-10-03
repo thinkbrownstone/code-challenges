@@ -1,10 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" />
+	<!-- Latest IE rendering mode -->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<!-- Render width of screen -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link href="/css/vendor/normalize.css" type="text/css" rel="stylesheet" media="screen" />
+	<link href="/css/fare_calc_styles.css" type="text/css" rel="stylesheet" media="screen" />
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700' rel='stylesheet' type='text/css'>
+
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
 <body>
-	
+	<div class="septa-fare-calc" ng-app="fareCalculatorApp" ng-controller="fareFormCtlr">
+		<div class="header dark">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/SEPTA.svg" alt="SEPTA Logo" width="60" height="45" class="inline"/>
+			<h2 class="inline">Regional Rail Fares</h2>
+		</div>
+		<form>
+			<div>
+				<label for="select-zone" class="block">Where are you going?</label>
+				<select id="select-zone" class="block light-text input" ng-model="zone">
+					<option value="0">CCP/1</option>
+					<option value="1">Zone 2</option>
+					<option value="2">Zone 3</option>
+					<option value="3">Zone 4</option>
+					<option value="4">NJ</option>
+				</select>
+			</div>
+			<div>
+				<label for="select-type" class="block">When are you riding?</label>
+				<select id="select-type" class="block light-text input" ng-model="type">
+					<option value="anytime">Anytime</option>
+					<option value="weekday">Weekday</option>
+					<option value="evening_weekend">Evening Weekend</option>
+				</select>
+				<p class="helper light-text">{{ fares.info[type] }}</p>
+			</div>
+			<div>
+				<fieldset>
+					<legend>Where will you purchase the fare?</legend>
+					<div class="middle-column no-padding">
+						<p>
+							<input type="radio" ng-model="purchase" value="advance_purchase" id="radio-advance-purchase"/>
+							<label for="radio-advance-purchase" class="light-text">Station Kiosk</label>
+						</p>
+						<p>
+							<input type="radio" ng-model="purchase" value="onboard_purchase" id="radio-onboard-purchase"/>
+							<label for="radio-onboard-purchase" class="light-text">Onboard</label>
+						</p>
+					</div>
+				</fieldset>
+			</div>
+			<div>
+				<label for="text-count" class="block">How many rides will you need?</label>
+				<input type="text" id="text-count" class="block input center" size="3" maxlength="3" placeholder="0" ng-model="numRides"/>
+			</div>
+		</form>
+		<div class="footer dark">
+			<p>Your fare will cost</p>
+			<!-- passes 0 in on first load -->
+			<h1 class="big">{{ getPrice() || 0 | currency }}</h1>
+		</div>
+	</div>
+
+	<!-- Angular 1.2 for IE8 compatibility -->
+	<script src="/js/vendor/angular.min.js"></script>
+    <script src="/js/fare_calc_app.js"></script>
 </body>
 </html>

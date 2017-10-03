@@ -1,0 +1,111 @@
+/* If using Polymer/Web Components, this CSS would have its own scope, thus
+** not needing the .septa-fare-calc class selector on each component here */
+
+body {
+    margin: 1em;
+}
+.septa-fare-calc {
+    max-width: 640px;
+    margin: 0 auto;
+    border: 4px solid #cccccc;
+    text-align: center;
+    color: #4d4d4d;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.septa-fare-calc select,
+.septa-fare-calc input {
+    margin: 0 auto;
+}
+.septa-fare-calc input[type=radio] {
+    margin: 0 0.25em;
+    vertical-align: middle;
+}
+.septa-fare-calc input[type=text] {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #4d4d4d;
+}
+.septa-fare-calc fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.septa-fare-calc form {
+    font-size: 2em;
+}
+.septa-fare-calc form div {
+    border-bottom: 2px solid #e6e6e6;
+    padding: 1em;
+}
+.septa-fare-calc form div:last-of-type {
+    border-bottom: none;
+}
+.septa-fare-calc select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 100%;
+    background: white url("../img/arrow-point-to-down.png") no-repeat 90% 50%;
+}
+.septa-fare-calc label {
+    margin: 0 0 1em 0;
+}
+.septa-fare-calc label + div {
+    padding: 0;
+}
+.septa-fare-calc p {
+    margin: 0;
+}
+.septa-fare-calc p:first-of-type {
+    margin-top: 1em;
+}
+.septa-fare-calc .header img {
+    margin-right: 15px;
+}
+.septa-fare-calc .header h2 {
+    margin: 0;
+}
+.septa-fare-calc .dark {
+    background-color: #595959;
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 30px;
+}
+.septa-fare-calc .big {
+    font-size: 4em;
+    margin: 0.25em 0;
+}
+.septa-fare-calc .inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+.septa-fare-calc .block {
+    display: block;
+}
+.septa-fare-calc .middle-column {
+    display: inline-block;
+    text-align: left;
+}
+.septa-fare-calc .helper {
+    font-size: 0.75em;
+    color: #808080;
+}
+.septa-fare-calc .light-text {
+    font-weight: 200;
+}
+.septa-fare-calc .input {
+    padding: 0.5em 0.75em;
+    border: 2px solid #bfbfbf;
+    border-radius: 10px;
+}
+.septa-fare-calc .no-padding {
+    padding: 0;
+}
+
+/* For browsers that don't support the viewport meta tag */
+@-ms-viewport {
+    width: device-width;
+}
+@viewport {
+    width: device-width;
+}
