@@ -3,8 +3,80 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script>
+    var app = angular.module("MyApp", []);
+    app.controller("FaresCtrl", function($scope, $http) {
+        $scope.fares = "";
+        $scope.baseFare = "";
+        $scope.chosenZone = "";
+        $scope.chosenTime = "";
+        $scope.chosenPOP = "";
+        $scope.helperTime = "";
+        $scope.totalRides = 0;
+        $scope.timesOfRide = [
+            {display:"Anytime", value:"anytime"},
+            {display:"Weekday", value:"weekday"},
+            {display:"Evening Weekend", value:"evening_weekend"}
+                             ];
+        
+        $http.get('fares.json').
+            success(function(data, status, headers, config) {
+                $scope.fares = data;
+            }).
+            error(function(data, status, headers, config) {
+                console.log("Something went wrong accessing data.")
+            });
+        $scope.getHelperText = function(){
+            if($scope.chosenTime === "")$scope.helperTime = "";
+            $scope.helperTime = $scope.fares.info[$scope.chosenTime.value]
+        
+        }
+        $scope.calculateFare = function(){
+            if(!$scope.chosenZone !=="" | !$scope.chosenPOP!=="" | !$scope.chosenTime!=="") $scope.totalCost = 0.00;
+            
+            angular.forEach($scope.chosenZone.fares, function(element, index, array){
+                
+                if(element.type === $scope.chosenTime.value && element.purchase === $scope.chosenPOP && $scope.totalRides != 0){
+                    
+                    $scope.baseFare = element.price;
+                    console.log(element.price, $scope.baseFare);
+                    $scope.totalCost = $scope.totalRides * $scope.baseFare
+                }
+            });      
+        
+        }
+    });
+    
+    </script>
 </head>
-<body>
-	
+<body ng-app="MyApp">
+   <div ng-controller="FaresCtrl">
+   
+    <h1><img src="img/logo.png" />Regional Rail</h1>
+    <h3 class="question">Where are you going?</h3>
+    <select class="form-control" ng-change="calculateFare()" 
+id="zone"
+name="zone"
+ng-model="chosenZone"
+ng-options="zone.name for zone in fares.zones" >
+
+</select>
+    <h3 class="question">When are you riding?</h3>
+    <select class="form-control" ng-change="calculateFare(); getHelperText();" 
+id="zone"
+name="zone"
+ng-model="chosenTime"
+ng-options="time.display for time in timesOfRide" >
+</select>
+   <span class="helper">{{helperTime}}</span>
+    <h3 class="question">Where will you purchase the fare?</h3>
+        <input type="radio" ng-change="calculateFare()" ng-model="chosenPOP" value="advance_purchase" />Station Kiosk
+        <input type="radio" ng-change="calculateFare()" ng-model="chosenPOP" value="onboard_purchase" />Onboard<br />
+    <h3 class="question">How many rides will you need?</h3>
+    <input type="number" ng-change="calculateFare()" ng-model="totalRides" />
+    <div>
+    <h2>{{totalCost | currency}}</h2>
+    </div>
 </body>
 </html>
