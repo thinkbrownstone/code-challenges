@@ -2,9 +2,96 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link type='text/css' rel='stylesheet' href='includes/css/styles.min.css'></link>
+
 </head>
 <body>
-	
+
+	<div id='error'  class='error'>
+
+		<p  class='inner-error'></p>
+
+	</div>
+
+	<div class='fareCalcContainer'>
+
+		<header class="titleBox"><img src="includes/img/septaLogo.png" alt="SEPTA Logo" class='septaLogo'><h3>Regional Rail Fares</h3></header>
+
+		<form id='fareCalcInfo'>
+
+			<div class='fareCalcSection'>
+
+				<label>Where are you going?</label>
+				<select title='Zone Selection' id='fareCalcZones' name='when' class='fareCalcField'>
+					<option selected value='0'>Please Select</option>
+					<option value='1'>Zone 1</option>
+					<option value='2' >Zone 2</option>
+					<option value='3' >Zone 3</option>
+					<option value='4' >Zone 4</option>
+					<option value='5' >Zone 5</option>
+
+				</select>
+
+			</div>
+
+			<div class='fareCalcSection'>
+
+				<label>When are you riding?</label>
+				<select title='Riding Selection' id='fareCalcWhen' name='when' class='fareCalcField'>
+					<option selected value='pleaseSelect'>Please Select</option>
+					<option value='weekday'>Weekday</option>
+					<option value='evening_weekend'>Weekend / Evening</option>
+
+				</select>
+				<small class='fareCalcInfo' >Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station</small>
+
+			</div>
+
+			<div class='fareCalcSection'>
+
+				<label title='Where Fare Purchased'>Where will you purchase the fare?</label>
+				<span class='fareCalcRadio'><input checked type='radio' id='stationKiosk' name='fareCalcWhere' value='advance_purchase' class='fareCalcField fareCalcRadioButton'>Station Kiosk</span>
+				<span class='fareCalcRadio'><input type='radio' id='onboard' name='fareCalcWhere' value='onboard_purchase' class='fareCalcField fareCalcRadioButton'>Onboard</span>
+				<small id='infoWhere' class='fareCalcInfo' >Tickets available for purchase at all SEPTA offices.</small>
+				
+
+			</div>
+
+			<div class='fareCalcSection'>
+
+				<label>How many rides will you need?</label>
+				<select title='Number Rides' id='fares' type='text' class='fareCalcField' name='rides'>
+<option selected value='none'>Please Select</option>
+					<option value='1'>1</option>
+					<option value='2'>2</option>
+					<option value='3'>3</option>
+					<option value='4'>4</option>
+					<option value='5'>5</option>
+					<option value='6'>6</option>
+					<option value='7'>7</option>
+					<option value='8'>8</option>
+					<option value='9'>9</option>
+					<option value='10'>10</option>
+				</select>
+				<small class='fareCalcInfo' >If you purchase 10 tickets you will receive a discounted pice.</small>
+
+			</div>
+
+			<div class='totalFareCalcSection'>
+
+				<label class='totalLabel'>The fare will cost</label>
+				<label title='Total Cost' class='totalCost'>$<span id='fareCalcTotal'>0.00</span></label>
+
+			</div>
+
+
+
+		</form>
+
+	</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src='includes/js/septaFareCalc.min.js'></script>
 </body>
 </html>
