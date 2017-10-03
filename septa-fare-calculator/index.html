@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="fares.js"></script>
+
+    <title>SEPTA Rail Fare Calculator</title>
+    
 </head>
+
 <body>
-	
+	<div class="w3-row w3-padding-16">
+    	<div class="w3-col m2 l3">
+        	<p></p>
+        </div>
+        <div class="w3-col m8 l6 w3-center w3-border">
+            <form ng-app="myApp">
+                <div class="w3-container"  ng-controller="faresCalCtrl">
+                    <header class="w3-dark-grey">
+                        <h1>Regional Rail Fares</h1>
+                    </header>
+                    <div>
+                        <h2 class="w3-text-dark-grey">Where are you going?</h2>
+                        <select class="w3-xlarge w3-border w3-text-grey w3-input">
+                            <option value="$index" ng-repeat="x in zones" ng-click="changeWhere($index)" ng-selected="$index==zone" class="w3-padding">{{x}}</option>
+                        </select>
+                    </div>
+                    <hr />
+                    <div>
+                        <h2 class="w3-text-dark-grey">When are you riding?</h2>
+                        <select class="w3-xlarge w3-border w3-text-grey w3-input">
+                            <option value="{{x}}" ng-repeat="x in types" ng-selected="$index==type" ng-click="changeWhen($index)" class="w3-padding">{{x}}</option>
+                        </select>
+                    </div>
+                    <hr />
+                    <div>
+                        <h2 class="w3-text-dark-grey">Where will you purchase the fare?</h2>
+                        <p ng-repeat="x in purchases" class="w3-text-grey w3-xlarge w3-margin-0"><input type="radio" name="purchaseLocation" value="{{x}}" ng-checked="$index==purchase" ng-click="changePurchase($index)"> {{x}}</p>
+                    </div>
+                    <hr />
+                    <div align="center">
+                        <h2 class="w3-text-dark-grey">How many rides will you need?</h2>
+                        <input name="" type="text" ng-model="rides" ng-change="changePassNum(rides)" ng-blur="validateRides()" class="w3-input w3-xxlarge w3-border w3-center w3-text-dark-grey" style="width:200px" />
+                        <div class="w3-container w3-section w3-yellow" ng-show="warning">
+                            <span onclick="this.parentElement.style.display='none'" class="w3-closebtn">×</span>
+                            <p>
+                                <span>{{minRides}} rides per purchase.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <hr />
+                    <footer class="w3-dark-grey w3-padding-16">
+                        <h1 style=" margin:0">Your fare will cost</h1>
+                        <p style="font-family:'Arial Black', Gadget, sans-serif; font-weight:bold; font-size:90px; line-height:none; margin:0">$<span>{{totalFare}}</span></p>
+                        <p style="margin:0"><button class="w3-btn w3-white w3-large" ng-click="buySubmit()">Buy</button></p>
+                    </footer>
+                </div>
+            
+            </form>
+        </div>
+    </div>
 </body>
 </html>
