@@ -1,10 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <meta charset="UTF-8">
+  <title>SEPTA Regional Rail Fare Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	
+
+  <script type="text/javascript" src="js/angular.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  <div class="fare-calc-widget" ng-app="FareCalc">
+    <div class="fc-title"><img src="img/septa.svg"><h1>Regional Rail Fares</h1></div>
+
+    <form nonvalidate class="fc-form" ng-controller="fareCalcCtrl">
+
+      <div class="fc-form-group">
+        <label for="fc-select-zone"><h2>Where are you going?</h2></label>
+
+        <select id="fc-select-zone" ng-options="zone as zone.name for zone in fareInfo.zones" ng-model="formData.fareZone">
+          <option value="">Choose one:</option>
+        </select>
+
+      </div>
+
+      <div class="fc-form-group">
+        <label for="fc-select-type"><h2>When are you riding?</h2></label>
+
+        <select id="fc-select-type" ng-options="type as type | prettyPrint for type in fareTypes" ng-model="formData.fareType">
+          <!-- Todo: disable the 'anytime' option when 'onboard_purchase' is selected -->
+          <option value="">Choose one:</option>
+        </select>
+
+      </div>
+
+      <div class="fc-form-group">
+        <label for="fc-select-purchase"><h2>Where will you purchase the fare?</h2></label>
+
+        <p ng-repeat="purchase in farePurchases" ng-class="">
+          <!-- Todo: dibable 'onboard_purchase' if 'anytime' is selected -->
+          <input type="radio" value="{{purchase}}" id="fc-purchase-{{purchase}}" ng-model="formData.farePurchase" value="{{purchase}}"></input>
+          <label for="fc-purchase-{{purchase}}">{{purchase | prettyPrint}}</label>
+        </p>
+
+      </div>
+
+      <div class="fc-form-group">
+        <label for="fc-select-qty"><h2>How many rides will you need?</h2></label>
+        <input type="text" id="fc-select-qty" ng-model="formData.fareQty"></input>
+      </div>
+
+      <div class="fc-footer">
+        <label for="fc-total-price">Your fare will cost:</label>
+        <p id="fc-total-price" class="fc-sm-title">{{totalFare | currency}}</p>
+      </div>
+
+    </form>
+
+  </div>
+
 </body>
 </html>

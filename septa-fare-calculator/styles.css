@@ -1,0 +1,53 @@
+/*Styles for Septa Fare Calculation Widget*/
+
+.fare-calc-widget {
+  text-align: center;
+  font-family: sans-serif;
+  border: black solid 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .fare-calc-widget{
+    width: 95vw;
+  }
+}
+@media (min-width: 768px) {
+  .fare-calc-widget{
+    width: 600px;
+  }
+}
+
+.fc-title, .fc-footer{
+  background-color: grey;
+  padding: 4px;
+  color: white
+}
+.fc-title h1 {
+  display: inline-block;
+}
+
+.fc-title img {
+  height: 2em;
+  float: left;
+  display: inline-block;
+  margin: 1.2em 0;
+}
+
+.fc-form-group {
+  margin: 10px;
+  border-bottom: 1px solid grey;
+  padding: 10px;
+}
+.fc-form-group:last-of-type {
+  border-bottom: none;
+}
+
+.fc-form-group p, .fc-form-group input, .fc-form-group select {
+  font-size: 2em;
+}
+
+.fc-sm-title {
+  font-size: 1.3em;
+}
