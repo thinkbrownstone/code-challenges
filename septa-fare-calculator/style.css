@@ -1,0 +1,87 @@
+* {
+	font-family: 'Helvetica';
+	letter-spacing: 1px;
+}
+
+#septa-logo {
+	height: 40px;
+	margin-right: 20px;
+}
+
+p {
+	font-size: 10px;
+	text-align: left;
+	padding: 0px 40px;
+	margin: none;
+}
+
+.label {
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+}
+
+.widget {
+	border: 4px #bdbdbd solid;
+	text-align: center;
+	width: 80%;
+	max-width: 550px;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background-color: #545454;
+	height: 20%;
+	padding: 20px;
+}
+
+h1 {
+	margin: 0;
+	display: inline-block;
+}
+
+.footer {
+	margin-top: 20px;
+	color: white;
+	background-color: #545454;
+	height: 20%;
+	padding: 20px;
+}
+
+.fare {
+	margin: 0;
+	font-size: 20px;
+	text-align: center;
+}
+
+#total-cost {
+	margin-top: 10px;
+}
+
+input {
+	text-align: center;
+}
+
+hr {
+	margin-top: 20px;
+}
+
+select {
+	width: 80%;
+}
+.zone, .type, .trips {
+	height: 40px;
+	font-size: 20px;
+	border: 2px #bdbdbd solid;
+	border-radius: 10px;
+	outline: none;
+}
+
+.trips {
+	width: 20%;
+}

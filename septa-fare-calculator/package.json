@@ -1,0 +1,24 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "Hello, hopeful Think Brownstone development team member!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnmprk/code-challenges.git"
+  },
+  "author": "Jessica Park",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wnmprk/code-challenges/issues"
+  },
+  "homepage": "https://github.com/wnmprk/code-challenges#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "express": "^4.13.4"
+  }
+}

@@ -3,8 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="node_modules/angular/angular.js" defer></script>
+	<script src="app.js" defer></script> 
 </head>
-<body>
-	
+<body ng-app='SeptaApp'>
+	<div ng-controller='MainController'>
+		<div class='widget'>
+			<div class='header'>
+				<img id='septa-logo' src='http://i.imgur.com/jsAih1s.png' />
+				<h1>Regional Rail Fares</h1>
+			</div>
+			<form ng-submit="submitForm()">
+				<p class='label'>Where are you going?</p>
+				<select class='zone' ng-model="myTrip.zone" name="zone">
+					<option value="1">Zone 1</option>
+					<option value="2">Zone 2</option>
+					<option value="3">Zone 3</option>
+					<option value="4">Zone 4</option>
+					<option value="5">Zone 5</option>
+				</select>
+				<hr>
+				<p class='label'>When are you riding?</p>
+				<select class='type' ng-model="myTrip.type" name="type">
+					<option value="weekday">Weekday</option>
+					<option value="evening_weekend">Evening Weekend</option>
+					<option value="anytime">Anytime</option>
+				</select>
+				<div class='helper-info'>
+					<p>Weekday: {{info.weekday}}</p>
+					<p>Evening Weekend: {{info.evening_weekend}}</p>
+					<p>Anytime: {{info.anytime}}</p>
+				</div>
+				<hr>
+				<p class='label'>Where will you purchase the fare?</p>
+				<input ng-model="myTrip.purchase" type="radio" value="advance_purchase"> Station Kiosk<br>
+				<input ng-model="myTrip.purchase" type="radio" value="onboard_purchase"> Onboard<br>
+				<hr>
+				<p class='label'>How many rides will you need?</p>
+				<input class='trips' ng-model="myTrip.trips" type='number' required></input>
+			</form>
+			<div class='footer'>
+				<p class='fare'>Your fare will cost</p>
+				<h1 id='total-cost'>{{ myTrip.total | currency }}</h1>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
