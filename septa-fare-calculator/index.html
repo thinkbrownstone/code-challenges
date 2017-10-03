@@ -1,10 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+	 <meta charset="UTF-8">
+	 <title>SEPTA Rail Fare Widget</title>
+     <meta name="description" content="This web page is used for Think Brownstone interview test">
+     <meta name="keywords" content="SEPTA Think Brownstone">
+     <meta name="author" content="Zhaoxing">
+
+	 <!--Css-->
+	 <link rel="stylesheet" href="css/main.css">
+	 <!--Css Ends-->
 </head>
 <body>
+
+<div class="widget-container">
+	<h1>Regional Rail Fares</h1>
+
+	<div class="widget-zone">
+	    <h2>Where are you going?</h2>
+		  <select id="widget-zone-option"></select>	
+	</div>
+
+	<div class="widget-type">
+		<h2>When are you riding?</h2>
+		<select id="widget-type-option">
+			  <option name="widget-type" value="weekday">Weekday</option>
+		   	<option name="widget-type" value="evening_weekend">Evening Weekend</option>
+		  	<option name="widget-type" value="anytime">Anytime</option>
+		</select>
+		<a id="widget-type-explain"></a>
+	</div>
 	
+	<div class="widget-purchase">
+		<h2>Where will you purchase the fare</h2>
+		<input name="widget-purchase" type="radio" value="advance_purchase" checked>
+		<label for="purchase"> Station Kiosk</label>
+		<input name="widget-purchase" type="radio" value="onboard_purchase">
+		<label for="purchase"> Onboard </label>
+	</div>
+	
+	<div class="widget-trips">
+		<h2>How many rides will you need?</h2>
+		<input name="widget-trips" type="text" id="widget-trips">
+	</div>
+
+	<div class="widget-price">
+		<h2>Your fare will cost</h2>
+		<a id="widget-price"></a>
+	</div>
+</div>
+ 
+     <!--Javascript-->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+     <!--Javascript Ends-->
+
 </body>
 </html>

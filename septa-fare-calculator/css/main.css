@@ -1,0 +1,109 @@
+/*General*/
+*{
+    margin:0;
+	padding: 0;
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 100;
+	font-size: 0.7em;
+	color:#3C3C3C;
+}
+/*General Ends*/
+
+/*Widget*/
+.widget-container{
+	position: absolute;
+	width: 400px;
+	height: 599px;
+	border: 4px solid #c1c1c1;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+.widget-container h1{
+	height: 50px;
+	background: #474747;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+.widget-container h1:before{
+	content: url('../img/septa.png');
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+}
+.widget-container h2{
+	margin-bottom: 15px;
+}
+.widget-container select{
+    width: 260px;
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    background: #fff url("../img/arrowdown.gif") no-repeat 98% 50%;
+}
+.widget-container select:focus {
+    outline: none;
+}
+.widget-container input[type='text']{
+	height: 40px;
+	width: 90px;
+	border: 2px solid #e1e1e1;
+	border-radius: 4px;
+    text-align: center;
+    font-size: 1.2em;
+    outline: none;
+}
+.widget-container input[type='radio'],.widget-container label{
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+.widget-container input[type='radio']{
+	position: relative;
+  	width: 45%;
+  	height: 16px;
+  	left: 120px;
+}
+.widget-container input[type='radio']:disabled + label{
+	color: #eee;
+}
+.widget-container label{
+    text-align: left;
+    width: 55%;
+    float: right;
+}
+.widget-zone,.widget-type,.widget-purchase,.widget-trips,.widget-price{
+	height: 89px;
+	text-align: center;
+	padding: 15px 0 5px;
+	border-bottom: 1px solid #e1e1e1;
+}
+.widget-price{
+	background: #474747;
+	color: #fff;
+	border-bottom:none;
+}
+#widget-type-explain{
+	display: block;
+	margin-top: 7px;
+    font-size: 0.4em;
+    font-style: italic;
+}
+#widget-price{
+	display: block;
+	font-size: 3em;
+	font-weight: 800;
+	margin-top: -10px;
+}
+/*Widget Ends*/
