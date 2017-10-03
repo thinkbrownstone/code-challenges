@@ -1,0 +1,44 @@
+<div class="septa-widget">
+	<div class="septa-fare-header">
+		
+	</div>
+	<div class="septa-fare-body zones">
+		<h2>Where are you going?</h2>
+		<p>
+			<select ng-options="item.zone as item.name for item in fareData.zones" ng-model="fareObject.zone" ng-change="calculateFares()"></select>
+		</p>
+	</div>
+	<div class="septa-fare-body">
+		<h2>When are you going?</h2>
+		<p>
+			<select id="fare-type" name="fare-type" ng-model="fareObject.type" ng-change="calculateFares()">
+				<option value="weekday">Weekdays</option>
+				<option value="evening_weekend">Evenings/Weekends</option>
+				<option value="anytime">Anytime</option>
+			</select>
+		</p>
+		<p class="septa-fare-helper">{{ fareData.info[fareObject.type] }}</p>
+	</div>
+	<div class="septa-fare-body">
+		<h2>Where will you purchase the fare?</h2>
+		<p>
+			<input id="radio-kiosk" type="radio" name="purchase" value="advance_purchase" ng-model="fareObject.purchase" ng-change="calculateFares()">
+			<label for="radio-kiosk">Station Kiosk</label>
+		</p>
+		<p>
+			<input id="radio-onboard" type="radio" name="purchase" value="onboard_purchase" ng-model="fareObject.purchase" ng-change="calculateFares()" checked="checked">
+			<label for="radio-onboard">Onboard</label>
+		</p>
+		<p class="septa-fare-helper">{{ fareData.info[fareObject.purchase] }}</p>
+	</div>
+	<div class="septa-fare-body">
+		<h2>How many rides will you need?</h2>
+		<p>
+			<input id="fare-number-rides" type="text" ng-model="fareObject.trips" ng-change="calculateFares()" />
+		</p>
+	</div>
+	<div class="septa-fare-footer">
+		<h2>Your fare will cost</h2>
+		<span class="fare-cost">${{ fareObject.totalPrice }}</span>
+	</div>
+</div>

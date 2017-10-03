@@ -1,0 +1,95 @@
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+}
+h2 {
+  font-size: 1.25em;
+  margin: 0.25em;
+}
+p {
+  margin: 0.5em;
+}
+header,
+a {
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif !important;
+  text-decoration: none;
+  text-align: center;
+}
+footer,
+a {
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif !important;
+  text-decoration: none;
+  text-align: center;
+}
+select {
+  -webkit-border-radius: 3px;
+  padding: 4px;
+}
+input[type="text"] {
+  text-align: center;
+  -webkit-border-radius: 3px;
+  padding: 4px;
+  width: 75px;
+}
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type='radio']:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  background-color: #ffffff;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #9f9f9f;
+}
+input[type='radio']:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #3689E1;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #9f9f9f;
+}
+.septa-widget {
+  width: 28em;
+  margin: 0 auto;
+  border: 2px solid #9f9f9f;
+  font-family: "Ubuntu", Helvetica, Arial, sans-serif !important;
+  text-align: center;
+}
+.septa-fare-header {
+  padding: 2.5em;
+  background-image: url('../img/widget-header-img.png');
+  background-repeat: round;
+}
+.septa-fare-body {
+  margin: 0;
+  padding: 0.75em;
+  border: 1px solid #CCC;
+  color: #4d4d4d;
+}
+.septa-fare-footer {
+  padding: 0.75em;
+  display: block;
+  background-color: #9f9f9f;
+  color: #ffffff;
+  font-size: .75em;
+  word-wrap: break-word;
+  height: 100px;
+}
+.septa-fare-helper {
+  font-size: 0.75em;
+}
+.fare-cost {
+  font-size: 3em;
+  font-weight: bolder;
+}
