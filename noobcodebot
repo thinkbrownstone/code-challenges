@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<style>
+fieldset {
+width:550px;
+}
+
+select {
+font-size:30px;
+}
+
+form {
+font-size:30px;
+}
+
+#infohelp {
+border-style:solid;
+border-width:1px;
+border-color:black;
+}
+
+#your-fare-cost {
+color:white;
+background-color:grey;
+border-style:solid;
+border-color:black;
+border-width:3px;
+width:590px;
+height:250px;
+font-size:70px;
+}
+#faretext1{
+padding:0px;
+margin:0px;
+}
+#faretext2{
+padding:0px;
+margin:0px;
+}
+
+#numofrides{
+width:150px;
+height:50px;
+font-size:30px;
+</style>
+
+</head>
+<body>
+<div>
+<center>
+<img src = "https://github.com/thinkbrownstone/code-challenges/raw/master/septa-fare-calculator/img/zone-map.jpg" height="800" width="1000">
+<form>
+<fieldset>
+<select id="firstselect" name="zones_select">
+<option value = "1">Zone 1</option>
+<option value = "2">Zone 2</option>
+<option value = "3">Zone 3</option>
+<option value = "4">Zone 4</option>
+<option value = "5">NJ</option>
+</select>
+</fieldset
+<br>
+<fieldset>
+<select id="secondselect" name="traveltime">
+<option value = "anytime">Anytime</option>
+<option value = "weekday">Weekday</option>
+<option value = "evening_weekend">Weekend/Evenings</option>
+
+</select>
+<p id="wheninfohelp"><p>
+</fieldset>
+<fieldset>
+<input id="radio1" type="radio" value="advance_purchase" name="howbought" >Kiosk</input>
+<br>
+<input id="radio2" type="radio" value="onboard_purchase" name="howbought">On Board</input>
+<br>
+<p id="purchasehelp"></p>
+</fieldset>
+<fieldset>
+<input id="numofrides" type="value" name ="howmany">
+<p>number of rides</p>
+</fieldset>
+</form>
+<div id="your-fare-cost">
+<p id="faretext1">Your fare will cost:</p><br>
+<p id="faretext2">$00.00</p>
+</div>
+</center>
+
+</body>
+<script>
+
+// since the data table was small I have included it in the app
+var septainfotable = {
+    "info": {
+        "anytime": "Valid anytime",
+        "weekday": "Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station",
+        "evening_weekend": "Valid weekdays after 7:00 p.m.; all day Saturday, Sunday and major holidays. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station",
+        "advance_purchase": "Tickets available for purchase at all SEPTA offices.",
+        "onboard_purchase": "Tickets available for purchase from a train conductor aboard SEPTA regional rail trains."
+    },
+    "zones": [{
+        "name": "CCP/1",
+        "zone": 1,
+        "fares": [{
+            "type": "weekday",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 4.75
+        }, {
+            "type": "weekday",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 6.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 3.75
+        }, {
+            "type": "evening_weekend",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 5.00
+        }, {
+            "type": "anytime",
+            "purchase": "advance_purchase",
+            "trips": 10,
+            "price": 38.00
+        }]
+    }, {
+        "name": "Zone 2",
+        "zone": 2,
+        "fares": [{
+            "type": "weekday",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 4.75
+        }, {
+            "type": "weekday",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 6.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 3.75
+        }, {
+            "type": "evening_weekend",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 5.00
+        }, {
+            "type": "anytime",
+            "purchase": "advance_purchase",
+            "trips": 10,
+            "price": 45.00
+        }]
+    }, {
+        "name": "Zone 3",
+        "zone": 3,
+        "fares": [{
+            "type": "weekday",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 5.75
+        }, {
+            "type": "weekday",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 7.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 5.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 7.00
+        }, {
+            "type": "anytime",
+            "purchase": "advance_purchase",
+            "trips": 10,
+            "price": 54.50
+        }]
+    }, {
+        "name": "Zone 4",
+        "zone": 4,
+        "fares": [{
+            "type": "weekday",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 6.50
+        }, {
+            "type": "weekday",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 8.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 5.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 7.00
+        }, {
+            "type": "anytime",
+            "purchase": "advance_purchase",
+            "trips": 10,
+            "price": 62.50
+        }]
+    }, {
+        "name": "NJ",
+        "zone": 5,
+        "fares": [{
+            "type": "weekday",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 9.00
+        }, {
+            "type": "weekday",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 10.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "advance_purchase",
+            "trips": 1,
+            "price": 9.00
+        }, {
+            "type": "evening_weekend",
+            "purchase": "onboard_purchase",
+            "trips": 1,
+            "price": 10.00
+        }, {
+            "type": "anytime",
+            "purchase": "advance_purchase",
+            "trips": 10,
+            "price": 80.00
+        }]
+    }]
+}
+//initialize variables
+//------------------------------------------------------------------
+var zoneindex = 0;
+var timeindex = "weekday";
+var purchasemethodindex = "advance_purchase"
+var fareindex = 0;
+var ticketprice = 0;
+var ticketcost = 0;
+var tcstring = "";
+//------------------------------------------------------------------
+// get zone and fare index from form input
+// update the page dynamicly
+//------------------------------------------------------------------
+// zone listener
+document.getElementById("firstselect").onchange = function(){
+zoneindex = document.getElementById("firstselect").value;
+console.log("zoneindex",zoneindex);
+updatefare();
+}
+// travel listener/helper
+document.getElementById("secondselect").onchange = function(){
+timeindex = document.getElementById("secondselect").value;
+console.log("timeindex",timeindex);
+document.getElementById("wheninfohelp").innerHTML = septainfotable.info[timeindex];
+updatefare();
+}
+//------------------------------------------------------------------
+// method of purchase listener/helper
+document.getElementById("radio1").onclick = function(){
+purchasemethodindex=document.getElementById("radio1").value;
+console.log("purchase method",purchasemethodindex);
+document.getElementById("purchasehelp").innerHTML = septainfotable.info[purchasemethodindex];
+updatefare();
+}
+document.getElementById("radio2").onclick = function(){
+purchasemethodindex=document.getElementById("radio2").value;
+console.log("purchase method",purchasemethodindex);
+document.getElementById("purchasehelp").innerHTML = septainfotable.info[purchasemethodindex];
+updatefare();
+}
+//-------------------------------------------------------------------
+// tickets-caluclate-update
+document.getElementById("numofrides").onchange = function(){
+// if time = weekday and method = advance_purchase then fare index = 0
+if (timeindex === "weekday" && purchasemethodindex === "advance_purchase"){fareindex = 0;}
+// if time = weekday and method = onboard_purchase then fare index = 1
+if (timeindex === "weekday" && purchasemethodindex === "onboard_purchase"){fareindex = 1;}
+// if time = evening_weekend and method = advance_purchase then fare index = 2
+if (timeindex === "evening_weekend" && purchasemethodindex === "advance_purchase"){fareindex = 2;}
+// if time = evening_weekend and method = onboard_purchase then fare index = 3
+if (timeindex === "evening_weekend" && purchasemethodindex === "onboard_purchase"){fareindex = 3;}
+// if time = anytime then fare index = 4
+if (timeindex === "anytime"){fareindex = 4;}
+console.log("fare index",fareindex)
+console.log("price",septainfotable.zones[zoneindex].fares[fareindex].price);
+ticketprice = septainfotable.zones[zoneindex].fares[fareindex].price
+updatefare();
+}
+//-----------------------------------------------------------------------
+var updatefare = function(){
+ticketprice = septainfotable.zones[zoneindex].fares[fareindex].price;
+//if travel time is anytime and number of rides is 10 or a multiple of 10 fare cost = price x numofrides
+if (timeindex === "anytime" && math.mod(numofrides,10) === 0){ticketcost=ticketprice*numofrides;}
+else {
+//if travel is anytime and number of rides is less than 10 or is not a multiple of 10
+if (timeindex === "anytime" && math.mod(numofrides,10) !== 0){alert("Anytime tickets must be purchasein multiples of 10,please select valid options to update fare cost");}
+//alert the user "anytime tickets must be purchased in multiples of 10,select valid options to update fare cost"
+}
+ticketcost = numofrides*ticketprice;
+//convert fare cost to a string
+tcstring = ticketcost.toString();
+
+//update "your fare will cost"
+document.getElementById("faretext2").innerHTML = tcstring;
+console.log(tcstring);
+}
+</script>
+</html>
