@@ -1,0 +1,61 @@
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+h2 {
+    font-size: 1.125em;
+    margin: 0.25em;
+}
+
+p {
+    margin: 0.5em;
+}
+.fare-widget {
+    width: 28em;
+    margin: 0 auto;
+    border: 2px solid #CCC;
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+}
+
+.fare-header {
+    padding: 0.5em;
+    background: #595959;
+    color: #FFF;
+}
+
+.fare-section {
+    background: #FFF;
+    color: #595959;
+}
+
+.fare-section fieldset {
+    margin: 0;
+    padding: 0.75em;
+    border: 0;
+    border-bottom: 1px solid #CCC;
+}
+
+.fare-footer {
+    padding: 0.75em;
+    background: #595959;
+    color: #FFF;
+}
+
+.fare-helper {
+    font-size: 0.75em;
+}
+
+.fare-cost {
+    font-size: 3em;
+}
+
+input[type='text'] { 
+    width: 50px;
+    font-size: 1em;
+    text-align: center;
+}
+
+select { 
+    font-size: 1em;
+}
