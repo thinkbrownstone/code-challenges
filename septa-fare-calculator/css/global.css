@@ -1,0 +1,137 @@
+/*----------------------------------------------*\
+    #SEPTA Fare Calculator Module
+\*----------------------------------------------*/
+
+html {
+  color: #595959;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+}
+
+p {
+  margin: 15px 0;
+}
+
+.module {
+  width: 100%;
+  border: 1px solid #CBCBCB;
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.module header, .module .fare-total-cost-container {
+  background-color: #595959;
+  color: white;
+}
+
+.module header img {
+  height: 18px;
+  vertical-align: text-bottom;
+}
+
+.module header h2 {
+  display: inline-block;
+  margin: .5rem;
+  font-size: 32px;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/*----------------------------------------------*\
+    #Input and Select Related Styles
+\*----------------------------------------------*/
+
+input, select  {
+  margin: 15px 0 5px 0;
+  border: 1px solid #BEBEBE;
+  border-radius: 5px;
+  padding:10px;
+  background-color: #FFFFFF;
+  color: #595959;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+input {
+  text-align: center;
+}
+
+.radio-purchased-container input {
+  margin: 0;
+}
+
+select {
+  width: 90%;
+  -webkit-appearance:none;
+}
+
+fieldset {
+  border: none;
+}
+
+.fare-destination-container,
+.fare-time-container,
+.radio-purchased-container {
+  border-bottom:1px solid #E8E8E8;
+}
+
+.radio-purchased-container legend {
+  display:inline-block;
+  margin: 15px 0;
+  width:100%;
+  text-align: center;
+}
+
+.radio-purchased-container .disabled,
+.radio-purchased-container .disabled legend {
+  color: #BEBEBE;
+}
+
+
+.radio-purchased-container ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.radio-purchased-container li {
+  text-align: left;
+  padding:0  0 5px 0;
+}
+
+.fare-helper-text,
+.fare-availability-text{
+  margin: 5px 0;
+	color:#8E8E8E;
+  font-size: .75rem;
+}
+
+.fare-quantity-container label{
+  display:block;
+}
+
+.fare-quantity-container input{
+  width:auto;
+}
+
+.fare-total-cost-container {
+  padding: 5px;
+}
+
+.fare-total-cost-container p{
+  margin: .5rem;
+}
+
+.fare-cost {
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 40em) {
+  .module{
+    width: 300px;
+  }
+}

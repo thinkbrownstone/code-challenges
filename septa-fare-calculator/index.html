@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<link rel="stylesheet" href="/css/global.css" type="text/css" media="screen" />
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
+
 <body>
-	
+	<div class="module">
+		<header>
+			<img src="/img/128px-SEPTA.png" alt="Client Name" />
+			<h2>Regional Rail Fares</h2>
+		</header>
+		<div class="fare-destination-container" data-fare-destination-container>
+			<p>
+				<label for="fare-destination">Where are you going?</label>
+				<select name="fare-destination" id="fare-destination" data-fare-destination>
+					<option value="">Select A Zone</option>
+					<option value="1">CCP/1</option>
+					<option value="2">Zone 2</option>
+					<option value="3">Zone 3</option>
+					<option value="4">Zone 4</option>
+					<option value="5">NJ</option>
+				</select>
+			</p>
+		</div>
+		<div class="fare-time-container" data-fare-time-container>
+			<p>
+				<label for="fare-time">When are you riding?</label>
+				<select name="fare-time" id="fare-time" data-fare-time>
+					<option value="">Select Travel Time</option>
+					<option value="anytime">Anytime</option>
+					<option value="weekday">Weekdays</option>
+					<option value="evening_weekend">Evening Weekends</option>
+				</select>
+			</p>
+			<p class="fare-helper-text" data-fare-helper-text></p>
+			<p class="fare-availability-text" data-fare-availability-text></p>
+		</div>
+		<div class="radio-purchased-container" data-radio-purchased-container>
+			<fieldset class="disabled">
+				<legend>Where will you purchase the fare?</legend>
+				<ul>
+					<li>
+						<input type="radio" name="radio-purchased" value="advance_purchase" checked="checked" id="radio-purchased-station-kiosk" data-fare-purchase-location disabled />
+						<label for="radio-purchased-station-kiosk">Station Kiosk</label>
+					</li>
+					<li>
+						<input type="radio" name="radio-purchased" value="onboard_purchase" id="radio-purchased-onboard" data-fare-purchase-location disabled />
+						<label for="radio-purchased-onboard">Onboard</label>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+		<div class="fare-quantity-container" data-fare-quantity-container>
+			<p>
+				<label for="fare-quantity">How many rides will you need?</label>
+				<input type="text" name="fare-quantity" id="fare-quantity" placeholder="Enter A Number" data-fare-quantity />
+			</p>
+		</div>
+		<div class="fare-total-cost-container" data-fare-total-cost-container>
+			<p>Your fare will cost</p>
+			<p class="fare-cost" data-fare-total-cost>$0.00</p>
+		</div>
+	</div>
+	<script src="/js/lib/jquery-1.12.3.min.js"></script>
+	<script src="/js/calculator.js"></script>
 </body>
+
 </html>
