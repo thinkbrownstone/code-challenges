@@ -1,0 +1,50 @@
+* {
+    font: 18px/42px sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.widget {
+    border: 2px solid #ccc;
+    margin: 0 auto;
+    max-width: 400px;
+    height: auto;
+    text-align: center;
+}
+
+.header img {
+    width: 100%;
+}
+
+.total {
+    bottom: 0;
+    background: #595959;
+    color: #fff;
+    padding: 34px;
+    position: relative;
+}
+
+.total_cost {
+    font-size: 70px;
+    line-height: 82px
+}
+
+.request_info {
+    border-bottom:  2px solid #ccc;
+    padding: 34px;
+}
+
+.hide {
+    display: none;
+}
+
+select {
+    width: 90%;
+}
+
+input {
+    border:  2px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 35%;
+}

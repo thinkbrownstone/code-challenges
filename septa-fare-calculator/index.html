@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SEPTA Regional Rail Fare Calculator</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" type='image/x-icon'>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	
+    <div class="widget">
+        <div class="header">
+            <img src="img/regional-fares-masthead.gif" alt="Regional Rail Fares">
+        </div><!-- /header -->
+
+        <!-- for testing only -->
+        <div class="status hide">Status: <span data-bind="text: appStatus()"></span></div>
+
+        <!-- zone -->
+        <div class="request_info">
+            <p>Where are you going?</p>
+            <select class="zone" name="zone" data-bind="foreach: zones(), event: {change: getFare}">
+                <option data-bind="text: 'Zone ' + $data.zone, value: $data.zone"></option>
+            </select>
+        </div><!-- /zone -->
+
+        <!-- when -->
+        <div class="request_info">
+            <p>When are you riding?</p>
+            <select class="when" name="when" data-bind="foreach: when(), event: {change: getFare}">
+                <option data-bind="text: $data, attr: {value: $data}"></option>
+            </select>
+        </div><!-- when -->
+
+        <!-- purchase where -->
+        <div class="request_info">
+            <p>Where will you purchase the fare?</p>
+            <select class="where" data-bind="foreach: purchaseLocs(), event: {change: getFare}">
+                <option name="where" data-bind="text: $data, value: $index"></option>
+            </select>
+        </div><!-- purchase where -->
+
+        <!-- rides -->
+        <div class="request_info">
+            <p>How many rides will you need?</p>
+            <input class="rides" type="number" name="rides" min="1" max="10" data-bind="value: rides(), event: {change: getFare}">
+        </div><!-- /rides -->
+
+        <!-- total -->
+        <div class="total">
+            Your fare will cost<br>
+            <span class="total_cost" data-bind="text: '$' + currentPrice()"></span>
+        </div><!-- /total -->
+
+    </div><!-- /widget -->
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="js/lib/knockout-3.4.0.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
