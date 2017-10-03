@@ -1,0 +1,79 @@
+/*css styles are (hopefully) specific to the project and will not 
+interfere with other project work due to abstract names */
+
+.septa-form{
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	border:2px solid #ccc;
+}
+.septa-image{
+	display: inline-block;
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/SEPTA.svg/500px-SEPTA.svg.png");
+	background-size:cover;
+	min-width:40px;
+	min-height:40px;
+	height:auto;
+	margin-right:15px;
+}
+.septa-header{
+	display: inline;
+	font-weight: bold;
+}
+.span-detail, .span-cost{
+	display: block;
+	padding-bottom: 10px;
+}
+.span-cost{
+	font-size:3em;
+}
+.helper-text{
+	padding:10px;
+	font-size:.8em;
+}
+.septa-day, .septa-zones, .quantity{
+	border-radius: 3px;
+	padding:3px;
+}
+.form-section, .form-section-total{
+	border-top: 1px solid #ccc;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.form-section-total, .form-header{
+	background-color: #7D7D7D;
+	color:#fff;
+}
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 320px) {
+	.septa-form{
+		width: 100%;
+	}
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+	.septa-form{
+		width: 100%;
+	}
+}
+
+/* Small Devices, Tablets -sm*/
+@media only screen and (min-width : 768px) {
+	.septa-form{
+		width: 500px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.septa-form{
+		width: 500px;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	.septa-form{
+		width: 500px;
+	}
+}

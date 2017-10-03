@@ -3,8 +3,230 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+	<!-- one file for everything to reduce refernces since this is a widget and is meant to be included in a larger project -->
+	<style>
+		/*
+		css styles are (hopefully) specific to the project and will not 
+		interfere with other project work due to abstract names 
+		*/
+		.septa-form{
+			font-family: 'Roboto', sans-serif;
+			text-align: center;
+			border:2px solid #ccc;
+		}
+		.septa-image{
+			display: inline-block;
+			background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/SEPTA.svg/500px-SEPTA.svg.png");
+			background-size:cover;
+			min-width:40px;
+			min-height:40px;
+			height:auto;
+			margin-right:15px;
+		}
+		.septa-header{
+			display: inline;
+			font-weight: bold;
+		}
+		.span-detail, .span-cost{
+			display: block;
+			padding-bottom: 10px;
+		}
+		.span-cost{
+			font-size:3em;
+		}
+		.helper-text{
+			padding:10px;
+			font-size:.8em;
+		}
+		.septa-day, .septa-zones, .quantity{
+			border-radius: 3px;
+			padding:3px;
+		}
+		.form-section, .form-section-total{
+			border-top: 1px solid #ccc;
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		.form-section-total, .form-header{
+			background-color: #7D7D7D;
+			color:#fff;
+		}
+		.quantity{
+			text-align: center;
+		}
+		/* Custom, iPhone Retina */ 
+		@media only screen and (min-width : 320px) {
+			.septa-form{
+				width: 100%;
+			}
+		}
+
+		/* Extra Small Devices, Phones */ 
+		@media only screen and (min-width : 480px) {
+			.septa-form{
+				width: 100%;
+			}
+		}
+
+		/* Small Devices, Tablets -sm*/
+		@media only screen and (min-width : 768px) {
+			.septa-form{
+				width: 500px;
+			}
+		}
+
+		/* Medium Devices, Desktops */
+		@media only screen and (min-width : 992px) {
+			.septa-form{
+				width: 500px;
+			}
+		}
+
+		/* Large Devices, Wide Screens */
+		@media only screen and (min-width : 1200px) {
+			.septa-form{
+				width: 500px;
+			}
+		}
+	</style>
 </head>
 <body>
+	<form class="septa-form">
+		<div class="form-section form-header">
+			<div class="septa-image"></div>
+			<h1 id="septa-header" class="septa-header">Regional Rail Fares</h1>
+		</div>
+		<div class="form-section">
+			<span class="span-detail">Where are you going?</span>
+			<select id="septa-zones" class="septa-zones"></select>
+		</div>
+
+		<div class="form-section">
+			<span class="span-detail">When are you riding?</span>
+			<select id="septa-day" class="septa-day">
+				<option value="anytime">Anytime</option>
+				<option value="weekday">Weekday</option>
+				<option value="evening_weekend">Evening Weekend</option>
+			</select>
+			<span id="helper-text" class="span-detail helper-text">Valid anytime</span>
+		</div>
+
+		<div class="form-section">
+			<span class="span-detail">Where will you purchase the tickets?</span>
+			<div id="purchase-location" class="rdobtn">
+				<input id="rd1" type="radio" name="purchase-location" value="advance_purchase" checked>
+				<label for="rd1">Station Kiosk</label><br/>
+				<input id="rd2" type="radio" name="purchase-location" value="onboard_purchase">
+				<label for="rd2">Onboard</label>
+			</div>
+		</div>
+
+		<div class="form-section">
+			<span class="span-detail">How many rides will you need?</span>
+			<input id="quantity" class="quantity" type="number" value="1">
+		</div>
+
+		<div class="form-section-total">
+			<span class="span-detail">Your fare will cost</span>
+			<span id="span-cost" class="span-cost">$0.00</span>
+		</div>
+	</form>
 	
 </body>
+	<script>
+		var helperInfo;
+		var jsonData;
+		//2 objects of json data for quick access when needed on the fly
+
+		$(document).ready(function(){
+			JsonGet();
+		});
+
+		function JsonGet(){
+			$.getJSON('fares.json', function(data){
+				//I use getJSON instead of AJAX to avoid cross browser request issues
+				//if i were using AJAX id do something like callback=? in the url or jsonp format
+
+				jsonData = data;
+				//it's quicker to save the data in an object rather than needlessly callback to the server to recalculate the costs on the form's change
+
+				$("#septa-zones").empty();
+				var sel = $('#septa-zones').get(0);
+				for(i = 0; i < data.zones.length; i++){
+					var opt = document.createElement('option');
+					opt.text = data.zones[i].name;
+					opt.value = data.zones[i].zone;
+					sel.add(opt, null);
+				}
+				//add drop down options depending on json data
+
+				helperInfo = data.info;
+				//storing seperate details about riding times in another object to easier access when needed
+			})
+			.done(function(){
+				//if theres some internet issue in downloading the json file, then we want to make sure the widget gets completed first before starting any client side interaction
+				//ensuring the bindings take place after the json loads also provents interaction from elements
+				//i also considered disabling fields until the data is loaded, then enabling with css
+				calcFare();
+				
+				//dom bindings
+				$("#septa-zones").on("change", function(){
+					calcFare();
+				});
+				$("#septa-day").on("change", function(){
+					$("#helper-text").html(helperInfo[$(this).val()]);
+					calcFare();
+				});
+				$("#purchase-location").on("change", function(){
+					calcFare();
+				});
+				$("#quantity").on("input", function() {
+					quantityCheck($("#quantity").val());
+					calcFare();
+				});
+			});
+		}
+
+		function calcFare(){
+			var fare;
+			var purchaseType = $("input[name=purchase-location]:checked").val();
+			//first, determine zone type in object
+			for(i = 0; i < jsonData.zones.length; i++){
+				if(jsonData.zones[i].zone == $("#septa-zones").val()){
+					fare = jsonData.zones[i];
+					break;
+				}
+			}
+			for(i = 0; i < fare.fares.length; i++){
+				if(fare.fares[i].purchase == purchaseType && fare.fares[i].type == $("#septa-day").val()){
+					fare = fare.fares[i].price;
+					break;
+					//set object to specific fare once found, break again
+				}
+			}
+			fare = fare * parseInt($("#quantity").val());
+			fare = fare.toFixed(2);
+			$("#span-cost").html("$" + fare);
+			//quanity calc, rounding and formatting
+		}
+
+		function quantityCheck(val){
+			//small check for nothing, ensuring the number is an integer and the number is not negative
+			try
+			{
+				if(val == ""){
+					$("#quantity").val("1");
+				}
+				parseInt(val);
+				if(val <= 0){
+					$("#quantity").val("1");
+				}
+			} catch (e){
+				console.log("error checking quantity: " + e);
+			}
+		}
+
+	</script>
 </html>
