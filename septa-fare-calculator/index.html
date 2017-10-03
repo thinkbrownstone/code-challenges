@@ -1,10 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+	<link href="styles.css" rel="stylesheet" media="screen" />
+
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
-<body>
-	
+
+<body ng-app="SeptaFareCalculator">
+
+	<!-- Begin Form Div -->
+	<div class="septa-fare-calculator" ng-controller="SeptaFareCalculatorController">
+		<form>
+
+			<!-- Begin Regional Rail Fares -->
+			<div class="form-top">
+				<img src="img/septa-logo.png">
+				<h2>Regional Rail Fares</h2>
+			</div>
+			<!-- End Regional Rail Fares -->
+
+			<!-- Begin Zone -->
+			<div class="form-input">
+				<h3>Where are you going?</h3>
+				<select ng-model="zone">
+					<option value="1">Zone 1</option>
+					<option value="2">Zone 2</option>
+					<option value="3">Zone 3</option>
+					<option value="4">Zone 4</option>
+				</select>
+			</div>
+			<!-- End Zone -->
+
+			<!-- Begin Fare Type -->
+			<div class="form-input">
+				<h3>When are you riding?</h3>
+				<select ng-model="fare_type">
+					<option value="weekday">Weekday</option>
+					<option value="evening_weekend">Evening/Weekend</option>
+				</select>
+				<div class="helper-text">
+					<p>Weekday fares are valid Monday through Friday, 4:00 a.m. - 7:00 p.m.</p>
+					<p>Evening/Weekend fares are valid weekdays after 7:00 p.m.; all day Saturday, Sunday and major holidays.</p>
+					<!-- Although 'anytime' is a valid option, it can only be purchased in a block of 10.
+					This would require some additional explanation and probably a much more advanced user interface.
+					For the purposes of this exercise, I thought it makes sense to leave this option out. -->
+				</div>
+			</div>
+			<!-- End Fare Type -->
+
+			<!-- Begin Purchase Location -->
+			<div class="form-input">
+				<h3>Where will you purchase the fare?</h3>
+				<input type="radio" ng-model="purchase_location" value="advance_purchase">Station Kiosk<br>
+				<input type="radio" ng-model="purchase_location" value="onboard_purchase">Onboard<br>
+			</div>
+			<!-- End Purchase Location -->
+
+			<!-- Begin # Rides -->
+			<div class="form-input">
+				<h3>How many rides will you need?</h3>
+				<input type="number" min="1" value="1" ng-model="quantity">
+			</div>
+			<!-- End # Rides -->
+
+			<!-- Begin Total $ -->
+			<div class="form-bottom">
+				<h3>Your fare will cost</h3>
+				<h1>{{fareCostCalculator(zone, fare_type, purchase_location, quantity) | currency}}</h1>
+			</div>
+			<!-- End Total $ -->
+
+		</form>
+	</div>
+	<!-- End Form Div -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<script src="app.js"></script>
+
 </body>
+
 </html>

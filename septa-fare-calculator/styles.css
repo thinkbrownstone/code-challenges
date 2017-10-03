@@ -1,0 +1,44 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+h1 {
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+
+.form-input h3 {
+	color: #4D4D4D;
+}
+
+.form-bottom h3 {
+	color: white;
+}
+
+.septa-fare-calculator {
+	padding: 50px;
+}
+
+.form-top {
+	background-color: #595959;
+	padding: 50px;
+}
+
+.form-input {
+	background-color: white;
+	border: 1px solid gray;
+	padding: 50px;
+}
+
+.form-bottom {
+	background-color: gray;
+	padding: 50px;
+}
+
+.helper-text {
+	color: #C7C7C7;
+}
