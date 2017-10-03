@@ -2,9 +2,76 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<!--  CSS-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
 <body>
-	
+
+	<form id="rail-fare">
+
+		<div class="wrap">
+			<h2> Regional Rail Fares </h2>
+
+			<div>
+				<label for="rail-fare-zone"> Where are you going? </label>
+				<select id="rail-fare-zone" name="zone">
+					<option disabled selected value=''>  Select Zone </option>
+					<option value="1"> Zone 1 </option>
+					<option value="2"> Zone 2 </option>
+					<option value="3"> Zone 3 </option>
+					<option value="4"> Zone 4 </option>
+				</select>
+			</div>
+
+			<div>
+				<label for="rail-fare-when"> When are you riding? </label>
+					<select id="rail-fare-when" name="type">
+						<option disabled selected value=''>  Select Time  </option>
+						<option value="anytime">   Anytime  </option>
+						<option value="weekday"> Weekday </option>
+						<option value="evening_weekend"> Evening </option>
+					</select>
+			</div>
+
+			<div>
+				<fieldset>
+					<legend> Where will you purchase the fare? </legend>
+					<div>
+						<label>
+							<input name="purchase" type="radio"  value="advance_purchase">
+							Station Kiosk
+						</label>
+						<label>
+							<input name="purchase" type="radio"  value="onboard_purchase">
+							Onboard
+						</label>
+					</div>
+				</fieldset>
+			</div>
+
+			<div>
+				<label for="rail-fare-trips"> How many rides will you need? </label>
+				<input id="rail-fare-trips" name="trips" type="number" min="1" step="1" value="">
+			</div>
+
+			<div class="output-wrap">
+				<label> Your fare will cost:
+					<output class="rail-fare-output" form="rail-fare" > </output>
+				</label>
+			</div>
+
+		</div>
+
+	</form>
+
+	<!--  JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+
 </body>
 </html>

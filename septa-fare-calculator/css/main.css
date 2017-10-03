@@ -1,0 +1,77 @@
+/*
+    Typically, I would use Sass/SCSS (with the Compass library) - in which case, I'd nest all the child elements within
+    #rail-fare, rather than repeat the id each time. I haven't written vanilla CSS in a while, so I figured I'd give a try.
+*/
+#rail-fare {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 1em;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+#rail-fare *, #rail-fare *:before, #rail-fare *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+#rail-fare  .wrap {
+    margin: 3%;
+    border: 2px solid gray;
+    text-align: center;
+}
+#rail-fare .wrap > div {
+    padding: 1em 3%;
+    border-bottom: 1px solid gray;
+}
+#rail-fare select, #rail-fare  option,  #rail-fare input, #rail-fare fieldset  {
+    background: transparent;
+    border-radius: 5px;
+}
+#rail-fare fieldset {
+    border: none;
+}
+#rail-fare input {
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 1em;
+}
+#rail-fare h2 {
+    background: #595959;
+    margin: 0;
+    padding: 1em;
+    color: white;
+}
+#rail-fare label, #rail-fare legend  {
+    display: block;
+    font-size: 1.3em;
+}
+#rail-fare fieldset div label {
+    font-size: 1em;
+}
+#rail-fare label + *, #rail-fare legend  {
+    margin: .5em auto;
+}
+#rail-fare fieldset div {
+    display: inline-block;
+    text-align: left;
+}
+#rail-fare  select {
+    display: block;
+    width: 100%;
+    height: 2em;
+}
+#rail-fare .output-wrap{
+    background: gray;
+    text-align: center;
+    color: white;
+}
+#rail-fare output {
+    display: block;
+    min-height: 2em;
+    padding-top: .5em;
+    font-size: 2em;
+    font-weight: bold;
+}
