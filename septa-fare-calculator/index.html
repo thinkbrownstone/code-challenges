@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+
+	<script type="text/javascript" src="fare-calculation.js"></script>
+	<link rel="stylesheet" type="text/css" href="site.css">
+	
+
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
 <body>
 	
+	<div id="main_content">
+		
+		<div id="header">
+			Regional Rail Fares
+		</div>
+		<div class="section">
+			<div class="text">Where are you going?</div>
+			<select id="select_desination" onchange="CalculateFare()">
+				<option value="1">Zone 1</option>
+				<option value="2">Zone 2</option>
+				<option value="3">Zone 3</option>
+				<option value="4">Zone 4</option>
+				<option value="5">Zone 5</option>
+			</select>
+		</div>
+		<div class="section">
+			<div class="text">When are you riding?</div>
+			<select id="select_when" onchange="CalculateFare()">
+				<option value="weekday">Weekdays</option>
+				<option value="anytime">Anytime</option>
+				<option value="evening_weekend">Evenings/Weekends</option>
+			</select>
+			<!-- I'm not going to lie to you, I did not see that helper text bit. I should have gone with my original idea (see .js file). -->
+		</div>
+		<div class="section">
+			<div class="text">Where will you purchase the fare?</div>
+			<div id="radiobuttons_location">
+				<input type="radio" name="location" value="advance_purchase" checked onchange="CalculateFare()">Station Kiosk<br>
+				<input type="radio" name="location" value="onboard_purchase" onchange="CalculateFare()">Onboard<br>
+			</div>
+		</div>
+		<div class="section">
+			<div class="text">How many rides will you need?</div>
+			<input id="text_rides" type="text" placeholder="0" onchange="CalculateFare()"/>
+		</div>
+		<div class="total_section">
+			Your fare will cost
+			<div id="total">
+				$0.00
+			</div>
+		</div>
+	</div>
 </body>
 </html>

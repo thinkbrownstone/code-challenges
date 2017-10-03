@@ -1,0 +1,61 @@
+#main_content {
+	margin: 0 auto;
+	font-family: Arial;
+	border: grey 2px solid;
+	text-align: center;
+}
+#header {
+	height: 40px;
+	background-color: #666666;
+	font: 24px bold;
+	text-align: center;
+	padding-top: 10px;
+	color: white;
+}
+
+.section {
+	border-bottom: 1px solid grey;
+	padding: 20px;
+}
+
+.section.text {
+	font: 18px;
+}
+
+select {
+	margin-top: 10px;
+	padding: 10px;
+	height: 40px;
+	min-width: 200px;
+	max-width: 400px;
+	border-radius: 5%;
+}
+
+#radiobuttons_location {
+	text-align: left;
+	margin: 0 auto;
+	min-width: 100px;
+	max-width: 200px;
+	padding-top: 20px;
+}
+
+#text_rides {
+	margin-top: 10px;
+	padding: 5px;
+	height: 30px;
+	font-size: 24px;
+	min-width: 50px;
+	max-width: 100px;
+	text-align: center;
+	border-radius: 5%;
+}
+
+.total_section {
+	background-color: #666666;
+	color: white;
+	font-size: 18px;
+}
+
+#total {
+	font-size: 26px;
+}
