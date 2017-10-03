@@ -1,0 +1,98 @@
+body {
+	padding: 1em;
+}
+
+.map {
+	width: 50%;
+	display: inline-block;
+}
+
+.map img {
+	width: 100%;
+}
+
+.calculate-fare {
+	width: 30%;
+	float: right;
+	display: inline-block;
+	text-align: center;
+	color: #404040;
+	border: 2px solid #cfcfcf;
+}
+
+.calculate-fare-header, .calculate-fare-result {
+	background: #4C4C4C;
+	color: #fff;
+	padding: 1em;
+}
+
+.calculate-fare-header h2 {
+	margin: 0;
+}
+
+.calculate-fare-header h2:before {
+	content: '';
+	background: url('../img/septa.png');
+	background-size: 37px 27px;
+	width: 37px;
+	height: 27px;
+	margin-right: 0.5em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.calculate-fare-field {
+	padding: 1em;
+	border-bottom: 1px solid #E9E9E9;
+}
+
+.calculate-fare-field label, .calculate-fare-field fieldset {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	display: inline-block;
+}
+
+.calculate-fare-field input[type="radio"] {
+	display: inline-block;
+}
+
+.calculate-fare-field fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.calculate-fare-field fieldset label {
+	font-size: 1rem;
+	font-weight: normal;
+	margin: 0;
+}
+
+.calculate-fare-field fieldset p:last-of-type {
+	margin-bottom: 0;
+}
+
+#calculate-fare-trips {
+	font-size: 1.5em;
+	width: 3em;
+	text-align: center;
+	padding-left: 0.5em;
+}
+
+.calculate-fare-field input, .calculate-fare-field select {
+	display: block;
+	margin: 0 auto;
+}
+
+.calculate-fare-result p {
+	margin: 0;
+}
+
+.calculate-fare-result p:first-of-type {
+	margin-bottom: 0.5em;
+}
+
+.calculate-fare-result strong {
+	font-size: 2.5em;
+}

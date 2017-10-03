@@ -3,8 +3,60 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.3/normalize.css" />
+	<link rel="stylesheet" media="screen" href="css/style.css" />
 </head>
 <body>
+	<!-- Not part of the module the task requires, just for presentation -->
+	<div class="map">
+		<img src="img/zone-map.jpg" alt="Train routing map" />
+	</div>
 	
+	<!-- The module -->
+	<div class="calculate-fare">
+		<div class="calculate-fare-header">
+			<h2>Regional Rail Fares</h2>
+		</div>
+		<div class="calculate-fare-field">
+			<label for="calculate-fare-zone">Where are you going?</label>
+			<select name="zone" id="calculate-fare-zone" data-hook="zone"></select>
+		</div>
+		<div class="calculate-fare-field">
+			<label for="calculate-fare-type">When are you riding?</label>
+			<select name="type" id="calculate-fare-type" data-hook="type">
+				<option value="anytime">Anytime</option>
+				<option value="weekday">Weekdays</option>
+				<option value="evening_weekend">Evenings & Weekends</option>
+			</select>
+			<p id="calculate-fare-type-helper">Valid anytime</p>
+		</div>
+		<div class="calculate-fare-field">
+			<fieldset>
+				<legend>Where will you purchase the fare?</legend>
+				<p>
+					<!-- Following your guidelines defined order -->
+					<input name="purchase" id="calculate-fare-purchase-advance" type="radio" value="advance_purchase" />
+					<label for="calculate-fare-purchase-advance">Station Kiosk</label>
+				</p>
+				<p>
+					<!-- But your guideline example didn't, so a natural order -->
+					<input type="radio" name="purchase" id="calculate-fare-purchase-onboard" value="onboard_purchase" />
+					<label for="calculate-fare-purchase-onboard">Onboard</label>
+				</p>
+			</fieldset>
+		</div>
+		<div class="calculate-fare-field">
+			<label for="calculate-fare-trips">How many rides do you need?</label>
+			<input type="number" name="trips" id="calculate-fare-trips" value="1" data-hook="trips" />
+		</div>
+		<div class="calculate-fare-result">
+			<p>Your fare will cost</p>
+			<p><strong>$38.00</strong></p>
+		</div>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="js/calculate-fare.js"></script>
 </body>
 </html>
