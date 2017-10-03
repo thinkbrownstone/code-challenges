@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>SEPTA Regional Rail Fare Calculator</title>
+        <meta name="keywords" content="septa, regional rail, fare calculator">
+        <meta name="description" content="Use this tool to calculate how much fare you'll need to ride the rails around Philadelphia.">
+        <meta name="author" content="Kevin Fry">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/septa.css" type="text/css" />
+    </head>
+    <body>
+        <div class="sectionCTA">
+            <h1><a href="index.html"><img src="img/septa80.png" /> Regional Rail Fares</a></h1>
+        </div>
+        <form>
+            <div class="section">
+                <p class="sectionTitle">Where are you going?</p>
+                <select id="selectZone"></select>
+            </div>
+<hr />
+            <div class="section">
+                <p class="sectionTitle">When are you riding?</p>
+                <select id="selectWhen"></select>
+                <p class="hint" id="whenHint"></p>
+            </div>
+<hr />
+
+            <div class="section">
+                <p class="sectionTitle">Where will you purchase the fare?</p>
+                <input type="radio" name="radioWherePurchase" value="advance_purchase" id="advance_purchase" checked="checked" /><label for="advance_purchase">Station Kiosk</label><br />
+                <input type="radio" name="radioWherePurchase" value="onboard_purchase" id="onboard_purchase" /><label id="label_onboard_purchase" for="onboard_purchase">Onboard</label>
+             
+            </div>
+<hr />
+
+            <div class="section">
+                <p class="sectionTitle">How many rides will you need?</p>
+                <input type="text" name="inputRides" class="rides" id="inputRides" />
+            </div>
+
+            <div class="sectionFareCost">
+                <p class="sectionTitleI">Your fare will cost</p>
+                <p class="fareCost"></p>
+            </div>
+        </form>
+        <script src="js/jquery-1.12.3.min.js" type="text/javascript"></script>
+        <script src="js/septa.js" type="text/javascript"></script>
+    </body>
 </html>
