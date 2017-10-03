@@ -1,0 +1,348 @@
+body {
+  padding-top: 0px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+
+
+.title, .zoneSelect, .timeSelect, .purchaseSelect, .selectNum, .textNum {
+  justify-content: center;
+  display: flex;
+  font-size: 20px;
+  color:black;
+  background-color: white;
+
+}
+
+
+
+.mainSection{
+  background-color: white;
+}
+
+.wrapper{
+  background-color: black;
+  border-radius: 4px;
+  border: 4px solid #333;
+  justify-content: center;
+  display: flex;
+  font-size: 25px;
+  font-color:black;
+
+}
+
+label {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+
+.finalPrice{
+   border: 2px solid black ;
+   justify-content: center;
+   display: flex;
+   padding: 10px;
+   width: 25%;
+   margin: 0 auto;
+   background-color: #428bca;
+  font-size: 27px;
+
+}
+
+.placeSelect{
+
+    margin: 0 auto;    
+    width: 125px;
+}
+
+input{
+   text-align:center;
+   font-size: 18px;
+}
+
+input[type="radio"] {
+    margin-left: 10px;
+}
+
+
+
+.logoImg {
+  background: transparent url("/images/septa.jpg") top center;
+  background-size: 40px 40px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  
+}
+
+
+
+
+
+
+form,
+.footer {
+  float: left;
+}
+
+.customSection {
+  margin: 0 0 10px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.customSection legend {
+  color: #cff;
+}
+
+.inputLabel {
+  float: left;
+  width: 25%;
+  height: 45px;
+
+  &.label-regionListField {
+    width: 50%;
+
+    select {
+      float: left;
+    }
+  }
+}
+
+#start,#end {
+  width: 80px;
+}
+
+.ui-datepicker-trigger {
+  float: left;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 2px 2px 0 4px;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid #fff;
+  padding: 1px 3px;
+  float: left;
+}
+
+select {
+  border: 1px solid #333;
+}
+
+.inputRequired {
+  color: #8ff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.labelCustomer {
+  float: left;
+  width: 100%;
+}
+
+#searchBar {
+  width: 100%;
+  float: right;
+  margin: 0 0 10px;
+}
+
+#filterBar {
+  width: 100%;
+  float: right;
+}
+
+.searchBy {
+  float: left;
+  width: 125px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #cff;
+}
+
+.searchLabel {
+  float: right;
+  //width: 710px;
+  width: 590px;
+  color: #8ff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.searchLabel span
+{
+  float: left;
+  margin: 3px 5px 0 2px;
+}
+
+.container .inputLabel {
+  margin-bottom: 10px;
+}
+
+.container .inputLabel span {
+  width: 100%;
+  float: left;
+  margin: 0 0 2px;
+}
+
+.dataRow {
+  float: right;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.linkC {
+  cursor: pointer;
+  color: #2180c7;
+  text-decoration: none;
+}
+
+.linkC:hover {
+  text-decoration: underline;
+}
+
+.errorMessage {
+  color: #f00;
+}
+
+#submitbutton,
+.hide {
+  display: none;
+}
+
+.secdT {
+  color: #088;
+  width: 125px;
+  float: left;
+  text-align: right;
+  font-weight: bold;
+}
+
+.secdV {
+  color: #000;
+  text-align: left;
+  float: left;
+  margin-left: 5px;
+}
+
+.thrdT {
+  color: #448;
+  width: 200px;
+  float: left;
+  text-align: right;
+  font-weight: bold;
+}
+
+.thrdV {
+  color: #555;
+  text-align: left;
+  float: left;
+  margin-left: 5px;
+}
+
+.openNew {
+  color: #44b;
+}
+
+.delete {
+  color: #f00;
+  float: right;
+}
+
+.resend {
+  color: #00f;
+  float: left;
+}
+
+.secondLink {
+  width: 33%;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.secondLink:hover {
+  color: #2180c7;
+}
+
+.red {
+  color: #f00;
+  font-weight: bold;
+}
+
+/* ---- List Data ---- */
+table.rData {
+  width: 100%;
+  max-width: 100%;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  border-right: 1px solid #555;
+  color: #555;
+}
+
+table.rData tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table.rData tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table.rData tr {
+  border-top: 1px solid #555;
+}
+
+table.rData td {
+  border-left: 1px solid #555;
+  text-align: center;
+  font-size: 12px;
+  overflow-x: auto;
+
+  &.data_note {
+    max-width: 200px;
+  }
+}
+
+table.secdData {
+  width: 100%;
+  margin: 5px 0;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+}
+
+table.thrdData {
+  width: 100%;
+  margin: 5px 0;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+}
+
+table.secdData td {
+  width: 33%;
+  border-left: 0 solid #555;
+  border-right: 1px solid #555;
+}
+
+table.thrdData td {
+  width: 50%;
+  border-left: 0 solid #555;
+  border-right: 1px solid #555;
+}
+
+td.titleField {
+  padding: 2px;
+  font-weight: bold;
+  background-color: #0aa;
+  color: #fff;
+}
+
+#searchResults {
+  margin: 20px 0 40px;
+  width: 100%;
+  float: left;
+}
+

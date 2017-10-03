@@ -1,0 +1,581 @@
+/* ---- Home ---- */
+.homeTitle {
+  background: linear-gradient( to bottom,#1598ad 0%,#176672 100% );
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 10px 0 30px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  float: left;
+
+  .leftTitle {
+    width: 150px;
+    float: left;
+  }
+}
+
+.clickLink {
+  font-weight: bold;
+  color: #f8b84b;
+}
+
+.ng-scope {
+.button {
+  float: right;
+  border-radius: 10px;
+  border: 1px solid #1598ad;
+  width: 100px;
+  color: #fff;
+  font-weight: bold;
+
+  text-shadow: 1px 1px 2px #048e9e;
+  text-align: center;
+  height: 26px;
+  margin: 5px 10px 10px 10px;
+  padding-top: 2px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.filterButton {
+    width: 180px;
+    float: left;
+    margin: 0;
+
+    &#emailToNewField {
+      background: linear-gradient( to bottom,#FB983C 0%,#683404 100% );
+    }
+
+    &#emailToNewDemoField {
+      background: linear-gradient( to bottom,#FB3214 0%,#681101 100% );
+    }
+
+    &#resendEmailField {
+      background: linear-gradient( to bottom,#3f3fff 0%,#006 100% );
+    }
+
+    &#emailToNewField:hover {
+      background: linear-gradient( to bottom,#FB983C 0%,#683404 50% );
+    }
+
+    &#emailToNewDemoField:hover {
+      background: linear-gradient( to bottom,#FB3214 0%,#681101 50% );
+    }
+
+    &#resendEmailField:hover {
+      background: linear-gradient( to bottom,#3f3fff 0%,#006 50% );
+    }
+  }
+
+  &.pushNext,
+  &.pushLast {
+    width: 150px;
+    float: left;
+    margin-left: 0;
+    background: linear-gradient( to bottom,#8a50cf 0%,#57209C 100% );
+  }
+
+  &.searchRefresh,
+  &.searchRefresh:hover,
+  &.searchOrder {
+    margin: 0 5px 0 0;
+    width: 90px;
+  }
+
+  &.approver,
+  &.approver:hover {
+    width: 150px;
+    margin: 4px 10px 4px 0 ;
+  }
+
+  &.billingWeek,
+  &.billingWeek:hover {
+    width: 115px;
+    margin: 0 5px 0 0;
+  }
+
+  &.cutoffTime,
+  &.cutoffTime:hover {
+    width: 150px;
+    margin: -2px 0 0 5px;
+    float: left;
+    display: none;
+  }
+
+  &.logout {
+    margin: 4px 0;
+  }
+}
+}
+
+.btn-base {
+  background: linear-gradient( to bottom,#168F99 0%, #3ad 15%, #036 50%, #176672 90%, #1598ad 100%  );
+  background-color: #168F99;
+}
+
+.btn-base:hover {
+  background: linear-gradient( to bottom,#3ab 0%, #5cf 15%, #258 50%, #4bc 90%, #3bc 100%  );
+  background-color: #168F99;
+}
+
+.label-emailToNewField,
+.label-emailToNewDemoField,
+.label-resendEmailField {
+  display: none;
+}
+
+.logout {
+  background: linear-gradient( to bottom,#555 0%, #888 15%, #000 50%, #555 90%, #aaa 100% );
+  margin: 0;
+}
+
+.backtoHome {
+  margin: -21px 10px 0 0;
+  background: linear-gradient( to bottom,#559 0%, #88b 15%, #00f 50%, #559 90%, #aaf 100% );
+}
+
+.logout:hover {
+  color: #fff;
+  background: linear-gradient( to bottom,#555 0%, #888 15%, #000 50% );
+}
+
+.backtoHome:hover {
+  color: #fff;
+  background: linear-gradient( to bottom,#559 0%, #88b 15%, #00f 50% );
+}
+
+.actions div {
+  margin: 5px;
+}
+
+.actions {
+  width: 100%;
+  float: left;
+}
+
+.actions div {
+  float: left;
+}
+
+.page {
+  width: 180px;
+}
+
+.pagelink {
+  width: 700px;
+}
+
+/* ---- List Data ---- */
+#searchPart {
+  display: none;
+}
+
+table.orderData {
+  width: 100%;
+  max-width: 100%;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  border-right: 1px solid #555;
+  color: #555;
+}
+
+table.orderData tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+table.orderData tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+table.orderData tr {
+  border-top: 1px solid #555;
+}
+
+table.orderData td {
+  border-left: 1px solid #555;
+  text-align: center;
+}
+
+td.titleField {
+  padding: 2px;
+  font-weight: bold;
+  background-color: #0aa;
+  color: #fff;
+}
+
+/* ---- regual ---- */
+body {
+  padding-top: 0px;
+  padding-bottom: 40px;
+  color: #fff;
+}
+
+.instruction {
+  width: 100%;
+  height: 50px; 
+  background: linear-gradient( to bottom, #176672 0%,#1598ad 100% );
+  float: left;
+  padding: 10px 0 0 15px;
+  font-weight: bold;
+}
+
+.mainSection {
+  width: 100%;
+  float: left;
+  background: linear-gradient( to bottom, #176672 0%,#1598ad 100% );
+  float: left;
+  padding: 20px;
+  min-height: 500px;
+}
+
+.basicTitle {
+  background: #fff;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0 10px;
+  border-radius: 10px;
+  border: 2px solid #259;
+  color: #000;
+  float: left;
+  padding: 12px 20px 10px;
+}
+
+.employerSection,
+.current,
+.employerSign {
+  background: #fff;
+  width: 100%;
+  font-size: 16px;
+  padding: 20px;
+  margin: 25px 0 0;
+  border-radius: 10px;
+  border: 2px solid #259;
+  color: #000;
+  float: left;
+}
+
+.current div,
+.employerSection div,
+.employerSign div {
+  float: left;
+}
+
+.employerSection input,
+.current input {
+  border: 1px solid #000;
+}
+
+.employerSectionTitle,
+.employerSignTitle,
+.currentTitle {
+  color: #00f;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.currentTitle {
+  color: #000;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid #fff;
+  padding: 1px 3px;
+  text-align: left;
+  float: left;
+}
+
+.eestart input,
+.eeend input,
+.dob input,
+.ppid input,
+.phone input,
+.receiptDate input,
+.empStart input,
+.empEnd input,
+.ererPhone input {
+  width: 100px;
+}
+
+.ssn input {
+  width: 50px;
+}
+
+.requiredInfo {
+  color: #8ff;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.inputReadOnly {
+  float: left;
+  margin: 10px 0 5px 20px;
+}
+
+.inputReadOnly input {
+  border: 0;
+  background-color: #ddd;
+}
+
+div.firstRow {
+  width: 22%;
+}
+
+div.secondRow {
+  width: 22%;
+}
+
+.refInputs span {
+  width: 100%;
+  float: left;
+  margin: 0 0 2px;
+}
+
+.current .inputReadOnly {
+  font-size: 14px;
+  width: 33%;
+  color: #333;
+  margin-left: 0;
+}
+
+.inputEmployer {
+  font-size: 14px;
+  width: 30%;
+  color: #333;
+  margin: 10px 0 5px 10px;
+}
+
+.questions .inputReadOnly,
+.questions .inputEmployer {
+  font-size: 12px;
+}
+
+div.finishSection {
+  float: right;
+  margin-top: 10px;
+}
+
+div.finishSection div {
+  float: right;
+}
+
+.mustSignAgree,
+.errorMsg {
+  float: right;
+  text-align: right;
+  color: #f00;
+  font-size: 14px;
+  margin: 10px;
+  width: 100%;
+  display: none;
+}
+
+.haveYou {
+  padding: 10px 0 0 100px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.questions {
+  padding: 0 0 0 100px;
+  width: 100%;
+  font-size: 12px;
+}
+
+.questions .inputReadOnly,
+.questions .inputEmployer {
+  width: 100%;
+}
+
+.options {
+  width: 100px;
+}
+
+.options span {
+  font-style: normal;
+  float: left;
+}
+
+.question {
+  font-style: normal;
+  width: 60%;
+}
+
+.questions .options input {
+  margin: -1px 10px 0 -16px;
+}
+
+.employerInst,
+.employerSignInst {
+  font-size: 16px;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #000;
+  margin: 20px 0;
+  padding: 10px;
+}
+ 
+.errorMessage {
+  color: #f00;
+}
+
+#stepTwoInstr {
+  display: none;
+  min-height: 600px;
+}
+
+.footer {
+  float: left;
+}
+
+  /* signture font styles */
+.signInstr {
+  font-size: 12px;
+  width: 100%;
+  margin: 10px 0 5px;
+}
+
+.inputSign span {
+  float: left;
+  font-size: 12px;
+  margin: 2px 5px 0 0;
+}
+
+.inputSign input {
+  border: 1px solid #000;
+  width: 200px;
+}
+
+.signButtons {
+  padding-left: 50px;
+  width: 100%;
+}
+
+#displayFullName {
+  width: 600px;
+  height: 100px;
+  font-size: 50px;
+  border-bottom: 1px solid #000;
+  padding: 60px 20px 0;
+  text-align: center;
+  font-family: cursive;
+}
+
+#signFonts {
+  width: 150px;
+  background: linear-gradient( to bottom,#555 0%, #888 15%, #000 50%, #555 90%, #aaa 100% );
+  font-size: 12px;
+  margin-top: -3px;
+}
+
+.Cursive {
+  font-family: cursive !important;
+}
+
+.Tangerine {
+  font-family: 'Tangerine', serif !important;
+}
+
+.DawningNewDay {
+  font-family: 'Dawning of a New Day', serif !important;
+}
+
+.Arizonia {
+  font-family: 'Arizonia', serif !important;
+}
+
+.Redressed {
+  font-family: 'Redressed', serif !important;
+}
+
+.Oregano {
+  font-family: 'Oregano', serif !important;
+}
+
+.ClickerScript {
+  font-family: 'Clicker Script', serif !important;
+  padding-top: 65px !important;
+}
+
+.Zeyada {
+  font-family: 'Zeyada', serif !important;
+  padding-top: 70px !important;
+}
+
+.Sunshiney {
+  font-family: 'Sunshiney', serif !important;
+}
+
+.MrsSaintDelafield {
+  font-family: 'Mrs Saint Delafield', serif !important;
+  padding-top: 70px !important;
+}
+
+.Engagement {
+  font-family: 'Engagement', serif !important;
+}
+
+/* Step Two */
+
+.confirmationSection {
+  display: none;
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  margin: 5px 0;
+  border-radius: 10px;
+  border: 2px solid #259;
+  color: #000;
+}
+
+/* jQueryUI */
+.ui-datepicker-trigger {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 0 0 0 4px;
+  float: left;
+}
+
+.ui-datepicker-calendar th {
+  color: #555;
+}
+
+.popup-message {
+  text-align: left;
+  color: #080;
+  font-size: 14px;
+  display: none;
+}
+
+.rValue {
+  td {
+    text-align: center;
+
+    .editSave,
+    .editSave.hover {
+    }
+  }
+
+  input {
+    border: 1px solid #00f;
+    background: #efffef;
+    padding: 0 0 0 9px;
+    width: 50px;
+    float: none;
+  }
+}
+
+.updateNameTile {
+  color: #00f;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+#updateName {
+  color: #000090;
+}
