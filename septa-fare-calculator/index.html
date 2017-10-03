@@ -3,8 +3,96 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link type='text/css' rel='stylesheet' href='css/styles.css'></link>
+	<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+	<script src='script/septa.js'></script>
 </head>
 <body>
+
+	<img class='close' src='img/close.png'>
+
+	<div id='splash' class='splash' style='z-index: 5000'>
+
+		<div class='splash-message'> 
+			<img src='img/septa_logo.png'>
+			<h2 id='main-message'>Welcome To Septa</h2>
+		</div>
+
+	</div>
+
+	<div id='septa-map' class='septa-map' style='z-index: -1'>
+	</div>
+
+	<div id='error'  class='error'>
+
+		<p  class='inner-error'></p>
+
+	</div>
+
+	<div id='septa' class='septa-container'>
+
+		<h3 class='septa-title'><img title='Click here to show the map.' alt='Click here to show the map.' id='septa-image' class='septa-image' src='./img/septa_logo.png'>Regional Rail Fares</h3>
+
+		<form id='calculate'>
+
+			<div class='form-box'>
+
+				<label class='septa-label'>Where are you going?</label>
+				<select title='Zone Selection' alt='Zone Selection' id='septa-going' name='when' class='septa-field septa-select'>
+					
+					<option selected value='1'>Zone 1</option>
+					<option value='2' >Zone 2</option>
+					<option value='3' >Zone 3</option>
+					<option value='4' >Zone 4</option>
+					<option value='5' >Zone 5</option>
+
+				</select>
+
+			</div>
+
+			<div class='form-box'>
+
+				<label class='septa-label'>When are you riding?</label>
+				<select title='Riding Selection' alt='Riding Selection' id='septa-when' name='when' class='septa-field septa-select septa-time'>
+					
+					<option selected value='weekday'>Weekday</option>
+					<option value='evening_weekend'>Weekend / Evening</option>
+
+				</select>
+				<small id='info-when' class='septa-info' >Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station</small>
+
+			</div>
+
+			<div class='form-box'>
+
+				<label title='Where Fare Purchased' alt='Where Fare Purchased' class='septa-label'>Where will you purchase the fare?</label>
+				<span class='septa-radio'><input checked type='radio' name='septa-where' value='advance_purchase' class='septa-field septa-radio-button'>Station Kiosk</span>
+				<span class='septa-radio'><input type='radio' name='septa-where' value='onboard_purchase' class='septa-field septa-radio-button'>Onboard</span>
+				<small id='info-where' class='septa-info' >Tickets available for purchase at all SEPTA offices.</small>
+				
+
+			</div>
+
+			<div class='form-box'>
+
+				<label class='septa-label'>How many rides will you need?</label>
+				<input title='Number Rides' alt='Number Rides' id='fares' type='text' class='form-box septa-field septa-input' name='rides' min='0' max='10' value='0'>
+				<small class='septa-info' >If you purchase 10 tickets you will receive a discounted pice.</small>
+
+			</div>
+
+			<div class='total-form-box'>
+
+				<label class='total-label'>The fare will cost</label>
+				<label title='Total Cost' alt='Total Cost' class='total-amount'>$<span id='septa-total'>0.00</span></label>
+
+			</div>
+
+
+
+		</form>
+
+	</div>
 	
 </body>
 </html>

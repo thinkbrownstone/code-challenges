@@ -1,0 +1,149 @@
+.error {
+  width: 400px;
+  min-height: 50px;
+  background: lightcoral;
+  margin: 0 auto;
+  border: 2px solid red;
+  margin-bottom: 10px;
+  opacity: 0;
+  color: white;
+  z-index: 2000; }
+  .error .inner-error {
+    padding: 10px; }
+
+.close {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer; }
+  @media screen and (max-width: 700px) {
+    .close {
+      top: 15px;
+      right: 15px; } }
+
+.splash {
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #595959;
+  color: white;
+  font-size: 50px; }
+  .splash .splash-message {
+    margin-top: 15%; }
+    .splash .splash-message img {
+      display: block;
+      width: 115px;
+      margin: 0 auto; }
+      @media screen and (max-width: 700px) {
+        .splash .splash-message img {
+          width: 80px; } }
+    .splash .splash-message h2 {
+      width: 100%;
+      text-align: center; }
+      @media screen and (max-width: 700px) {
+        .splash .splash-message h2 {
+          font-size: 35px; } }
+
+.septa-map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../img/zone-map.jpg);
+  background-size: 100% 100%; }
+
+.septa-container {
+  width: 400px;
+  margin: 0 auto;
+  border: 2px solid #595959;
+  font-family: "Times New Roman", Georgia, Serif;
+  z-index: 2000; }
+  .septa-container .septa-title {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    background: #595959;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    margin: 0px; }
+    .septa-container .septa-title .septa-image {
+      position: absolute;
+      width: 35px;
+      height: 25px;
+      top: 12.5px;
+      left: 50px;
+      vertical-align: middle;
+      padding-right: 15px;
+      cursor: pointer; }
+  .septa-container .form-box {
+    border-bottom: 1px solid #595959; }
+    .septa-container .form-box .septa-label {
+      display: block;
+      text-align: center;
+      color: grey;
+      font-size: 25px;
+      margin: 20px 0; }
+    .septa-container .form-box .septa-select {
+      width: 80%;
+      margin: 0 auto 20px auto;
+      display: block;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      height: 50px;
+      border-radius: .25em;
+      border: 1px solid #595959;
+      font-size: 20px;
+      padding-left: 10px;
+      background: url(../img/triangle.png) no-repeat;
+      background-position: 95% 50%;
+      background-size: 15px 10px; }
+    .septa-container .form-box .septa-info {
+      width: 70%;
+      margin: 0 auto 20px auto;
+      color: grey;
+      display: block; }
+    .septa-container .form-box .septa-input {
+      border-radius: .25em;
+      width: 20%;
+      height: 30px;
+      margin: 0px auto 20px auto;
+      display: block;
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; }
+      .septa-container .form-box .septa-input::-webkit-inner-spin-button,
+      .septa-container .form-box .septa-input ::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; }
+    .septa-container .form-box .septa-radio {
+      display: block;
+      margin: 10px auto;
+      font-size: 20px;
+      width: 60%; }
+  .septa-container .total-form-box {
+    background: #595959;
+    color: white;
+    text-align: center;
+    padding: 20px 0; }
+  .septa-container .total-label {
+    font-size: 25px;
+    display: block; }
+  .septa-container .total-amount {
+    font-size: 50px; }
+
+/*# sourceMappingURL=styles.css.map */
