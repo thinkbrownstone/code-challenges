@@ -3,8 +3,56 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+	<link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+	<script src="assets/js/scripts.js"></script>
+
 </head>
 <body>
-	
+
+	<div id="wrapper">
+
+		<div class="header">
+			<h2>Regional Rail Fares</h2>
+		</div>
+
+		<div class="zone">
+			<p>Where are you going?</p>
+			<div class="zone-select"></div>
+		</div>
+
+		<div class="riding">
+			<p>When are you riding?</p>
+			<select>
+			  <option value="Weekdays">Weekdays</option>
+			  <option value="Weekends">Weekends</option>
+			  <option value="Anytime">Anytime</option>
+			  <option value="Evening Weekends">Evening Weekends</option>
+			</select>
+			<span class="helper">Helper Text</span>
+		</div>
+
+		<div class="fare-purchase">
+			<p>Where will you purchase the fare?</p>
+			<p><input type="radio" name="fare" value="Station Kiosk"> Station Kiosk</p>
+			<p><input type="radio" name="fare" value="Onboard"> Onboard</p>
+		</div>
+
+		<div class="rides">
+			<p>How many rides will you need?</p>
+			<input type="text" class="rides-input" />
+		</div>
+
+		<div class="footer">
+			<p>Your fare will cost</p>
+			<div class="total">$28.00</div>
+		</div>
+
+	</div>
+
 </body>
 </html>

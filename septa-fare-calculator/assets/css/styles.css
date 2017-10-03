@@ -1,0 +1,74 @@
+html, body, header, footer, div, h2, p, a, span, select, input{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html, body{
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1em;
+}
+
+p{
+	margin: 5px;
+}
+
+select, input[type="text"]{
+	border: 1px solid #CCC;
+	background: #FFF;
+	padding: 10px;
+	color: #595959;
+	display: block;
+	margin: 10px auto;
+}
+
+select {
+	width: 150px;
+}
+
+option{
+	padding: 10px;
+}
+
+input[type="text"] {
+	width: 50px;
+	text-align: center;
+}
+
+#wrapper{
+	position: relative;
+	border: 2px solid #CCC;
+	height: auto;
+	width: 320px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.header, .footer{
+	height: auto;
+	background: #595959;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+}
+
+.zone, .riding, .fare-purchase, .rides{
+	color: #595959;
+	font-weight: 600;
+	text-align: center;
+	padding:10px;
+	font-size: 1em;
+}
+
+.total{
+	display: block;
+	padding: 10px;
+	font-size: 3em;
+}
+
+.zone, .riding, .fare-purchase{
+	border-bottom: 1px solid #CCC;
+}
