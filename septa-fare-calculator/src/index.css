@@ -1,0 +1,41 @@
+.regional-rail-fares-form-container {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #FFF;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.regional-rail-fares-form-container .component-header,
+.regional-rail-fares-form-container .component-footer {
+    background-color: #333;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2em;
+}
+
+.regional-rail-fares-form-container form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.regional-rail-fares-form-container .form-input {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 10%;
+    border: 1px solid #EEE;
+    box-sizing: border-box;
+}
+
+.regional-rail-fares-form-container .form-input * {
+    max-width: 100%;
+    margin: 10px auto;
+    display: block;
+}
+
+.regional-rail-fares-form-container .form-input>label {
+    font-size: 1.2em;
+    font-weight: bold;
+}
