@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="fare_style.css">
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
 <body>
-	
+	<form class="regional-rail-form">
+		<div class="regional-rail-title">
+			<h2>Regional Rail Fares</h2>
+		</div>
+
+		<!-- Ride Zone -->
+		<div class="regional-rail-section">
+			<label for="regional-rail-zone"><h3>Where are you going?</h3></label>
+			<select id="regional-rail-zone" name="regional-rail-zone">
+				<option value="1" selected>CCP/1</option>
+				<option value="2">Zone 2</option>
+				<option value="3">Zone 3</option>
+				<option value="4">Zone 4</option>
+				<option value="5">NJ</option>
+			</select>
+		</div>
+
+		<!-- Ride Time -->
+		<div class="regional-rail-section">
+			<label for="regional-rail-time"><h3>When are you riding?</h3></label>
+			<select id="regional-rail-time" name="regional-rail-time">
+				<option value="weekday" selected><p>Weekdays</p></option>
+				<option value="evening_weekend"><p>Evening/Weekends</p></option>
+				<option value="anytime"><p>Any Time</p></option>
+			</select>
+			<p class="regional-rail-help-text" id="regional-rail-help-text-time">Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station</p>
+		</div>
+
+		<!-- Place of purchase -->
+		<div class="regional-rail-section">
+			<h3>Where are you going?</h3>
+			<div class="regional-rail-radio-container"><input type="radio" value="advance_purchase" name="regional-rail-purchase" id="regional-rail-advanced" checked><label for="regional-rail-advanced" ><p class="regional-rail-radio">Station Kiosk</p></label></div>
+			<div class="regional-rail-radio-container"><input type="radio" value="onboard_purchase" name="regional-rail-purchase" id="regional-rail-onboard"><label for="regional-rail-onboard"><p class="regional-rail-radio">Onboard</p></label>
+			<p class="regional-rail-help-text" id="regional-rail-help-text-purchase">Tickets available for purchase at all SEPTA offices.</p></div>
+		</div>
+
+		<!-- Trip number -->
+		<div class="regional-rail-section">
+			<label for="regional-rail-rides"><h3>How many rides will you need.</h3></label>
+			<input type="number" name="regional-rail-rides" id="regional-rail-rides" step="1" min="1" value="1">
+		</div>
+
+		<!-- Calculated fare -->
+		<div class="regional-rail-section regional-rail-section-fair">
+			<h3>Your fare will cost</h3>
+			<div id="regional-rail-fare-price">----</div>
+		</div>
+	</form>
 </body>
+<!-- Using jquery 1.x for IE8 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="fare.js"></script>
 </html>

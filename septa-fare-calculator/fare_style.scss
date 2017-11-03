@@ -1,0 +1,113 @@
+//Color Variables
+$primary-color: #595959;
+$secondary-color: #CCCCCC;
+$text-color: #595959;
+$text-color-alt: #ffffff;
+$text-color-lite: #808080;
+$border-color: #CCCCCC;
+
+//Sizing variables
+$max-width: 500px;
+
+/* 
+ * Using 480px as the mobile breakpoint for the form. Had I been working
+ * on a pre existing site I'd use their breakpoints.
+ */
+//Mobile breakpoint
+$mobile_breakpoint: 480px;
+
+/*
+ * Begin Styling for Regional Rale Fare Form
+ */
+.regional-rail-form{
+	text-align: center;
+	border: 3px solid $border-color;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+
+	h2{
+		font-size: 40px;
+		color: $text-color-alt;
+		margin: 0px;
+
+		@media (max-width: $mobile_breakpoint){
+			font-size: 30px;
+		}
+	}
+	h3{
+		font-size: 30px;
+		color: $text-color;
+		@media (max-width: $mobile_breakpoint){
+			font-size: 25px;
+		}
+	}
+	p{
+		margin: 0px;
+		font-size: 20px;
+		color: $text-color;
+	}
+	select{
+		padding: 15px;
+		width: 100%;
+	}
+	input[type="number"]{
+		padding: 15px;
+		width: 100px;
+	}
+}
+
+// Title Section
+
+.regional-rail-title{
+	padding: 25px;
+	background: $primary-color;
+}
+
+// Styling for all input sections
+
+.regional-rail-section{
+	padding: 25px;
+	border-bottom: 1px solid $border-color;
+	@media (max-width: $mobile_breakpoint){
+		padding: 15px;
+	}
+}
+
+
+// Help Text
+
+p.regional-rail-help-text{
+	font-size: 14px;
+	color: $text-color-lite;
+	margin-top: 10px;
+
+	@media (max-width: $mobile_breakpoint){
+		font-size: 12px;
+	}
+}
+
+
+// Purchase Location Section
+
+.regional-rail-radio-container{
+	input,label,p{
+		display: inline-block;
+	}
+	.regional-rail-help-text{
+		display: block;
+	}
+}
+
+// Fare Section
+
+.regional-rail-section-fair{
+	background: $primary-color;
+	h3{
+		color: $text-color-alt;
+	}
+}
+#regional-rail-fare-price{
+	color: $text-color-alt;
+	font-size: 50px;
+}

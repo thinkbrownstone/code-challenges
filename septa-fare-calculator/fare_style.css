@@ -1,0 +1,66 @@
+.regional-rail-form {
+  text-align: center;
+  border: 3px solid #CCCCCC;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
+  .regional-rail-form h2 {
+    font-size: 40px;
+    color: #ffffff;
+    margin: 0px; }
+    @media (max-width: 480px) {
+      .regional-rail-form h2 {
+        font-size: 30px; } }
+  .regional-rail-form h3 {
+    font-size: 30px;
+    color: #595959; }
+    @media (max-width: 480px) {
+      .regional-rail-form h3 {
+        font-size: 25px; } }
+  .regional-rail-form p {
+    margin: 0px;
+    font-size: 20px;
+    color: #595959; }
+  .regional-rail-form select {
+    padding: 15px;
+    width: 100%; }
+  .regional-rail-form input[type="number"] {
+    padding: 15px;
+    width: 100px; }
+
+.regional-rail-title {
+  padding: 25px; }
+
+.regional-rail-section {
+  padding: 25px;
+  border-bottom: 1px solid #CCCCCC; }
+  @media (max-width: 480px) {
+    .regional-rail-section {
+      padding: 15px; } }
+
+.regional-rail-title {
+  background: #595959; }
+
+p.regional-rail-help-text {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 10px; }
+  @media (max-width: 480px) {
+    p.regional-rail-help-text {
+      font-size: 12px; } }
+
+.regional-rail-radio-container input, .regional-rail-radio-container label, .regional-rail-radio-container p {
+  display: inline-block; }
+.regional-rail-radio-container .regional-rail-help-text {
+  display: block; }
+
+.regional-rail-section-fair {
+  background: #595959; }
+  .regional-rail-section-fair h3 {
+    color: #ffffff; }
+
+#regional-rail-fare-price {
+  color: #ffffff;
+  font-size: 50px; }
+
+/*# sourceMappingURL=fare_style.css.map */
