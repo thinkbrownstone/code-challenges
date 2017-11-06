@@ -1,0 +1,166 @@
+html, body{
+	margin: 0; padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+#container{
+	margin: 0 auto;
+	max-width: 555px;
+	border: 3px solid #CACACA;
+}
+
+div{
+
+	&.title{
+		background: #595959;
+		background-color: #595959;
+
+		.-innercontainer{
+			margin: 0 auto;
+			width: inherit;
+			padding-top: 15px;
+			padding-left: 26px;
+
+			.-icon{
+				padding-right: 10px;
+			}
+
+			.-heading{
+				top: -11px;
+				font-size: 21px;
+				color: #FBFBFB;
+			}
+		}
+
+	}
+
+	&.display{
+		background: #595959;
+		background-color: #595959;
+		color: #FBFBFB;
+		text-align: center;
+
+		h3{
+			font-size: 25px;
+			padding-top: 15px;
+			font-weight: 300;
+		}
+
+		.-total{
+			font-size: 80px;
+			padding-bottom: 15px;
+			font-weight: 700;
+			top: -15px;
+		}
+	}
+
+
+	section{
+
+		&.body{
+
+			display: block;
+			position: relative;
+			border-bottom: 2px solid #CACACA;
+			padding-bottom: 20px;
+
+			fieldset{
+
+				display: block;
+				margin: 0 auto;
+				position: relative;
+				width: 350px;
+				border: 0;
+
+				label{
+
+					display: block;
+					padding: 10px 25px;
+					margin: 0 auto;
+					position: relative;
+					max-width: 280px;
+
+					&.-numeric{
+						width: 80px;
+						height: 20px;
+						padding: 5px;
+						margin: 0 auto;
+					}
+
+					&.body.-radio-label{
+						display:inline-block;
+						position: relative;
+						left: -15px;
+					}
+
+					&.-above-select{
+						left: 55px;
+					}
+
+				}
+
+				select{
+
+					display: block;
+					margin: 0 auto;
+					width: 250px;
+					border-radius: 5px;
+
+				}
+
+				input{
+
+					display: block;
+					padding: 0;
+					margin: 0;
+					border-radius: 25px;
+
+					&.body.--radio{
+						display: inline-block;
+						margin-left: 100px;
+					}
+
+					&.body.--input.-numeric{
+						width: 80px;
+						position: relative;
+						left: 120px;
+						border-radius: 4px;
+						height: 30px;
+					}
+
+				}
+
+			}
+
+		}
+
+		&.body.--section.-no-border-bottom{
+
+			border-bottom: 0;
+
+		}
+	}
+
+	&.display{
+		background: #595959;
+		background-color: #595959;
+
+		.-top-border{
+
+			border-top: 1px solid #CACACA;
+
+		}
+	}
+
+}
+
+span{
+
+	&.title{
+		display: inline-block;
+		position: relative;
+	}
+
+
+}
