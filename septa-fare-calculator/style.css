@@ -1,0 +1,155 @@
+<style>
+
+select {
+    border-radius: 5px;
+}
+
+input,
+textarea,
+select,
+button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 18px system-ui;
+}
+
+input,
+textarea,
+select,
+button,
+meter,
+progress {
+    -webkit-writing-mode: horizontal-tb;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+div#rail-fare-calulator {
+    margin: auto;
+    width: 300px;
+    border: 3px solid #909090;
+    padding: 10px;
+    padding-bottom: 55px;
+}
+
+select#zone-selector,
+#time-selector {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+h2 {
+    display: block;
+    font-size: 1.3em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: 400;
+    font-family: system-ui;
+    font-color: #909090;
+}
+
+form#location-selector {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: left;
+    margin: 0em;
+    font: 18px system-ui;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+    float: left;
+}
+
+input#ride-count {
+    width: 30%;
+    text-align: center;
+}
+
+h3.info {
+    font-size: 0.9em;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: 200;
+    font-family: sans-serif;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+fieldset {
+    border-style: none;
+}
+
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+
+/* Portrait and Landscape */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    div#rail-fare-calulator {
+        width: 95%;
+        font-size: 2em;
+    }
+
+    form#location-selector {
+        font-size: 1em;
+    }
+
+    input[type="radio"] {
+        margin: 13px;
+        margin-top: 12px;
+        transform: scale(3);
+        float: left;
+    }
+
+    select#zone-selector,
+    #time-selector {
+        float: left;
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 1em;
+        border-radius: 5px;
+        border-color: #909090;
+    }
+
+    input#ride-count {
+        font-size: 1em;
+        border-color: #909090;
+    }
+
+    h3.info {
+        font-size: 0.8em;
+    }
+}
+
+</style>

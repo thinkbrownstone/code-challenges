@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+    <meta charset="UTF-8">
+    <title>SEPTA Regional Rail Fare Calculator</title>
+    <link rel="stylesheet" href="style.css" media="screen" />
+    <script type="text/javascript" src="fares.json"></script>
 </head>
+
 <body>
-	
+    <div id="rail-fare-calulator">
+        <div class="header">
+            <h2>Where are you going?</h2>
+            <select id="zone-selector" onchange="getTotal();">
+                <option value="0">Zone 1</option>
+                <option value="1">Zone 2</option>
+                <option value="2">Zone 3</option>
+                <option value="3">Zone 4</option>
+                <option value="4">Zone 5</option>
+            </select>
+        </div>
+        <div class="header">
+            <h2>When are you riding?</h2>
+            <select id="time-selector" onchange="getTotal();">
+                <option value="anytime">Anytime</option>
+                <option value="weekday">Weekday</option>
+                <option value="evening_weekend">Evening Weekend</option>
+            </select>
+            <h3 id="timeMessage" class="info">* Valid anytime</h3>
+        </div>
+        <div class="header">
+            <h2>Where will you purchase the fare?</h2>
+            <fieldset>
+                <form id="location-selector" onchange="getTotal();">
+                    <input type="radio" name="location" value="advance_purchase" checked>Station Kiosk
+                    <br>
+                    <input type="radio" name="location" value="onboard_purchase"> Onboard
+                    <br>
+                </form>
+            </fieldset>
+            <h3 id="locationMessage" class="info">* Tickets available for purchase at all SEPTA offices.</h3>
+        </div>
+        <div class="header">
+            <h2>How many rides will you need?</h2>
+            <input type="number" name="fname" id="ride-count" value="1" min="1" max="10" onchange="getTotal();">
+        </div>
+        <div id="total-price">
+            <h2 class="total">Your fare will cost $3.80</h2>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
+
 </html>
