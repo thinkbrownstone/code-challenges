@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="septaApp">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<!-- styling -->
+	<link rel="stylesheet" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
 <body>
-	
+	<div data-ui-view="" data-autoscroll="false"></div>
+
+	<!-- libraries -->
+	<script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/angular-ui-router.min.js"></script>
+
+	<!-- core -->
+	<script src="js/core/app.js"></script>
+	<script src="js/core/app.routes.js"></script>
+
+	<!-- components -->
+	<script src="js/components/home.js"></script>
+
+	<!-- directives -->
+	<script src="js/directives/septaWidget.js"></script>
 </body>
 </html>

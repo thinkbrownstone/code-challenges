@@ -1,0 +1,37 @@
+<form class="widget-form" aria-label="regional rail fares calculation form">
+    <div class="title">
+        <h2><img src="img/SEPTA.svg" alt="SEPTA logo" class="logo"> Regional Rail Fares</h2>
+    </div>
+    <div class="section">
+        <label for="destination">Where are you going?</label>
+        <select id="destination" name="destination" ng-model="selectedZone" ng-change="checkPrice()" aria-label="destination">
+            <option ng-repeat="zone in zones" ng-value="$index" aria-label="choose {{zone.name}}">{{zone.name}}</option>
+        </select>
+    </div>
+    <div class="section">
+        <label for="start-time">When are you riding?</label>
+        <select id="start-time" name="start-time" ng-model="selectedTime" ng-change="checkPrice()" aria-label="start time">
+            <option ng-repeat="time in times" ng-value="$index" aria-label="choose {{time.name}}">{{time.name}}</option>
+        </select>
+        <p class="add-text">{{timeAddt}}</p>
+        <p ng-if="times[selectedTime].value == 'anytime'" class="add-text">You may only buy anytime tickets in advance and 10 at a time.</p>
+    </div>
+    <div class="section">
+        <label>Where will you purchase the fare?</label>
+        <div class="radio-container">
+            <div ng-repeat="purchase in purchaseTypes">
+                <input type="radio" id="{{purchase.value}}" ng-value="$index" ng-model="$parent.selectedPurchase" ng-change="checkPrice()" ng-disabled="anytimeDisable" aria-label="choose {{purchase.name}}">
+                <label for="{{purchase.value}}">{{purchase.name}}</label>
+            </div>
+            <p class="add-text">{{purchaseAddt}}</p>
+        </div>
+    </div>
+    <div class="section">
+        <label for="quantity">How many rides will you need?</label>
+        <input type="number" name="quantity" id="quantity" class="quantity" step="1" min="1" value="1" ng-model="selectedRides" ng-change="checkPrice()" ng-disabled="anytimeDisable" aria-label="number of rides">
+    </div>
+    <div class="section fare">
+        <h3>Your fare will cost</h3>
+        <div class="price">{{price != '' ? price : '--.--' | currency}}</div>
+    </div>
+</form>

@@ -1,0 +1,136 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+select {
+    margin-bottom: 2%;
+}
+
+.logo {
+    width: 100%;
+    min-width: 5%;
+    max-width: 10%;
+}
+
+.widget-form {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #CCC; 
+    text-align: center;
+}
+
+.widget-form h2 {
+    margin: 0px;
+    color: #fff;
+    font-size: 40px;
+    font-size: 2em;
+}
+
+.widget-form h3 {
+    color: #595959;
+    font-size: 30px;
+    font-size: 1.5em; 
+}
+
+.widget-form p {
+    margin: 0px;
+    color: #595959;
+    font-size: 20px;
+    font-size: 0.9em;;
+}
+
+.widget-form select {
+    width: 100%;
+    padding: 15px;
+}
+
+.widget-form input[type="number"] {
+    width: 100px;
+    padding: 15px;
+}
+
+.widget-form label {
+    display: block;
+    margin-bottom: 2%;
+    color: #595959;
+    font-size: 30px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.title {
+    display: inline-block;
+    padding: 25px; 
+    background: #595959;
+}
+
+.section {
+    border-bottom: 1px solid #CCC;
+    padding: 25px;
+}
+
+p.add-text {
+    margin-top: 10px;
+    color: #808080;
+    font-size: 14px;
+    font-size: 0.9em;
+}
+
+.radio-container input, .radio-container p, .radio-container div {
+    display: inline-block;
+}
+
+.radio-container div {
+    margin: 1%;
+}
+.radio-container label {
+    display: inline-block;
+    font-size: 14px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.radio-container .add-text {
+    display: block; 
+}
+
+.fare {
+    background: #595959;
+}
+
+.fare h3 {
+    color: #fff; 
+}
+
+.quantity {
+    border: 1px solid #808080;
+}
+
+.price {
+    color: #fff;
+    font-size: 50px;
+}
+
+@media (max-width: 480px) {
+
+    .widget-form h2 {
+        font-size: 30px; 
+    }
+
+    .widget-form h3 {
+        font-size: 25px; 
+    }
+    
+    .section {
+        padding: 15px; 
+    }
+
+    p.add-text {
+        font-size: 12px;
+    }
+
+    .radio-container div {
+        width: 100%;
+    }
+}
