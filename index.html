@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div class="calculator-holder">
+		<div class="calculator">
+			<div class="header">
+				<h1>Regional Rail Fares</h1>
+			</div>
+			<form id="septa-form">
+				<fieldset>
+					<label for="zone">Where are you going?</label>
+					<select required="true" id="zone-select">
+						<option value="1">CCP/1</option>
+	         	<option value="2">Zone 2</option>
+	         	<option value="3">Zone 3</option>
+	         	<option value="4">Zone 4</option>
+	         	<option value="5">New Jersey</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<label for="type">When are you riding?</label>
+					<select required="true" id="type">
+						<option value="weekday">Weekdays</option>
+	          <option value="evening_weekend">Evening/Weekends</option>
+	          <option value="anytime">Anytime</option>
+					</select>
+					<div class="help" id="info"></div>
+				</fieldset>
+
+				<fieldset>
+					<legend for="purchase">Where will you purchase the fare?</legend>
+					<p class="radio-holder">
+						<input type="radio" id="station-kiosk" name="purchase" value="advance_purchase" checked /> Station Kiosk
+					</p>
+					<br />
+					<p class="radio-holder">
+						<input type="radio" id="onboard" name="purchase" value="onboard_purchase" /> Onboard
+					</p>
+					<div class="help" id="info-purchase"></div>
+				</fieldset>
+
+				<fieldset class="bottom">
+					<label for="ride">How many rides will you need?</label>
+					<input type="number" id="ride" name="ride" value="1" />
+				</fieldset>
+				<div class="fare-info">
+					<p>Your fare will cost</p>
+					<div id="fare"></div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript" src="application.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+  font-family: -apple-system, 'helvetica', 'arial'
+}
+p {
+  margin: 0 auto;
+}
+form {
+  text-align: center;
+}
+.calculator-holder {
+  width: 320px;
+  margin: 5px auto;
+}
+.calculator {
+  /* padding: 0 10px; */
+  border: 3px solid #ddd;
+}
+
+.header {
+  padding: 10px 0;
+  background: #595959;
+}
+.header > h1 {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 25px;
+}
+.header > h1::before {
+  content: '';
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  height: 24px;
+  width: 40px;
+  background: url('img/32px-SEPTA.svg.png') no-repeat;
+}
+.fare-info {
+  padding: 10px 0;
+  height: 80px;
+  background: #595959;
+  color: #fff;
+}
+.fare-info > p {
+  padding: 0;
+}
+.fare-info > div {
+  padding: 10px 0;
+  font-size: 50px;
+}
+.help {
+  font-size: 13px;
+  color: #bbb;
+  padding: 10px 0;
+}
+/* forms */
+fieldset {
+  border: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+.calculator fieldset {
+  margin: 10px 0;
+  border-bottom: 1px solid #aaa;
+}
+.calculator fieldset.bottom {
+  margin-bottom: 0;
+}
+.calculator label {
+  margin: 0 0 10px 0;
+  display: block;
+}
+.calculator select {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+}
+.calculator input[type="number"] {
+  display: block;
+  margin: 0 auto;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  text-align: center;
+}
+.calculator fieldset p.radio-holder {
+  width: 120px;
+  text-align: left;
+}
