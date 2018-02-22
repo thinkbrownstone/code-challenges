@@ -2,9 +2,290 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<script src="jquery-1.12.4.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	<link href="style.css" rel="stylesheet">
+	<link href="jquery-ui.min.css" rel="stylesheet">
+
 </head>
 <body>
-	
+
+  <div class="fareCalculator">
+    <form class="fareCalculator__form" id="fareCalculator__form">
+      <h1>Regional Rail Fares</h1>
+      <div class="fareCalculator__form__zone fareCalculator__form__question">
+        <h2>Where are you going?</h2>
+        <select class="fareCalculator__form__zone__select" name="fareCalculator__form__zone__select" form="fareCalculator__form">
+          <option disabled selected value> -- select an option -- </option>
+        </select>
+      </div>
+      <div class="fareCalculator__form__type fareCalculator__form__question">
+        <h2>When are you riding?</h2>
+        <select class="fareCalculator__form__type__select" name="fareCalculator__form__type__select" form="fareCalculator__form">
+          <option disabled selected value> -- select an option -- </option>
+        </select>
+      </div>
+      <div class="fareCalculator__form__purchase fareCalculator__form__question">
+      </div>
+      <div class="fareCalculator__form__rides fareCalculator__form__question">
+        <h2>How many rides will you need?</h2>
+        <input type="number" class="fareCalculator__form__rides__quantity" name="fareCalculator__form__rides__quantity" min="1" max="20">
+        <div class="fareCalculator__form__rides__slider fareCalculator__form__rides__slider-0"></div>
+      </div>
+      <div class="fareCalculator__form__sum"></div>
+    </form>
+  </div>
+
+
+
+
+<script type="text/javascript">
+
+  /**
+   * Define global variables.
+   */
+
+  var zones = []; // stores all zone info from getJSON
+  var info = []; // stores helper text
+
+  var fareType = []; // programmatically stores fare types
+  fareType['clean'] = []; // same, but a "clean" name
+  fareType['multiples'] = [];
+
+  var purchaseType = ['keys', 'values']; // stores purchase types on a per-fare type basis
+  purchaseType['keys'] = []; // stores fare types
+  purchaseType['values'] = []; // stores each fare type's various purchase types
+  var k = 0;
+
+  var purchaseIncrements = 1; // default increment for # of tickets purchasable
+  var sliderIncrement = 0;
+
+  var finishTheFormMessage = "Your fare will cost <strong>$0.00</strong> Please fill out the remaining fields."
+
+  var helperText = ['type', 'purchase']; // init the compiled helper texts
+  helperText['type'] = "";
+  helperText['purchase'] = "";
+
+  /**
+   * Parse the JSON file, storing pertinent information about zone names,
+   * fare types, purchase options, and purchase amounts.
+   */
+
+  $.getJSON( "fares.json", function(data) {
+    zones = data['zones']; // save for later!
+    info = data['info'];
+
+    /**
+     * This outer loop is mostly used to append zone names.
+     *
+     * The inner loop was nested to handle potential variance in purchase
+     * types/options across zones—not that any exists. It just felt inelegant
+     * to run that loop against a single zone and call it a day.
+     */
+    for (i = 0; i < data['zones'].length; i++) {
+      zones[i]['safe'] = zones[i]['name'].replace(/[^0-9a-z]/gi, ''); // machine-friendly name
+      $('.fareCalculator__form__zone__select').append('<option value="' + zones[i]['safe'] + '">' + zones[i]['name'] + '</option>'); // generate form item #1
+
+      for (j = 0; j < zones[i]['fares'].length; j++) {
+
+        /**
+         * Checking for three main things here:
+         *
+         * (1) Has this fare type been encountered before?
+         * (2) For each fare type: how many purchase options does it offer?
+         * (3) Can you buy these tickets individually, or only as a bundle?
+         */
+
+        var fare = zones[i]['fares'][j]; // possibly unnecessary?
+        var type = JSON.stringify(fare['type']).slice(1,-1); // remove quote marks
+        var typeClean = type.charAt(0).toUpperCase() + type.slice(1).replace("_", "/"); // uppercase/backslash-ify
+        var purchase = JSON.stringify(fare['purchase']);
+        var trips = JSON.stringify(fare['trips']);
+        if (trips > 1) {
+          typeClean = typeClean + " (" + trips + "-trip special)"; // helpful copy rewrite
+        }
+
+        if (fareType.includes(type) == false) {
+          // write push global information for this particular fare type, and initiate its purchase array
+          fareType.push(type);
+          fareType['clean'].push(typeClean);
+          fareType['multiples'].push(trips);
+          purchaseType['keys'][k] = type;
+          purchaseType['values'][k] = []; // initiate the purchase array for this new fare type
+          k++;
+
+          /**
+           * "k" is weird, in that it's essentially a parallax "for" loop that runs
+           * concurrent to, and in different time from, the "i" and "j" loops. I
+           * suspect that's due to the semilattice data structure, which essentially
+           * forces "k" to run in half-time.
+           *
+           * Is there a more elegant solution to something like this than the one I'm
+           * going with here? I'm not sure if I've heard of a situation like this before.
+           */
+        }
+        var purchaseTypeIndex = purchaseType['keys'].indexOf(type); // locates the fare type to test purchases against
+        if (purchaseType['values'][purchaseTypeIndex].includes(purchase) == false ) {
+          purchaseType['values'][purchaseTypeIndex].push(purchase); // stores purchase types FOR that fare type
+        }
+
+      }
+    }
+    for (i = 0; i < fareType.length; i++) {
+      $('.fareCalculator__form__type__select').append('<option value="' + fareType[i] + '" data-multiples="' + fareType['multiples'][i] + '">' + fareType['clean'][i] + '</option>'); // generate form item #2
+      if (info[fareType[i]]) {
+        helperText['type'] = helperText['type'].concat('<div class="fareCalculator__form__type__helper-text helper-text"><strong>' + fareType['clean'][i] + '</strong> ' + info[fareType[i]] + '</div>');
+      }
+    }
+    $('.fareCalculator__form__type').append(helperText['type']);
+  })
+    .done(function() {
+      console.log( "Fares loaded." );
+    })
+    .fail(function() {
+      console.log( "Couldn't load fares." );
+    });
+
+  /**
+   * This function handles three things:
+   *
+   * (1) Creates a pretty slider to augment the numberic "# tickets" selector.
+   *
+   *     (Mostly for the snap effect when "Anytime" tickets are selected, to
+   *     make the rigidity more transparent to the end user.)
+   *
+   * (1b) Modifies that slider when a new purchase increment has been selected.
+   *
+   * (2) Generates form item #3, when it's pertinent to show it.
+   *
+   * (3) Runs the sum updater when anybody so much as sneezes in the widget's
+   *     direction.
+   */
+  $(document).ready(function(){
+    drawSlider(purchaseIncrements); // initiates the ticket-amount slider
+    $('.fareCalculator__form__sum').html(finishTheFormMessage);
+
+    // display the "fare purchase" radio options only if they're necessary
+    $(document).on('change','.fareCalculator__form__type__select',function(){
+      $('.fareCalculator__form__purchase').empty(); // this wipes the selected option when fare type changes; hypothetical @TODO find more elegant solution
+      $('.fareCalculator__form__purchase').append('<h2>Where will you purchase your fare?</h2>');
+
+      var purchaseTypeSelect = $('.fareCalculator__form__type__select').val(); // not a fan of this variable name
+      purchaseTypeIndex = purchaseType['keys'].indexOf(purchaseTypeSelect); // debated making this its own function; still probably could've
+
+      if (purchaseType['values'][purchaseTypeIndex].length > 1) { // could've stored this as another data attr
+        helperText['purchase'] = ""; // resets to an empty string
+        for (i = 0; i < purchaseType['values'][purchaseTypeIndex].length; i++) {
+          value = purchaseType['values'][purchaseTypeIndex][i];
+          valueStripped = value.slice(1,-1); // for helper text purposes
+          cleanValue = value.charAt(1).toUpperCase() + value.slice(2, -1).replace("_", " "); // uppercase/space-ify
+          $('.fareCalculator__form__purchase').append('<div class="fareCalculator__form__purchase__option"><input type="radio" id="purchase-' + i + '" name="fareCalculator__form__purchase" value=' + value + '></input><label for="purchase-' + i + '">' + cleanValue + '</label></div>'); // generate form item #3
+
+          if (info[valueStripped]) {
+            helperText['purchase'] = helperText['purchase'].concat('<div class="fareCalculator__form__type__helper-text helper-text"><strong>' + cleanValue + '</strong> ' + info[valueStripped] + '</div>'); // add relevant helper text
+          }
+        }
+        $('.fareCalculator__form__purchase').append(helperText['purchase']);
+        $('.fareCalculator__form__purchase').show();
+      } else {
+        $('.fareCalculator__form__purchase').hide();
+      }
+      if (purchaseIncrements != $('option:selected', $('.fareCalculator__form__type__select')).attr('data-multiples')) {
+        purchaseIncrements = $('option:selected', $('.fareCalculator__form__type__select')).attr('data-multiples'); // this line and the one before it amuse me
+        drawSlider(purchaseIncrements);
+      }
+    });
+
+
+    $(document).on('change', '.fareCalculator', function(){
+      updateSums(); // updates on document change
+    });
+  });
+
+
+
+  /**
+   * The slider-drawer eliminates the old slider, draws a new one, then
+   * initiates it. Attempting to re-initiate the slider is a bad idea, I
+   * learned. The joys of unforeseen complexity.
+   */
+  function drawSlider(increment) {
+    $('.fareCalculator__form__rides__slider-' + sliderIncrement).remove(); // remove the old slider, to prevent collisions
+    sliderIncrement++;
+    $('.fareCalculator__form__rides').append('<div class="fareCalculator__form__rides__slider fareCalculator__form__rides__slider-' + sliderIncrement + '">'); // append a new slider
+    $(".fareCalculator__form__rides__slider-" + sliderIncrement).slider({
+      range: "min",
+      value: increment,
+      step: increment,
+      min: 0,
+      max: 20,
+      slide: function(event, ui) {
+        $(".fareCalculator__form__rides__quantity").val(ui.value);
+        updateSums(); // because the slider is dynamic, this has to be handled manually; it breaks the on('change') watcher above
+      }
+    });
+    $(".fareCalculator__form__rides__quantity").val(increment).attr('step', increment); // keep users from manually setting erroneous values
+  }
+
+
+  /**
+   * The sum updater is mostly straightforward. The only part that isn't
+   * is the way it has to run checks on which form elements *haven't* been
+   * filled out, and whether or not it matters that they haven't.
+   */
+  function updateSums() {
+
+    // Grab the various selected values
+    var selectedZone = $('option:selected', $('.fareCalculator__form__zone__select')).text();
+    var selectedType = $('option:selected', $('.fareCalculator__form__type__select')).val();
+    var selectedPurchase = $('input[name="fareCalculator__form__purchase"]:checked').val();
+    var selectedQuantity = $(".fareCalculator__form__rides__quantity").val();
+
+    // Find the correct zone the selected value...
+    if (selectedZone && selectedType && selectedZone != " -- select an option -- ") { // there's got to be a more elegant way of handling the default option
+      for(i = 0; i < zones.length; i++) {
+        if (selectedZone === zones[i]['name']) break;
+      }
+      var zoneIndex = i;
+
+      // ...then do one of 3 things:
+      for (i = 0; i < zones[zoneIndex]['fares'].length; i++) {
+        if (zones[zoneIndex]['fares'][i]['type'] == selectedType)  {
+          // (1) Find the correct entry for the fare type.
+          // (2) If the fare type has multiple purchase options, hunt for the correct purchase option too.
+          if ((purchaseType['values'][purchaseTypeIndex].length > 1 && zones[zoneIndex]['fares'][i]['purchase'] == selectedPurchase) || purchaseType['values'][purchaseTypeIndex].length == 1) {
+            var purchaseIndex = i;
+            var tripPrice = zones[zoneIndex]['fares'][purchaseIndex]['price'] / purchaseIncrements * selectedQuantity;
+            break;
+          } else if (purchaseType['values'][purchaseTypeIndex].length > 1 && !(selectedPurchase)) {
+            // (3) If the purchase option hasn't been selected, this can't be calculated.
+            tripPrice = 0;
+            $('.fareCalculator__form__sum').html(finishTheFormMessage);
+          }
+        }
+      }
+    // If the zone and type have been selected, don't bother checking *any* of that.
+    } else {
+      tripPrice = 0;
+    }
+
+    // Last but not least! Set the price.
+    if (tripPrice != 0) {
+      $('.fareCalculator__form__sum').html("Your fare will cost <strong>$" + tripPrice.toFixed(2) + "</strong>");
+      /**
+       * Slight bug in my implementation here, in that "zero tickets" results in you getting
+       * the price of one ticket. The other easy alternative, though, had that form message
+       * popping up every time you slide the slider down to 0. There's a more elegant fix here,
+       * but it felt pretty minor for the exercise's sake.
+       */
+    }
+
+  }
+
+</script>
+
 </body>
 </html>

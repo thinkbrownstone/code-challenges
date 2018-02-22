@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'metropolis';
+  src: url("metropolis-regular-webfont.woff2") format("woff2"), url("metropolis-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'metropolis';
+  src: url("metropolis-medium-webfont.woff2") format("woff2"), url("metropolis-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'metropolis';
+  src: url("metropolis-bold-webfont.woff2") format("woff2"), url("metropolis-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+body, select, option {
+  font-family: 'metropolis', sans-serif;
+  color: #4d4d4d;
+  line-height: 1.35; }
+
+h1 {
+  background-color: #595959;
+  color: white;
+  margin: 0;
+  padding: .5em 0; }
+
+h2 {
+  font-weight: 500;
+  margin: .5em 0; }
+
+select {
+  background-color: white;
+  border: 1px solid #c7c7c7;
+  -webkit-appearance: none;
+  width: 350px;
+  font-size: 1.5em;
+  padding: .5em;
+  font-weight: 400;
+  margin-bottom: .5em; }
+  select:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    border-top-color: #595959; }
+
+.helper-text {
+  margin-bottom: .5em;
+  text-align: left;
+  color: #595959; }
+
+.fareCalculator__form {
+  border: 2px solid #d2d2d2;
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto; }
+  .fareCalculator__form__question {
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid #e9e9e9; }
+  .fareCalculator__form__purchase {
+    display: none; }
+    .fareCalculator__form__purchase__option {
+      margin-bottom: .5em;
+      font-size: 1.5em; }
+      .fareCalculator__form__purchase__option input {
+        margin-right: 1em; }
+  .fareCalculator__form__rides {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+    .fareCalculator__form__rides h2 {
+      flex-basis: 100%; }
+    .fareCalculator__form__rides__slider {
+      order: 2;
+      flex: 0 0 calc(100% - 6em); }
+    .fareCalculator__form__rides__quantity {
+      order: 3;
+      flex-basis: 3em;
+      text-align: center;
+      border: 0;
+      -webkit-appearance: none;
+      font-size: 1.5em;
+      color: #4d4d4d;
+      width: 3em;
+      box-sizing: border-box;
+      flex: 0 0 3em; }
+  .fareCalculator__form__sum {
+    background-color: #595959;
+    color: white;
+    padding: 1em;
+    font-size: 2em; }
+    .fareCalculator__form__sum strong {
+      display: block;
+      font-size: 3em; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }

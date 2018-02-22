@@ -1,0 +1,159 @@
+
+$color--grey: #d2d2d2;
+$color--dark-grey: #595959;
+$color--light-grey: #e9e9e9;
+
+$color--text-grey: #4d4d4d;
+$color--select-grey: #c7c7c7;
+$color--helper-grey: #999;
+
+
+
+
+
+@font-face {
+    font-family: 'metropolis';
+    src: url('metropolis-regular-webfont.woff2') format('woff2'),
+         url('metropolis-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolis';
+    src: url('metropolis-medium-webfont.woff2') format('woff2'),
+         url('metropolis-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolis';
+    src: url('metropolis-bold-webfont.woff2') format('woff2'),
+         url('metropolis-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+body, select, option {
+	font-family: 'metropolis', sans-serif;
+  color: $color--text-grey;
+  line-height: 1.35;
+}
+
+h1 {
+  background-color: $color--dark-grey;
+  color: white;
+  margin: 0;
+  padding: .5em 0;
+}
+
+h2 {
+  font-weight: 500;
+  margin: .5em 0;
+}
+
+select {
+  background-color: white;
+  border: 1px solid $color--select-grey;
+  -webkit-appearance: none;
+  width: 350px;
+  font-size: 1.5em;
+  padding: .5em;
+  font-weight: 400;
+  margin-bottom: .5em;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border: 1em solid transparent;
+    border-top-color: $color--dark-grey;
+  }
+}
+
+.helper-text {
+  margin-bottom: .5em;
+  text-align: left;
+  color: $color--dark-grey;
+}
+
+
+
+.fareCalculator__form {
+  border: 2px solid $color--grey;
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto;
+
+  &__question {
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid $color--light-grey;
+  }
+
+  &__purchase {
+    display: none; //init
+
+    &__option {
+      margin-bottom: .5em;
+      font-size: 1.5em;
+
+      input {
+        margin-right: 1em;
+      }
+    }
+  }
+
+  &__rides {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    h2 {
+      flex-basis: 100%;
+    }
+
+    &__slider {
+      order: 2;
+      flex: 0 0 calc(100% - 6em);
+    }
+
+    &__quantity {
+      order: 3;
+      flex-basis: 3em;
+      text-align: center;
+      border: 0;
+      -webkit-appearance: none;
+      font-size: 1.5em;
+      color: $color--text-grey;
+      width: 3em;
+      box-sizing: border-box;
+      flex: 0 0 3em;
+    }
+  }
+
+  &__sum {
+    background-color: $color--dark-grey;
+    color: white;
+    padding: 1em;
+    font-size: 2em;
+
+    strong {
+      display: block;
+      font-size: 3em;
+    }
+  }
+}
+
+
+
+// webkit fix
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
