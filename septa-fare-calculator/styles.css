@@ -1,0 +1,79 @@
+.fare_calculator_module {
+  max-width: 375px;
+  margin: 0 auto;
+  border: 2px solid lightgray;
+  font-family: 'Verdana', sans-serif;
+  text-align: center; }
+  .fare_calculator_module header {
+    width: 100%;
+    height: 60px;
+    background: #595959; }
+  .fare_calculator_module img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px 10px 16px 0px; }
+  .fare_calculator_module h1 {
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem; }
+  .fare_calculator_module fieldset {
+    display: block;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0; }
+    .fare_calculator_module fieldset .radio_button {
+      width: 130px;
+      margin: 0 auto;
+      text-align: left; }
+    .fare_calculator_module fieldset .trip_count_input {
+      overflow: hidden;
+      width: 20%;
+      height: 40px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background: white;
+      font-size: 1rem;
+      color: #595959;
+      text-align: center; }
+  .fare_calculator_module legend {
+    display: block;
+    color: #595959;
+    font-weight: 600; }
+  .fare_calculator_module select {
+    overflow: hidden;
+    width: 90%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: white;
+    font-size: 1rem;
+    color: #595959; }
+  .fare_calculator_module details {
+    width: 90%;
+    margin: 10px auto 0;
+    font-size: 0.75rem;
+    color: #7a7a7a; }
+    .fare_calculator_module details p {
+      text-align: left; }
+  .fare_calculator_module label {
+    color: #595959; }
+  .fare_calculator_module .calculated_fare {
+    padding: 20px;
+    background: #595959;
+    color: white; }
+    .fare_calculator_module .calculated_fare p {
+      margin: 0; }
+    .fare_calculator_module .calculated_fare #calculated_fare_output {
+      padding: 5px;
+      font-size: 40px;
+      font-weight: 600; }
+    .fare_calculator_module .calculated_fare #message {
+      display: none;
+      padding-top: 10px;
+      font-size: 0.75rem; }
+
+/*# sourceMappingURL=styles.css.map */

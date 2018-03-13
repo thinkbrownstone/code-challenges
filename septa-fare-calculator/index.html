@@ -2,9 +2,66 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" type="text/css">
+	<link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-	
+	<article class="fare_calculator_module" role="main">
+		<header>
+			<img src="img/septa_logo.png" height="26px" width="auto" alt="septa logo">
+			<h1>Regional Rail Fares</h1>
+		</header>
+
+		<form role="form">
+			<fieldset>
+				<legend align="center" for="where-are-you-going">Where are you going?</legend>
+				<select id="zone_options" name="zone_options">
+					<option value="">Select Zone</option>
+					<!-- Use JS to dynamically populate zone options -->
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<legend align="center" for="when-are-you-riding">When are you riding?</legend>
+				<select id="fare_types" name="fare_types">
+					<option value="">Select One</option>
+					<!-- Use JS to dynamically populate fare type options -->
+				</select>
+				<!-- Will have to update because HTML Disclosure Summary element is not supported by all browsers -->
+				<details id="fare_types_helper_text">
+					<summary>Click for more information about ride time options</summary>
+					<!-- Use JS to dynamically populate fare type info -->
+				</details>
+			</fieldset>
+
+			<fieldset role="radiogroup" aria-required="true">
+				<legend align="center" for="where-will-you-purchase-fare">Where will you purchase the fare?</legend>
+				<div class="radio_button">
+					<input type="radio" name="purchase_location_types" id="purchase_location_type_1" value="advance_purchase" aria-checked="true" checked required="required">
+					<label for="purchase_location_type_1">Station Kiosk</label>
+				</div>
+				<div class="radio_button">
+					<input type="radio" name="purchase_location_types" id="purchase_location_type_2" value="onboard_purchase" required="required">
+					<label for="purchase_location_type_1">Onboard</label>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend align="center" for="how-many-rides-will-you-need">How many rides will you need?</legend>
+				<input class="trip_count_input" type="number" pattern="[1-10]*" value="1" min="1" id="trips" name="trips" aria-required="true">
+			</fieldset>
+		</form>
+
+		<section class="calculated_fare">
+			<p>Your fare will cost</p>
+			<div id="calculated_fare_output">$0.00</div>
+			<p id="message"></p>
+		</section>
+	</article>
+
+	<script charset="utf-8" src="app.js"></script>
 </body>
 </html>

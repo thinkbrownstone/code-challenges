@@ -1,0 +1,108 @@
+.fare_calculator_module {
+  max-width: 375px;
+  margin: 0 auto;
+  border: 2px solid rgb(211, 211, 211);
+  font-family: 'Verdana', sans-serif;
+  text-align: center;
+
+  & header {
+    width: 100%;
+    height: 60px;
+    background: rgb(89, 89, 89);
+  }
+
+  & img {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px 10px 16px 0px;
+  }
+
+  & h1 {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  & fieldset {
+    display: block;
+    margin-top: 20px;
+    border: none;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    padding: 20px 0;
+
+    & .radio_button {
+      width: 130px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    & .trip_count_input {
+      overflow: hidden;
+      width: 20%;
+      height: 40px;
+      border: 1px solid rgb(204, 204, 204);
+      border-radius: 5px;
+      box-sizing: border-box;
+      background: rgb(255, 255, 255);
+      font-size: 1rem;
+      color: rgb(89, 89, 89);
+      text-align: center;
+    }
+  }
+
+  & legend {
+    display: block;
+    color: rgb(89, 89, 89);
+    font-weight: 600;
+  }
+
+  & select {
+    overflow: hidden;
+    width: 90%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    font-size: 1rem;
+    color: rgb(89, 89, 89);
+  }
+
+  & details {
+    width: 90%;
+    margin: 10px auto 0;
+    font-size: 0.75rem;
+    color: rgb(122, 122, 122);
+
+    & p {
+      text-align: left;
+    }
+  }
+
+  & label {
+    color: rgb(89, 89, 89);
+  }
+
+  & .calculated_fare {
+    padding: 20px;
+    background: rgb(89, 89, 89);
+    color: rgb(255, 255, 255);
+
+    & p {
+      margin: 0;
+    }
+
+    & #calculated_fare_output {
+      padding: 5px;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    & #message {
+      display: none;
+      padding-top: 10px;
+      font-size: 0.75rem;
+    }
+  }
+}
