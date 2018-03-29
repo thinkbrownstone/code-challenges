@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SEPTA Regional Rail Fare Calculator</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-	
+<div class="fare-calculator-widget" role="main">
+    <header class="form-header">
+        <img src="./assets/septa_logo.svg" alt="septa logo" class="header-logo">
+        <h1>Regional Rail Fares</h1>
+    </header>
+
+    <form action="" class="fare-calculator-from" role="form">
+        <fieldset class="form-field">
+            <legend class="field-header" for="zone-select">Where are you going?</legend>
+            <select id="zone-select" name="zone-select" data-selector-name="zone-select">
+                <option value="">Select Zone</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="form-field">
+            <legend class="field-header" for="time-select">When are you riding?</legend>
+            <select id="time-select" name="time-select" data-selector-name="time-select">
+                <option value="">Select One</option>
+                <option value="weekday">Weekday</option>
+                <option value="evening_weekend">Evenings/Weekend</option>
+                <option value="anytime">Anytime(10 rides limit)</option>
+            </select>
+            
+            <details id="fares-help-text" data-selector-name="fares-help-text" class="help-text">
+                <summary>Click here for more details</summary>
+            </details>
+        </fieldset>
+
+        <fieldset class="form-field" role="radiogroup" aria-required="true">
+            <legend class="field-header" for="purchase-select">Where will you purchase the fare?</legend>
+            <div class="purchase-option">
+                <input type="radio" name="purchase-type" id="purchase-1" value="advance_purchase" aria-checked="true"
+                    checked required="required">
+                <label for="purchase-1">Station Kiosk</label>
+            </div>
+            <div class="purchase-option">
+                <input type="radio" name="purchase-type" id="purchase-2" value="onboard_purchase" required="required">
+                <label for="purchase-2">Onboard</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-field">
+            <legend class="field-header" for="num-trips-select">How many rides will you need?</legend>
+            <input class="num-trips-select" type="number" value="1" min="1" id="num-trips-select" name="num-trips-select" data-selector-name="num-trips-select" aria-required="true">
+        </fieldset>
+
+        <section class="fare-display">
+			<p>Your fare will cost</p>
+			<div id="total-fare" data-selector-name="total-fare">$0.00</div>
+		</section>
+
+    </form>
+</div>
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
