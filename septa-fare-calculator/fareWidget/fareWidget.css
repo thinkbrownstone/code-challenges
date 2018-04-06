@@ -1,0 +1,47 @@
+.fare-widget{
+    text-align: center;
+    border: solid grey 2px;
+    width: 400px;
+}
+.fw-header{
+    background-color:  #404040;
+    color: white;
+    font-size: 26px;
+}
+.fw-form>div{
+    border-top: solid grey 1px;
+}
+.fw-purchase-options label{
+    display: inline;
+}
+.fw-purchase-options{
+    display: inline-block;
+}
+.fw-purchase-options>div{
+    text-align: left;
+}
+label{
+    display: block;
+    min-width: 400px;
+    font-size: 20px;
+}
+.fare-widget select{
+    width: 200px;
+    margin: 10px;
+    padding: 5px 0px;
+}
+.fare-widget input[type="text"]{
+    width: 100px;
+    margin: 10px;
+    padding: 5px 0px;
+    text-align: center;
+}
+.fw-total{
+    padding: 10px;
+    color: white;
+    background-color:  #404040;
+}
+.fw-total-price{
+    font-size: 40px;
+}
+

@@ -1,0 +1,40 @@
+<div class="fare-widget">
+    <div class="fw-header">
+        <span>{{vm.title}}</span>
+    </div>
+    <div class="fw-form">
+        <div class="fw-zone">
+            <label for="destination">Where are you going?</label>
+            <select name="destination" ng-model="vm.selectedZone" ng-options="zone as zone.name for zone in vm.zoneOptions" ng-change="vm.calculateFare()">
+            </select>
+        </div>
+        <div class="fw-type">
+            <label for="time">When are you riding?</label>
+            <select name="time" id="" ng-model="vm.selectedType" ng-options="type as type.name for type in vm.typeOptions" ng-change="vm.calculateFare()">
+            </select>
+            <p>{{vm.selectedType.info}}</p>
+        </div>
+        <div class="fw-purchase">
+            <label>Where will you purchase the fare?</label>
+            <div class="fw-purchase-options">
+                <div ng-repeat="purchase in vm.purchaseOptions">
+                    <input type="radio" ng-model="vm.selectedPurchase" ng-change="vm.calculateFare()" id="{{purchase.code}}" value="{{purchase.code}}">
+                    <label for="{{purchase.code}}">{{purchase.name}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="fw-count">
+            <label>
+                <span ng-if="vm.selectedType.code !== 'anytime'">How many rides will you need?</span>
+                <span ng-if="vm.selectedType.code === 'anytime'">How many passes will you need? (10 rides per pass)</span>
+            </label>
+            <input ng-model="vm.count" ng-change="vm.calculateFare()" type="text" />
+            <span ng-if="vm.selectedType.code === 'anytime'">{{vm.count * 10}} rides total</span>
+        </div>
+        <div class="fw-total">
+            <div ng-if="vm.total" class="fw-total-info">Your fare will cost</div>
+            <div class="fw-total-price">{{vm.total}}</div>
+            <div ng-if="vm.hintMessage" class="fw-total-hint">{{vm.hintMessage}}</div>
+        </div>
+    </div>
+</div>
