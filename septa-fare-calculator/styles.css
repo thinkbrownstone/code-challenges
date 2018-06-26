@@ -1,0 +1,74 @@
+.fare {
+	border: 2px solid #ccc;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+.fare-heading { 
+	background-color: #595959;
+	margin: 0;
+	padding: 10px 0;
+	color: white;
+}
+
+.fare-form ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fare-form fieldset { border: 0; }
+
+.fare-form label { display: block; }
+
+.fare-form-item {
+	padding: 20px;
+	border-bottom: 1px solid #ccc;
+}
+
+.fare-form-select {
+	width: 100%;
+	font-size: 20px;
+	background-color: transparent;
+}
+
+.fare-form-input {
+	padding: 8px;
+	font-size: 20px;
+}
+
+.fare-form-input[type="number"] {
+	text-align: center;
+}
+
+.fare-form-item-heading {
+	color: #595959;
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.fare-form-helper {
+	font-size: 14px;
+	color: #aaa;
+	margin-bottom: 0;
+}
+
+
+.fare-cost {
+	background-color: #595959;
+	padding: 20px 0;
+	color: white;
+}
+
+.fare-cost-heading {
+	margin: 0 0 6px;
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.fare-cost-num {
+	margin: 0;
+	font-weight: 700;
+	font-size: 50px;
+}

@@ -3,8 +3,70 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	
+
+<main class="fare">
+  <header>
+    <h1 class="fare-heading">Regional Rail Fares</h1>
+  </header>
+
+  <section>
+    <form class="fare-form">
+      <ul>
+
+        <li class="fare-form-item">
+          <label for="zones" class="fare-form-item-heading">Where are you going?</label>
+          <select id="zones" class="fare-form-select"></select>
+        </li>
+
+        <li class="fare-form-item">
+          <label for="type" class="fare-form-item-heading">When are you riding?</label>
+          <select id="type" class="fare-form-select">
+            <option value="weekday">Weekday</option>
+            <option value="evening_weekend">Evenings/Weekend</option>
+            <option value="anytime">Anytime</option>
+          </select>
+          <p class="fare-form-helper"></p>
+        </li>
+        
+        <li class="fare-form-item">
+          <fieldset>
+            <legend class="fare-form-item-heading">Where will you purchase the fare?</legend>
+            <ul>
+              <li>
+              	<label class="fare-form-radio-label">
+	                <input type="radio" name="purchase-type" value="advance_purchase" class="fare-form-radio" checked>
+	              	Station Kiosk
+	              </label>
+              </li>
+              <li>
+              	<label class="fare-form-radio-label">
+	                <input type="radio" name="purchase-type" value="onboard_purchase" class="fare-form-radio">
+	                Onboard
+	              </label>
+              </li>
+            </ul>
+          </fieldset>
+        </li>
+
+        <li class="fare-form-item">
+          <label for="num-rides" class="fare-form-item-heading">How many rides will you need?</label>
+          <input type="number" id="num-rides" value="1" class="fare-form-input">
+        </li>
+
+      </ul>
+    </form>
+
+    <div class="fare-cost">
+      <h2 class="fare-cost-heading">Your fare will cost</h2>
+      <p class="fare-cost-num"></p>
+    </div>
+  </section>
+</main>
+
+<script src="scripts.js" async></script>
+
 </body>
 </html>
