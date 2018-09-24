@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html role = "Heading" lang = "en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" name="viewport" content="user-scalable=yes">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+
+	<script src="js/widget.js"></script>
+
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
+
 <body>
-	
+	<div id="septaFareCalculatorContainer" class = "fareCalculatorContainer">
+		<div id = "septaFareCalculatorInnerContainer" class = "fareCalculatorInnerContainer">
+			<div id = "regionalTitleDiv" class = "greyBar">
+				<img src = "img/logo.png" alt="SEPTA Logo" class="septaLogo">
+				<p class = "septaTitleFont">Regional Rail Fares</p>
+			</div>		
+
+			<div class = "greyBorderBottom">
+				<p class = "septaSubheaderFont">Where are you going?</p>
+				<div class = "fareVariousInputs">
+					<select aria-label = "Zones" id="zones" alt = "Dropdown selects what zone">
+						<option></option>
+					</select>	
+					<p class = "septaHelperText">Not sure? Click here for a map</p>
+				</div>
+			</div>	
+			<div class = "greyBorderBottom">
+				<p class = "septaSubheaderFont">When are you riding?</p>
+				<div class = "fareVariousInputs">
+					<select aria-label = "Fare Type" id="fareType" alt = "Dropdown selects what type of fare">
+						<option></option>
+					</select>
+					<p class = "septaTextAlignCenter septaHelperText"><span class = "boldSpanSepta">Weekday:</span> Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station</p>
+					<p class = "septaTextAlignCenter septaHelperText"><span class = "boldSpanSepta">Evening/Weekend:</span> Valid weekdays after 7:00 p.m.; all day Saturday, Sunday and major holidays. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station</p>
+					<p class = "septaTextAlignCenter septaHelperText"><span class = "boldSpanSepta">Anytime:</span> Valid Anytime</p>
+				</div>
+			</div>		
+			<div sclass = "greyBorderBottom">
+				<p class = "septaSubheaderFont">Where will you purchase the fare?</p>
+				<div class = "fareVariousInputs">
+					<input aria-label = "Purchase Location Type" id = "station" type="radio" name="purchasePoint" value="stationKiosk" checked alt = "Radio button selects where ticket is bought- station kiosk">Station Kiosk
+					<input aria-label = "Purchase Location Type" id = "onboard" type="radio" name="purchasePoint" value="onboard" alt = "Radio button selects where ticket is bought- onboard">Onboard<br>
+				</div>
+			</div>	
+			<div class = "greyBorderBottom">
+				<p class = "septaSubheaderFont">How many rides will you need?</p>
+				<div class = "fareVariousInputs">
+
+					<input aria-label = "Number of Tickets" id = "ticketAmount" type="text" name="numberOfRides" class = "septaInputWidth" onKeyup = 'calculatesFare()' alt = "Enter how many tickets you'd like"/>
+				</div>
+			</div>
+			<div class = "greyBar">
+				<p class = "septaTitleFont septaTextAlignCenter" style = "margin: 0;">Your fare will cost</p>
+				<p id = "total" class = "septaTitleFont septaTextAlignCenter septaFareTotal" alt = "Cost of your fare"></p>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- <ul id="people"></ul> -->
 </body>
 </html>

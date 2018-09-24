@@ -6,6 +6,7 @@
         "advance_purchase": "Tickets available for purchase at all SEPTA offices.",
         "onboard_purchase": "Tickets available for purchase from a train conductor aboard SEPTA regional rail trains."
     },
+
     "zones": [{
         "name": "CCP/1",
         "zone": 1,
@@ -35,7 +36,8 @@
             "trips": 10,
             "price": 38.00
         }]
-    }, {
+    }, 
+    {
         "name": "Zone 2",
         "zone": 2,
         "fares": [{
@@ -64,7 +66,8 @@
             "trips": 10,
             "price": 45.00
         }]
-    }, {
+    }, 
+    {
         "name": "Zone 3",
         "zone": 3,
         "fares": [{
@@ -93,7 +96,8 @@
             "trips": 10,
             "price": 54.50
         }]
-    }, {
+    }, 
+    {
         "name": "Zone 4",
         "zone": 4,
         "fares": [{
@@ -122,7 +126,8 @@
             "trips": 10,
             "price": 62.50
         }]
-    }, {
+    }, 
+    {
         "name": "NJ",
         "zone": 5,
         "fares": [{
