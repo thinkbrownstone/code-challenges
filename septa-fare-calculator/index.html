@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>SEPTA Regional Rail Fare Calculator</title>
+    <meta name="description" content="An interactive web application to determine how much a SEPTA rail fare would cost.">
+    <meta name="keywords" content="septa, transit, rail, calculator, fares, price, ticket, trip, philadelphia">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+  <body>
+    <form name="farecalcForm">
+      <div id="farecalc-header" class="farecalc-display-section">
+        <img alt="SEPTA Logo" src="img/SEPTA-logo.svg" width="50" />
+        <h1>Regional Rail Fares</h1>
+      </div>
+
+      <div class="farecalc-input-section">
+        <label for="farecalc-destination" class="farecalc-section-topic">Where are you going?</label>
+        <select id="farecalc-destination" class="farecalc-input">
+        </select>
+      </div>
+
+      <div class="farecalc-input-section">
+        <label for="farecalc-time" class="farecalc-section-topic">When are you riding?</label>
+        <select id="farecalc-time" class="farecalc-input">
+        </select>
+        <p id="farecalc-time-helper" class="farecalc-helper-text">Valid anytime. This includes weekdays, evenings, and weekends. Can only be bought at a station kiosk in advance and at a 10-trip rate.</p>
+      </div>
+
+      <div class="farecalc-input-section">
+        <fieldset id="farecalc-purchase-location-fieldset">
+          <legend class="farecalc-section-topic">Where will you purchase the fare?</legend>
+        </fieldset>
+      </div>
+
+      <div class="farecalc-input-section">
+        <label for="farecalc-num-rides" class="farecalc-section-topic">How many rides will you need?</label>
+        <!-- Not using input type number cause we need to support IE8 -->
+        <input type="text" id="farecalc-num-rides" class="farecalc-input" value="10"/>
+        <p class="farecalc-helper-text">Discount for 10-trip tickets available to use anytime. Only purchasable in advance at a station kiosk and at a 10-trip rate.</p>
+      </div>
+
+      <div id="farecalc-total-section" class="farecalc-display-section">
+        <p>Your fare will cost</p>
+        <p id="farecalc-total-cost"><strong>$38.00</strong></p>
+      </div>
+    </form>
+    
+    
+    <script src="js/index.js"></script>
+    
+  </body>
 </html>

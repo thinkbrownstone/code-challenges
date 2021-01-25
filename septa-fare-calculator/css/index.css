@@ -1,0 +1,89 @@
+/* Remove margin on overall body and set default font */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* For the far calulator header with h1 and logo */
+#farecalc-header h1 {
+  margin: 0;
+  margin-left: 15px;
+}
+#farecalc-header {
+  padding: 15px;
+}
+#farecalc-header h1,
+#farecalc-header img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* For each section that takes some user input */
+.farecalc-input-section {
+  text-align: center;
+  padding: 25px;
+  font-size: 22px;
+  border-bottom: 1px solid lightgray;
+}
+/* For that input sections topic question */
+.farecalc-input-section .farecalc-section-topic {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+/* Set stlying for each type of input in an input section */
+.farecalc-input-section .farecalc-input {
+  font-size: 22px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+.farecalc-input-section select {
+  max-width: 400px;
+}
+.farecalc-input-section #farecalc-num-rides {
+  max-width: 100px;
+  border: 1px solid #9e9e9e;
+  text-align: center;
+}
+
+/* Styling for the display section on the fare calculator, at top and bottom */
+.farecalc-display-section {
+  background: #595959;
+  color: white;
+  text-align: center;
+}
+
+/* For the specific helper text in "When are you riding?" Usable elsewhere */
+.farecalc-helper-text {
+  font-size: 16px;
+  /* Lets be good and make sure it passes AAA accessibility */
+  color: #585858;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+/* To remove default fieldset styling */
+#farecalc-purchase-location-fieldset {
+  border: none;
+}
+/* To style and spae out radio buttons in "Where will you purchase the fare?" section */
+#farecalc-purchase-location-fieldset div {
+  text-align: left;
+  max-width: 200px;
+  margin: auto;
+  margin-top: 5px;
+}
+
+/* For final section with total amount of fare */
+#farecalc-total-section {
+  padding: 25px 0;
+  font-size: 24px;
+}
+#farecalc-total-section p {
+  margin: 0;
+}
+#farecalc-total-cost {
+  font-size: 64px;
+}
