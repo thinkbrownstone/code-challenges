@@ -1,0 +1,23 @@
+.app {
+  color: #595959;
+  border: 4px solid #cccccc;
+  width: 450px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.app-header {
+  color: #ffffff;
+  background: #595959;
+  align-content: center;
+  text-align: center;
+  height: 50px;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+.notice {
+  color: red;
+}
