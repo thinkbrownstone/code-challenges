@@ -1,0 +1,98 @@
+.septaFareCalculator {
+  border: 1px solid black;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.header p {
+  color: white;
+  margin: 0;
+  padding: 1em;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+p .septa-logo {
+  width: 36px;
+  height: 36px;
+}
+
+.septaFareCalculator .header {
+  background-color: #595959;
+}
+
+.inputBlock {
+  padding: 2em;
+  border-bottom: 1px solid black;
+}
+
+.radioSelect {
+  margin-top: 1em;
+}
+
+.radioInputBlock {
+  display: block;
+  padding: 2em;
+  border-bottom: 1px solid black;
+}
+
+.radioInputBlock legend {
+  font-size: 1.25rem;
+}
+
+.inputBlock label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+}
+
+.resultBlock {
+  background-color: #595959;
+  padding: 2em;
+  font-size: 1.25em;
+}
+
+.resultBlock p {
+  margin: 0;
+  color: white;
+}
+
+.helperText {
+  color: gray;
+}
+
+.resultBlock .totalFare {
+  font-size: 2.75em;
+  font-weight: bold;
+  color: white;
+}
+
+.septa-select-input {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid black;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+
+.septa-input {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 4ch;
+  border: 1px solid black;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
