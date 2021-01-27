@@ -1,0 +1,267 @@
+/***=============== Global CSS =====================***/
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  background-color: rgb(14, 14, 14);
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 768px;
+  margin: 0 auto;
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  padding: 70px 0;
+}
+
+:focus {
+  outline: none;
+}
+
+span {
+  float: left;
+}
+
+.fa {
+  float: right;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  padding-bottom: 30px;
+  color: rgb(77, 77, 77);
+  letter-spacing: 1px;
+}
+h1 {
+  color: #fff;
+  font-size: 43px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+p {
+  color: rgb(128, 128, 128);
+  font-size: larger;
+  text-align: center;
+  padding-top: 15px;
+  letter-spacing: 0.5px;
+}
+
+section {
+  background-color: rgb(89, 89, 89);
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+/***=============== Main Widget + Selector Options CSS Start ================***/
+
+.widget {
+  width: 75%;
+  margin: 0 auto;
+  border: 4px solid rgb(204, 204, 204);
+  text-align: center;
+}
+
+.widget .widget-box {
+  padding: 50px 0px;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  position: relative;
+}
+.widget .widget-box .select-box {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.widget .widget-box .zone-selector {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 408px;
+}
+.widget .form-control {
+  height: calc(2.5em + 1rem + 2px);
+  width: 100%;
+  border-radius: 6px;
+  border: 2px solid rgb(191, 191, 191);
+  padding: 0px 20px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(115, 115, 115);
+  cursor: pointer;
+  background: url(https://cdn0.iconfinder.com/data/icons/pinpoint-action/48/arrow-dropdown-256.png)
+    no-repeat right;
+  -webkit-appearance: none;
+  background-position-x: 342px;
+  background-size: 25px;
+}
+/* 
+.widget .widget-box .menu2 {
+    top: 69% !important;
+} */
+
+.widget .widget-box .dropdown-menu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 100%;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  border-radius: 6px;
+}
+
+.widget .widget-box .dropdown-menu > li {
+  padding: 10px 0px;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(115, 115, 115);
+}
+
+.widget .widget-box .dropdown-menu > li:focus {
+  background-color: aliceblue;
+}
+
+.widget .widget-box .dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+
+/***=============== Radio Check-Box CSS Start ================***/
+
+.widget .widget-box .radio-check-box {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.widget .widget-box .radio-check-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.widget .widget-box .radio-check-box:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.widget .widget-box .radio-check-box input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.widget .widget-box .radio-check-box input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.widget .widget-box .radio-check-box .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/***=============== (Widget-Box) Ride Counter CSS Start ================***/
+.widget .widget-box .ride-counter {
+  max-width: 20%;
+  text-align: center;
+}
+
+/***=============== (Widget-Box) Footer CSS Start ================***/
+.widget section.widget-footer {
+  padding: 50px 0;
+  color: #fff;
+  text-align: center;
+  display: block;
+  height: 166px;
+}
+
+.widget .widget-footer h1 {
+  font-size: 100px;
+  display: block;
+  color: #fff;
+  font-weight: bolder;
+}
+
+/***=============== Media Quries ================***/
+@media screen and (max-width: 640px) {
+  .checkmark {
+    left: 15%;
+  }
+  .widget-content {
+    display: block;
+    padding: 0px 10px;
+  }
+  section {
+    display: block;
+    height: auto;
+  }
+}
+@media screen and (max-width: 420px) {
+  .checkmark {
+    left: 6%;
+  }
+  .widget .widget-box .ride-counter {
+    max-width: 60%;
+  }
+  .widget .widget-footer h1 {
+    font-size: 70px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .checkmark {
+    left: 0%;
+  }
+}

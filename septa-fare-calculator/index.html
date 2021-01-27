@@ -1,10 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Test</title>
+    <!--Custom css-->
+    <link rel="stylesheet" href="style.css" />
+    <!--Font Awsome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!---- ======== Section Main (Widget) Start ========= ---->
+    <div class="container">
+      <div class="widget">
+        <!---- ============= Section (Widget) Head ============== ---->
+        <section>
+          <img src="./img/logo.png" alt="logo" />
+          <h1>Regional Rail Fares</h1>
+        </section>
+
+        <div class="widget-content">
+          <!---- ===== Section (Widget-box) Selector Option_1 ===== ---->
+
+          <div class="widget-box">
+            <h2>Where are you going?</h2>
+            <div class="zone-selector">
+              <select
+                id="zone_field"
+                class="form-control"
+                onchange="calculateFare()"
+              ></select>
+            </div>
+          </div>
+
+          <!---- ===== Section (Widget-box) Selector Option_1 ===== ---->
+
+          <div class="widget-box">
+            <h2>When are you riding?</h2>
+            <div class="zone-selector">
+              <select
+                id="riding_time_select"
+                class="form-control"
+                onchange="calculateFare()"
+              ></select>
+            </div>
+            <p class="helper-text">
+              Helper text that explains the options above.
+            </p>
+          </div>
+
+          <!---- ===== Section (Widget-box) Radio Options ===== ---->
+          <div class="widget-box">
+            <h2>Where will you purchase the fare?</h2>
+            <div id="purchase_type_div"></div>
+          </div>
+
+          <!---- ====== Section (Widget-Box) Ride Counter  ====== ---->
+          <div class="widget-box">
+            <h2>How many rides will you need?</h2>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control ride-counter"
+                id="rides_field"
+                min="0"
+                onkeyup="calculateFare()"
+              />
+            </div>
+          </div>
+        </div>
+        <!---- ====== Section (Widget-Box) Footer  ====== ---->
+        <section class="widget-footer">
+          <div class="footer-content">
+            <h2 style="color: #fff">Your fare will cost</h2>
+            <h1><bold>$</bold><bold id="rates">0</bold></h1>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+  <!-- JavaScript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    let final_rate = [];
+    let zones_list = [];
+    let riding_times = [];
+    let purchase_type = [];
+
+    let jsonData;
+    let jsonFile = "./fares.json";
+
+    $(document).ready(function () {
+      $.getJSON(jsonFile, {
+        format: "json",
+      })
+        .then(function (data) {
+          jsonData = data;
+          jsonData.zones.map((element) => {
+            zones_list.push({ key: element.name, value: element.zone });
+            element.fares.map((fare) => {
+              if (!riding_times.filter((obj) => obj.key === fare.type).length) {
+                riding_times.push({ key: fare.type, value: fare.type });
+              }
+
+              if (
+                !purchase_type.filter((obj) => obj.key === fare.purchase).length
+              ) {
+                purchase_type.push({
+                  key: fare.purchase,
+                  value: fare.purchase,
+                });
+              }
+            });
+          });
+        })
+        .done(function () {
+          zones_list.map((element) => {
+            $("#zone_field").append(new Option(element.key, element.value));
+          });
+          riding_times.map((element) => {
+            $("#riding_time_select").append(
+              new Option(element.key, element.value)
+            );
+          });
+
+          purchase_type.map((element, i) => {
+            if (i == 0) {
+              $("#purchase_type_div").append(
+                `<label class="radio-check-box">${element.key}<input type="radio" checked="checked" name="radio" value="${element.key}" id="purchase_type_field" onchange="calculateFare()" /> <span class="checkmark"></span> </label>`
+              );
+            } else {
+              $("#purchase_type_div").append(
+                `<label class="radio-check-box">${element.key}<input type="radio" name="radio" value="${element.key}" id="purchase_type_field" onchange="calculateFare()" /> <span class="checkmark"></span> </label>`
+              );
+            }
+          });
+        });
+    });
+
+    function calculateFare() {
+      let zone_no = $("#zone_field").val();
+      let type = $("#riding_time_select").val();
+      let purchase = $("#purchase_type_field").val();
+      let no_of_trips = $("#rides_field").val();
+      const result = jsonData.zones.filter((zone) => zone.zone == zone_no);
+      const fare = result[0].fares.filter(
+        (fare) => fare.type == type && fare.purchase == purchase
+      );
+
+      if (fare[0].trips > 1) {
+        final_rate = 0;
+        let per_trip_price = fare[0].price / fare[0].trips;
+        final_rate = per_trip_price * no_of_trips;
+        $("#rates").text(final_rate);
+      } else {
+        final_rate = 0;
+        final_rate = fare[0].price * no_of_trips;
+        $("#rates").text(final_rate);
+      }
+    }
+  </script>
 </html>
