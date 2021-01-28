@@ -1,0 +1,79 @@
+.App {
+	margin: 0 auto;
+	max-width: 500px;
+	border: solid #e5e6e8;
+}
+
+.header {
+	background-color: #595959;
+	color: white;
+	padding: 5px;
+}
+
+.header__container{
+	margin: 10px auto;
+	height: 40px;
+	width: 400px;
+}
+
+.header__title {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.header__logo {
+	height: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+.fares-form__section {
+	border-bottom: solid #e5e6e8 1px;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+.fare-calc {
+	text-align: center;
+	background-color: #595959;
+	color: white;
+	padding: 10px;
+}
+
+.fare-calc__title {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.fare-calc__total {
+	margin: 0 auto;
+	font-size: 48px;
+}
+
+.fares-form__zone label, .fares-form__zone input {
+	display: block;
+	margin: 10px auto;
+}
+.fares-form__travel-period label, .fares-form__travel-period input {
+	display: block;
+	margin: 10px auto;
+}
+.fares-form__rides label {
+	display: block;
+	margin: 10px auto;
+}
+.fares-form__purchase-loc label {
+	display: inline-block;
+	padding-right: 10px;
+}
+
+.helptext {
+	width: 60%;
+	margin: 10px auto;
+	font-weight: bold;
+}
+
+input#rides {
+	width: 50px;
+}
+
