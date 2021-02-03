@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+:root {
+  --header-and-footer-bg: #595959;
+}
+
+.outerContainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 520px;
+  height: 840px;
+  max-height: 840px;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: var(--header-and-footer-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4% 2%;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.firstFormSection {
+  border-top: none;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.lastFormSection {
+  border-bottom: none;
+  border-top: 1px solid #e6e6e6;
+}
+
+.logo {
+  height: 62px;
+  width: 45px;
+}
+
+.label {
+  font-size: 24px;
+  color: #4d4d4d;
+  font-weight: 600;
+}
+
+.helperText {
+  margin-top: 4%;
+  font-size: 16px;
+  color: #808080;
+  text-align: center;
+}
+
+.inputField {
+  font-size: 20px;
+  width: 100%;
+  padding: 3%;
+  border-radius: 4px;
+  border: 1px solid #bfbfbf;
+  margin-top: 5%;
+}
+
+.numberField {
+  width: 12%;
+  text-align: center;
+  padding-left: 6%;
+}
+
+.selectWrapper {
+  width: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.selectField {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Customize select dropdown arrow */
+.selectWrapper:after {
+  content: '▼';
+  padding: 12px 8px;
+  position: absolute;
+  right: 10px;
+  top: 22px;
+  z-index: 1;
+  text-align: center;
+  width: 4%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(1.5);
+  color: #737373;
+}
+
+.radioButtonsContainer {
+  margin-top: 3%;
+}
+
+.radioLabel {
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+.resultsContainer {
+  background-color: var(--header-and-footer-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 18%;
+  flex: 0 1 200px;
+}
