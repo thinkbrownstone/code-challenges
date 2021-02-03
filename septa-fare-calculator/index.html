@@ -2,9 +2,320 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<style>
+		.outer_div {
+			position: relative;
+			height: 600px;
+			width: 60%;
+			margin: 0 auto;
+			padding: 20px;
+			overflow: auto;
+		}
+
+		.panel {
+			border-style: solid;
+			border-color: lightgrey;
+		  	width: 50%;
+		  	transform: translate(-50%, -50%);
+		  	position: absolute;
+		  	top: 50%;
+		  	left: 50%;
+		  	overflow: auto;
+		  	text-align: center;
+		}
+
+		h2 {
+			color: white;
+			font-family: sans-serif;
+			background-color: #585858;
+			padding: 10px;
+			margin: 0px;
+		}
+
+		h5, h1 {
+			color: white;
+			font-family: sans-serif;
+			margin: 0;
+		}
+
+		footer {
+			background-color: #585858;
+			padding: 10px;
+			margin: 0px;
+		}
+
+		h4 {
+			font-family: sans-serif;
+			margin: 0.8em;
+		}
+
+		
+		.box {
+			width: 20em;
+			padding: 0.5em;
+			border-radius: 0.4em;
+		}
+
+		.box2 {
+			width: 20em;
+			padding: 0.5em;
+			border-radius: 0.4em;
+			margin-bottom: 0.8em;
+		}
+
+		.countbox {
+			width: 4em;
+			padding: 0.5em;
+			border-radius: 0.4em;
+			margin-bottom: 0.8em;
+			text-align: center;
+		}
+
+		.image {
+			padding: 3px;
+			display:inline-block;
+		}
+
+		.trip_count {
+			margin: 5px;
+		}
+
+
+		h6 {
+			opacity: 0.5;
+			font-family: sans-serif;
+			margin: 0.9em 0 1.4em;
+		}
+
+		.purchase_location {
+			text-align: center;
+			margin: 0.8em auto;
+		}
+
+		.radioalign {
+			margin: 0 auto;
+		    width: auto;
+		    text-align: left;
+		    display: table;
+		}
+
+		h1 {
+			margin: 0;
+		}
+
+		h6#alert_text {
+			color: white;
+			font-family: sans-serif;
+			margin: 0.9em 0 1.4em;
+		}
+
+		@media only screen and (max-width: 880px) {
+			  .outer_div {
+				position: relative;
+				height: 600px;
+				width: 100%;
+				margin: 0 auto;
+				padding: 20px;
+				overflow: auto;
+			}
+
+			.panel {
+				border-style: solid;
+				border-color: lightgrey;
+			  	width: 80%;
+			  	transform: translate(-50%, -50%);
+			  	position: absolute;
+			  	top: 50%;
+			  	left: 50%;
+			  	overflow: auto;
+			  	text-align: center;
+			}
+		}
+
+	</style>
+
 </head>
 <body>
+	<div class="outer_div">
+		<div class="panel">
+
+			<header>
+				<h2><img src="img/logo.png" alt="img-logo"> Regional Rail Fares</h2>
+			</header>
+
+			<div class="info">
+
+				<h4>Where are you going?</h4>
+				<select name="zone_dropdown" id="zone_dropdown" class="box2">
+					<option value="None" selected="selected">Select zone</option>
+				</select>
+				<hr>
+
+				<h4>When are you riding?</h4>
+				<select name="time_dropdown" id="time_dropdown" class="box">
+					<option value="None" selected="selected">Select travel time</option>
+					<option value="weekday">Weekdays</option>
+					<option value="evening_weekend">Evenings & Weekend</option>
+					<option value="anytime">Anytime</option>
+				</select>
+				<h6 id="helper_text">Helper text that explains the options above.</h6>
+				<hr>
+				
+				<h4>Where will you purchase the fare?</h4>
+				<div class="purchase_location">
+					<div class="radioalign">
+						<input type="radio" name="select_location" value="advance_purchase"> Station Kiosk<br>
+						<input type="radio" name="select_location" value="onboard_purchase"> Onboard
+					</div>
+				</div>
+				<hr>
+				
+				<h4>How many rides will you need?</h4>
+				<p class="trip_count">
+					<input type="number" id="trip_number" class="countbox" name="" min="1">
+				</p>
+				
+			</div>
+			
+			<footer>
+				<h5>Your fare will cost</h5>
+				<h1 id="total_price"></h1>
+				<h6 id="alert_text"></h6>
+			</footer>	
+			
+		</div>
+	</div>
 	
+	<script>
+		$(document).ready(function() {
+
+			//this object collects entered data by the user
+			var userdata = {};
+			$.ajax({
+		        url: 'fares.json',
+		        dataType: "json"
+		    }).done(function (data) {
+		    
+				$.each(data.zones, function(key, value){
+					$("#zone_dropdown").append("<option>" + value.name + "</option>");
+				});
+
+				//based on the user's zone selection, corresponding zone data is sent to the time function
+				$('#zone_dropdown').on('change', function(){
+					var dropdown_val = $(this).val();
+					userdata['zone'] = dropdown_val;
+					
+					//check if user has entered all the data and calculate the total ticket price
+					if(validate_userdata(userdata)){
+						calculate_cost(userdata);
+					}
+				    
+				});
+
+				//based on user's time selection, helper text is updated
+				$('#time_dropdown').on('change', function(){
+					var time_selection = $(this)[0].value;
+					userdata['time'] = time_selection;
+
+					//check if user has entered all the data and calculate the total ticket price
+					if(validate_userdata(userdata)){
+						calculate_cost(userdata);
+					}
+
+					$.each(data.info, function(key, value) {
+						if(key == time_selection){
+							$('#helper_text').text(value);
+						}
+					});
+				});
+
+				$('.purchase_location').on('change', function(){
+					var pickup_selection = $("input[name='select_location']:checked").val();
+					userdata['purchase_location'] = pickup_selection;
+
+					//check if user has entered all the data and calculate the total ticket price
+					if(validate_userdata(userdata)){
+						calculate_cost(userdata);
+					}
+				});
+
+				$('#trip_number').on('keyup keydown change', function(){
+					userdata['trips'] = $(this)[0].value;
+
+					//check if user has entered all the data and calculate the total ticket price
+					if(validate_userdata(userdata)){
+						calculate_cost(userdata);
+					}
+				});
+
+				//function that checks for all the required values
+				function validate_userdata(input){
+					if(input['purchase_location'] && input['time'] && input['trips'] && input['zone']){
+						return true;
+					}else{
+						return false;
+					}
+				}
+
+				//function that loops through user input object to prepare the data for cost calculation
+				function calculate_cost(input){
+					$.each(data.zones, function(key, value) {
+						if(value.name == input['zone']){
+							calculate_total(value.fares, input);
+						}
+					});
+				}
+
+				//function that calculates the actual cost
+				function calculate_total(given_input, user_input){
+					
+					//since anytime ticket price is always stored at index 4, grab it from the given_input
+					var anytime_price = given_input[4].price.toFixed(2);
+
+					$.each(given_input, function(key, value) {
+
+						//case 1: when time is NOT Anytime and number of trips != 10 then total cost is equal to price times the number of trips entered by the user
+						if(value.type == user_input['time'] && value.purchase == user_input['purchase_location'] && user_input['time'] != 'anytime' && user_input['trips'] != 10){
+							var total = (value.price * user_input['trips']).toFixed(2);
+							$('#total_price').text('$'+total);
+							$('#alert_text').text('');
+						}
+
+						//case 2: when time is Anytime AND number of trips is 10 AND purchase location is Station Kiosk then the total cost is the price contained in the given_input object
+						else if(value.type == user_input['time'] && value.purchase == user_input['purchase_location'] && user_input['time'] == 'anytime' && user_input['trips'] == 10 && user_input['purchase_location'] == 'advance_purchase') {
+							var total = value.price.toFixed(2);
+							$('#total_price').text('$'+total);
+							$('#alert_text').text('');
+						}
+
+						//case 3: when case 2 is true except for Anytime condition then let the user know that special pricing for 10-trips is available if he upgrades to Anytime
+						else if(value.type == user_input['time'] && value.purchase == user_input['purchase_location'] && user_input['time'] != 'anytime' && user_input['trips'] == 10 && user_input['purchase_location'] == 'advance_purchase'){
+							var total = (value.price * user_input['trips']).toFixed(2);
+							$('#total_price').text('$'+total);
+							$('#alert_text').text('Upgrade to Anytime ticket at only $'+anytime_price+' for the same number of rides!');
+						}
+
+						//case 4: when time is NOT Anytime AND number of trips is 10 AND purchase location is NOT Station Kiosk then total cost is equal to price times the number of trips entered by the user
+						else if(value.type == user_input['time'] && value.purchase == user_input['purchase_location'] && user_input['time'] != 'anytime' && user_input['trips'] == 10 && user_input['purchase_location'] == 'onboard_purchase'){
+							var total = (value.price * user_input['trips']).toFixed(2);
+							$('#total_price').text('$'+total);
+							$('#alert_text').text('');
+						}
+
+						//case 5: when time is Anytime but either of these conditions => (number of trips = 10 OR purchase location is Onboard) then alert the user that Anytime tickets require user to satisfy these conditions
+						else if(user_input['time'] == 'anytime' && (user_input['trips'] != 10 || user_input['purchase_location'] == 'onboard_purchase')){
+							$('#total_price').text('');
+							$('#alert_text').text('Prices for Anytime tickets are available only if the number of rides is equal to 10 and if you purchase the ticket at the Station Kiosk');
+						}
+					});
+				}
+			});
+
+		});
+	</script>
 </body>
 </html>
