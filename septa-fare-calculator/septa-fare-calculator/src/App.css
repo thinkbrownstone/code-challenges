@@ -1,0 +1,77 @@
+.fareForm {
+  text-align: center;
+}
+
+header {
+  background-color: #676363;
+  height: 50px;
+}
+
+.logo {
+  width: 35px;
+  margin-top: 10px;
+}
+.title {
+  bottom: 5px;
+  display: inline;
+  position: relative;
+  padding-left: 10px;
+  color: white;
+}
+
+.formSections {
+  border-bottom: solid 1px #d6d6d6;
+  padding-top: 15px;
+}
+.selectForm {
+   -webkit-appearance: button;
+   -webkit-border-radius: 5px;
+   -webkit-padding-end: 20px;
+   -webkit-padding-start: 2px;
+   -webkit-user-select: none;
+   background-image: url(http://i62.tinypic.com/15xvbd5.png);
+   background-position: 97% center;
+   background-repeat: no-repeat;
+   border: 1px solid #AAA;
+   color: #555;
+   font-size: inherit;
+   margin: 20px;
+   overflow: hidden;
+   padding: 5px 10px;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width: 280px;
+}
+
+.radioForm {
+  width: 120px;
+  margin: 0 auto;
+  text-align: left;
+}
+.radioLabel {
+  margin-left: 5px;
+}
+#faresTrips {
+  width: 40px;
+  height: 20px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 4px;
+  border: solid 1px #b5b3b3;
+  text-align: center;
+}
+p {
+  font-size: 12px;
+}
+.top {
+  margin-top: 15px;
+}
+.bottom {
+  margin-bottom: 20px;
+}
+.formCost {
+  padding-top: 15px;
+  background-color: #676363;
+  color: white;
+  height: 100px;
+}
