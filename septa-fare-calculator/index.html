@@ -3,8 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	
+	<div id="app">
+		<header>
+			<img src="img/septa.png" id="septa-logo" alt="septa logo">
+			<h1>Regional Rail Fares</h1>
+		</header>
+		<form>
+			<fieldset>
+				<label for="zones">Where are you riding?</label>
+				<div class="styled-select">
+					<select id="zones"></select>
+					<span class="caret"></span>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<label for="dayOfWeek">When are you riding?</label>
+				<div class="styled-select">
+				<select id="dayOfWeek"></select>
+				<span class="caret"></span>
+				</div>
+				<p id="dayOfWeekDescription"></p>
+			</fieldset>
+
+			<fieldset>
+				<label>Where will you purchase the fare?</label>
+				<div id="purchaseLocation"></div>
+			</fieldset>
+
+			<fieldset>
+				<label for="quantity">How many rides will you need?</label>
+				<input id="quantity" type="number" min="0" max="10" step="1"/>
+			</fieldset>
+
+			<fieldset>
+				<label for="totalCost">Your fare will cost</label>
+				<div id="totalCost">&mdash;</div>
+			</fieldset>
+		</form>
+	</div>
+
+	<script src="main.js"></script>
 </body>
 </html>
