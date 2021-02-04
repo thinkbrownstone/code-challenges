@@ -1,10 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SEPTA Regional Rail Fare Calculator</title>
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="widget">
+        <section>
+          <img
+            src="./img/septa-logo.png"
+            alt="Septa Logo"
+            class="widget__logo"
+          />
+          <h1 class="widget__header">Regional Rail Fares</h1>
+        </section>
+
+        <div class="widget__container">
+          <div class="widget__box">
+            <h2>Where are you going?</h2>
+            <div class="widget__zone">
+              <select
+                id="zone-field-select"
+                class="widget__input"
+                onchange="updateTotal()"
+              ></select>
+            </div>
+          </div>
+
+          <div class="widget__box">
+            <h2>When are you riding?</h2>
+            <div class="widget__zone">
+              <select
+                id="riding-time-select"
+                class="widget__input"
+                onchange="updateTotal()"
+              ></select>
+            </div>
+            <p class="helper-text">
+              Helper text that explains the options above.
+            </p>
+          </div>
+
+          <div class="widget__box">
+            <h2>Where will you purchase the fare?</h2>
+            <div id="purchase-type-el"></div>
+          </div>
+
+          <div class="widget__box">
+            <h2>How many rides will you need?</h2>
+            <div>
+              <input
+                type="text"
+                class="widget__input ride__count"
+                onkeyup="updateTotal()"
+              />
+            </div>
+          </div>
+        </div>
+
+        <section class="widget__footer">
+          <div class="widget__footer__content">
+            <h2>Your fare will cost</h2>
+            <span class="widget__footer__total">0</span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
