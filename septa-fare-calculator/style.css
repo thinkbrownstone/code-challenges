@@ -1,0 +1,65 @@
+/* I utilized the BEM CSS Naming Convention used http://getbem.com/introduction/  */
+
+/* widget container */
+.widget-container {
+    min-width:200px;
+    min-height:325px;
+    max-width: 800px; 
+    max-height: 1300px;
+    border: solid 4px silver;
+}
+.widget-container__section-text {
+    text-align: center;
+    color: DimGrey;
+}
+.widget-container__selector {
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
+}
+
+/* wiget header */
+.widget-container__header {
+    background-color: DimGrey;
+    height: 60px;
+    color: white;
+}
+
+.widget-container__header-text {
+    margin: 0;
+    font-weight: bold;
+    position: relative;
+    top: 14%;
+    text-align: center;
+    font-size: 40px;
+}
+.widget-container___header-logo{
+    display: inline-block;
+    width: 5vw;
+    height: 5vh;
+}
+/* section divider */
+.widget-section-divider {
+    margin-top: 20px;
+    border-bottom: solid 1px DimGrey;
+}
+/* footer */
+.widget-container__footer {
+    height: 15vh;
+    background-color: DimGrey;
+    color:white;
+    padding: 20px 0px;
+}
+
+.widget-container__footer-text {
+    text-align: center;
+    color: white;
+}
+
+
+
+/* universal selectors */
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
