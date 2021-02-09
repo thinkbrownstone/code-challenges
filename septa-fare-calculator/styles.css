@@ -1,0 +1,81 @@
+
+body{
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0
+}
+
+p{
+    margin: 2px;
+}
+
+.calculator{
+    border: 5px solid #bbb;
+}
+
+.form-header, .form-footer{
+    padding: 20px 1%;
+    background-color: #555;
+    color: white;
+}
+
+.form-header img{
+    height: 35px;
+    transform: translateY(5px);
+    
+}
+
+.form-control{
+    padding: 10px 5px;
+    border-bottom: 2px solid #ddd;
+}
+
+.form-control select{
+    width: 90%;
+    height: 35px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.form-control .radio-container{
+    width: 50%;
+    margin: 5px auto;
+    text-align: left;
+}
+.form-control .radio-container label{
+    font-size: 1rem;
+}
+
+.form-control option{
+    padding: 3px;
+}
+
+.form-control.last{
+    border-bottom: none;
+}
+
+.form-control .number-input{
+    width: 20%;
+    height: 35px;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.output{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+@media (min-width: 500px){
+    .calculator{
+        max-width: 500px;
+        width: 80vw;
+        margin: 35px auto;
+    }
+
+
+}

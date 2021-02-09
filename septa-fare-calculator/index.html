@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Septa Regional Rail Fares Calculator</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="scripts.js"></script>
 </head>
 <body>
-	
+    <form class="calculator">
+        <div class="form-header">
+		   <h2>
+			   <img src="img/200px-SEPTA.png.png" />
+			   Regional Rail Fares
+			</h2>
+        </div>
+        <div class="form-control">
+           <p> Where are you going?</p>
+            <select id="select_zones">
+                <option value="zone1">
+                    Zone 1
+                </option>
+                <option value = "zone2">
+                    Zone 2
+                </option>
+                <option value="zone3">
+                    Zone 3
+                </option>
+                <option value="zone4">
+                    Zone 4
+                </option>
+            </select>
+        </div>
+        <div class="form-control">
+            <p>When are you riding?</p>
+            <select id="select_days">
+                <option value="weekdays">
+                    Weekdays (before 7:00 PM)
+                </option>
+                <option value="weekends_evenings">
+                    Weekends or Evenings
+                </option>
+            </select>
+        </div>
+        <div class = "form-control">
+            <p>Where will you purchase the fare?</p>
+                <div class="radio-container">
+                    <input checked type="radio" name="where" id="kiosk" value="kiosk">
+                    <label for="where">Station Kiosk</label>
+                </div>  
+                <div class="radio-container">
+                    <input type="radio" name="where" id="onboard" value="onboard">
+                    <label for="where">Onboard</label>        
+                </div>
+            </div>
+        </div>
+        <div class="form-control last">
+            <p>How many rides do you need?</p>
+			<input id="quantity" class="number-input" type="number" min="1" value="1" />
+        </div>
+        <div class="form-footer">
+            <p>Your fare will coast</p>
+            <div class="output">
+                $<span id="output">-</span>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
