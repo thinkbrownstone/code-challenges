@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/dist/style.css" type="text/css"/>
+  <title>SEPTA Regional Rail Fare Calculator</title>
 </head>
 <body>
-	
+  <div class="septa-fare-widget">
+    <div class="septa-fare-widget__boundary septa-fare-widget__boundary--demo">
+      <div class="septa-fare-widget__logo"><img alt="Septa Fare Calculator Logo" src="/img/septa_logo.png" width="32px" height="24px" /> Regional Rail Fares</div>
+      <form class="septa-fare-widget__form">
+        <div class="septa-fare-widget__divider">
+          <label for="septa-fare-widget__zone-section">Where are you going</label>
+          <select class="septa-fare-widget__select--zone" id="septa-fare-widget__zone-section">
+          </select>
+        </div>
+        <div class="septa-fare-widget__divider">
+          <label for="septa-fare-widget__time-selection">When are you riding?</label>
+          <select class="septa-fare-widget__select--time" id="septa-fare-widget__time-selection">
+            <option value="weekday">Weekday</option>
+            <option value="evening_weekend">Evening Weekend</option>
+          </select>
+          <div class="septa-fare-widget__helptext"></div>
+        </div>
+
+        <fieldset class="septa-fare-widget__fieldset--radio">
+          <legend>Where will you purchase the fare?</legend>
+          <p>
+            <input class="septa-fare-widget__input__radio" id="septa-fare-widget__radio-one" checked="checked" type="radio" name="purchase-group" value="onboard_purchase">
+            <label class="septa-fare-widget__radio__label" for="septa-fare-widget__radio-one">Onboard Purchase</label>
+          </p>
+          <p>
+            <input class="septa-fare-widget__input__radio" id="septa-fare-widget__radio-two" type="radio" name="purchase-group" value="advance_purchase">
+            <label class="septa-fare-widget__radio__label" for="septa-fare-widget__radio-two">Station Kiosk</label>
+          </p>
+        </fieldset>
+        <label for="septa-fare-widget__tickets">How many rides will you need?</label>
+        <input class="septa-fare-widget__input__number" type="number" value="1" id="septa-fare-widget__tickets" />
+      </form>
+      <div class="septa-fare-widget__results">
+        <p>Your fare will cost</p>
+
+        <div class="septa-fare-widget__result"></div>
+        <div class="septa-fare-widget__anytime"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Import JS -->
+  <script src="dist/app.js"></script>
 </body>
 </html>

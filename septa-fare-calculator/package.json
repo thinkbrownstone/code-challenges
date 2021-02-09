@@ -1,0 +1,38 @@
+{
+  "name": "asset_compiling",
+  "description": "Custom compiling solution.",
+  "version": "1.0.0",
+  "browserify-shim": {
+    "jquery": "jQuery"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "browserify-shim": "^3.8.14",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^2.0.3",
+    "gulp-sass-bulk-import": "^1.0.1",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.3.1",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "node-neat": "^1.7.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
