@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 1%;
+}
+input{
+    border: solid black 1px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+}
+.fare-widget-top {
+    background-color: grey;
+    color: white;
+}
+.fare-widget-logo {
+    width:100px;
+}

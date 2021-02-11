@@ -3,8 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	
+	<div class = "fare-widget-top">
+            <img src = "./img/320px-SEPTA.svg.png" class = "fare-widget-logo" alt="SEPTA Logo">
+            <div class = "fare-widget-title">
+                <h1>Regional Rail Fares</h1></div>
+            </div>
+        <form action="#" class="fare-widget-form">
+            <label for="fare-widget-zone">Where are you going?</label>
+            <select name = "fare-widget-zone">
+ 				<option value="1" selected="selected">Zone 1</option>
+  				<option value="2">Zone 2</option>
+  				<option value="3">Zone3</option>
+  				<option value="4">Zone4</option>
+			</select>
+			<label for="fare-widget-when">When are you riding?</label>
+            <select name = "fare-widget-when">
+ 				<option value="weekday" selected="selected">Weekdays</option>
+  				<option value="evening_weekend">Evenings/ Weekends</option>
+  				<option value="anytime">Anytime</option>
+			</select>
+			<p>Helper text that explains the options above.</p>
+			<label for="fare-widget-purchase">Where will you purchase the fare?</label>
+			<input type="radio" name="fare-widget-purchase" value="advance_purchase" checked> Station Kiosk<br>
+  			<input type="radio" name="fare-widget-purchase" value="onboard_purchase"> On board<br>
+  			<label for="fare-widget-rides">How many rides will you need?</label>
+  			<input type="number" name="fare-widget-rides" value=0>
+  			<button type="submit">Calculate</button>
+        </form>
+        <div class="fare-widget-result">
+        	<p>Your fare will cost:</p>
+        	<span class="fare-widget-total"></span>
+        </div>
 </body>
 </html>
