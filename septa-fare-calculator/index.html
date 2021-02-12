@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+	<title>SEPTA Regional Rail Fare Calculator - Jeff Ginsburg</title>
+	<link rel="stylesheet" href="farecalc-styles.css" />
+	<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
 </head>
 <body>
-	
+	<div class="header"></div>
+
+	<hr/>
+
+	<label>Where are you going?</label>
+	<br/>
+	<select id="where-going">
+		<option value="0">CCP/Zone 1</option>
+		<option value="1">Zone 2</option>
+		<option value="2">Zone 3</option>
+		<option value="3">Zone 4</option>
+		<option value="4">NJ</option>
+	</select>
+	<br class="clear"/>
+
+	<hr>
+
+	<label>When are you riding?</label>
+	<br class="clear"/>
+	<select id="when-riding">
+		<option value="anytime">Anytime</option>
+		<option value="evening_weekend">Evening/Weekend</option>
+		<option value="weekday">Weekday</option>
+	</select>
+	<br class="clear"/>
+	<p>Helper text that explains the options above.</p>
+	<br class="clear"/>
+
+	<hr/>
+
+	<label>Where will you purchase the fare?</label>
+	<br class="clear"/>
+	<input type="radio" id="advance_purchase" name="purchase" value="advance_purchase" checked />
+	<p class="purchase-label">Station Kiosk</p>
+	<input type="radio" id="onboard_purchase" name="purchase" value="onboard_purchase" />
+	<p class="purchase-label">Onboard</p>
+	<br class="clear"/>
+
+	<hr/>
+
+	<label>How many rides will you need?</label>
+	<br class="clear"/>
+	<input id="rides" type="text" value="0" />
+	<br class="clear"/>
+
+	<hr/>
+
+	<div id="finalFare">20.00</div>
+
+	<script type="text/javascript" src="farecalc-script.js"></script>
 </body>
 </html>
