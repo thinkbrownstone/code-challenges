@@ -1,0 +1,59 @@
+/* BASE */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+p, label {
+  margin: .3em;
+}
+
+.text-sm {
+  font-size: .7em;
+}
+
+.text-xlg {
+  font-size: 2.5em;
+}
+
+/* LAYOUT */
+.septa {
+  width: 100%;
+  border: 4px solid #E1E1E1;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.septa-fieldset {
+  padding: 20px;
+  border-bottom: 2px solid #E1E1E1;
+}
+
+.septa select {
+  display: block;
+  margin: 0 auto;
+}
+
+.bookend {
+  padding: 20px;
+  background-color: gray;
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 850px) {
+  .septa {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 550px) and (max-width: 849px) {
+  .septa {
+    width: 50%;
+  }
+}

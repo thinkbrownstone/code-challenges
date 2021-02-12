@@ -3,8 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-	
+	<section class="septa" id="fare">
+    <div class="bookend">
+      <h1>Regional Rail Fares</h1>
+    </div>
+    <form>
+      <fieldset class="septa-fieldset">
+        <label>Where are you going?</label>
+        <select septaQ="destination"></select>
+      </fieldset>
+      <fieldset class="septa-fieldset">
+        <label>When are you riding?</label>
+        <select septaQ="time">
+          <option value="weekday" select="true">Weekday</option>
+          <option value="evening_weekend">Evening/Weekend</option>
+        </select>
+      </fieldset>
+      <fieldset class="septa-fieldset">
+        <label>Where will you purchase the fare?</label>
+        <div septaQ="purchaseLoc">
+          <input id="septa-purchaseAdv" type="radio" name="where" value="advance_purchase" checked="checked" /><label for="septa-purchaseAdv">Station Kiosk</label><br />
+          <input id="septa-purchaseOnb" type="radio" name="where" value="onboard_purchase" /><label for="septa-purchaseOnb">Onboard</label>
+        </div>
+      </fieldset>
+      <fieldset class="septa-fieldset test">
+        <label>How many rides will you need?</label>
+        <input septaQ="tixAmount" type="text"></input>
+      </fieldset>
+      <div class="bookend">
+        <p>Your fare will cost<p>
+        <div id="fareCost"></div>
+      </div>
+    </form>
+  </section>
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
