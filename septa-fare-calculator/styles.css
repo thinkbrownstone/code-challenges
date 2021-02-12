@@ -1,0 +1,122 @@
+body {
+  margin: 0 auto;
+  padding: 0px;
+  font-family: sans-serif;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #595959;
+}
+
+p {
+  font-size: 15px;
+  text-align: center;
+  color: #595959;
+}
+
+label {
+  font-size: 1.5em;
+  color: #595959;
+}
+
+fieldset {
+  border: none;
+  padding: 0px;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+
+.calculator-container {
+  border: 2px solid gray;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 450px;
+}
+
+.calculator-header {
+  display: flex;
+  justify-content: center;
+  background-color: #595959;
+  width: 100%;
+}
+
+.calculator-header > h1 {
+  color: #FFFFFF;
+}
+
+.septa-logo-small {
+  width: 45px;
+  height: 40px;
+  align-self: inherit;
+  vertical-align: center;
+  margin-right: 1em;
+}
+
+.septa-logo-small > img {
+  width: 100%;
+  height: 100%;
+}
+
+.selection-form {
+  width: 80%;
+  height: 50px;
+  font-size: 25px;
+}
+
+.selection-form:focus {
+  outline: none;
+}
+
+.zone-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 2em;
+  border-bottom: 1px solid gray;
+}
+
+.timings-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.purchase-selection-container {
+  width: 100%;
+  padding-bottom: 2em;
+  border-bottom: 1px solid gray;
+}
+
+.purchase-radio {
+  text-align: center;
+}
+
+.select-rides-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-bottom: 2em;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+.fare-price-container {
+  padding-bottom: 2em;
+  background-color: #595959;
+  width: 100%;
+}
+
+.fare-price-container > h1, .fare-price-container > h2 {
+  color: #FFFFFF;
+}
