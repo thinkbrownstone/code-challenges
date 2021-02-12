@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-	
+	<div class="widget">
+		<div class="heading">
+			<img class="logo" src="./img/septa-logo.png" alt="Septa logo"/>
+			<h1>Regional Rail Fares</h1>
+		</div>
+
+		<div class="widget-content">
+			
+			<!--  Zone Selection  -->
+			<div class="question">
+				<label class="label" for="zone">Where are you going?</label>
+				<select class="form-control" id="zone" name="zone" onchange="calculateFare(this)">
+					<option value="">Select Zone</option>
+				</select>
+			</div>
+
+			<!--  Time Selection  -->
+			<div class="question">
+				<label class="label" for="time">When are you riding?</label>
+				<select class="form-control" id="time" name="time" onchange="calculateFare(this)">
+					<option value="">Select Time</option>
+					<option value="weekday">Weekdays</option>
+					<option value="evening_weekend">Evening/Weekend</option>
+					<option value="anytime">Anytime</option>
+				</select>
+				<p id="helper-text"></p>
+			</div>
+
+			<!--  Ticket Purchase Place Selection  -->
+			<div class="question">
+				<h2 class="label">Where will you purchase the fare?</h2>
+				<div class="radio-btns">
+					<div class="radio-btn">
+						<input type="radio" id="station-kiosk" name="location" value="advance_purchase" onchange="calculateFare(this)">
+						<label for="station-kiosk">Station Kiosk</label>
+					</div>
+					<div class="radio-btn">
+						<input type="radio" id="onboard-purchase" name="location" value="onboard_purchase" onchange="calculateFare(this)">
+						<label for="onboard-purchase">Onboard</label>
+					</div>
+				</div>
+				<p class="text" id="purchase-text"></p>
+			</div>
+
+			<!--  Number of Rides Selection  -->
+			<div class="question">
+				<label class="label" for="rides">How many rides will you need?</label>
+				<input class="form-control" type="number" id="rides" name="rides" min="1" max="10" onchange="calculateFare(this)" onkeyup="validateNumber(this)">
+			</div>
+
+			<!--  Number of Rides Selection  -->
+			<div class="question fare-cost">
+				<h2>Your fare will cost</h2>
+				<p id="cost"></p>
+				<p class="text" id="cost-text"></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
 </body>
 </html>
