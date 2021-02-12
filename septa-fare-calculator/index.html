@@ -3,8 +3,40 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	<link href='css/septa.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	
+	<div class="septa-fares">
+		<h1><img src="img/septa.svg" class="logo"> Regional Rail Fares</h1>
+		<form data-selector-name="fare-calculator">
+			<label for="fare-destination">Where are you going?</label>
+				<!-- populating with js -->
+				<select data-selector-name="fare-destination" name="fare-destination" id="fare-destination"></select>
+			<label for="fare-when">When are you riding?</label>
+			<!-- these don't have names in json, so hardcoding -->
+				<select data-selector-name="fare-when" name="fare-when" id="fare-when">
+					<option value="weekday">Weekday</option>
+					<option value="evening_weekend">Evening/Weekend</option>
+					<option value="anytime">Anytime</option>
+				</select>
+			<label>Where will you purchase the fare?</label>
+			<label class="checkbox">
+				<input type="radio" name="fare-purchase" value="advance_purchase" id="advance_purchase" checked>
+				Station Kiosk
+			</label>
+			<br>
+			<label class="checkbox">
+				<input type="radio" name="fare-purchase" value="onboard_purchase" id="onboard_purchase">
+				Onboard
+			</label>
+			<label for="fare-qty">How many rides will you need?</label>
+			<input type="text" data-selector-name="fare-qty" name="fare-qty" id="fare-qty" value="1"/>
+		</form>
+		<div data-selector-name="fare-total" class="fare-total"></div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/modernizr-custom.js"></script>
+	<script src="js/septa.js"></script>
 </body>
 </html>

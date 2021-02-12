@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+img {
+	max-width: 100%;
+}
+
+.septa-fares {
+	/* would normally set width to 100% and control by container/grid */
+	max-width: 700px;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+	text-align: center;
+	border: #ccc 3px solid;
+	color: #595959;
+}
+
+.septa-fares form {
+	padding: .8em 3% 2em;
+}
+
+.septa-fares .logo {
+	height: 1.2em;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+.septa-fares h1,
+.septa-fares .fare-total {
+	background: #595959;
+	color: #fff;
+	padding: 3% 1em;
+}
+
+.septa-fares h1 {
+	font-size: 1.5em;
+}
+
+.septa-fares .fare-total {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.septa-fares .fare-total span {
+	font-size: 2em;
+}
+
+.septa-fares label:not(.checkbox) {
+	display: block;
+	font-weight: bold;
+}
+
+.septa-fares input,
+.septa-fares select {
+	border: #ccc 1px solid;
+	font-size: 1em;
+	padding: 10px;
+	color: #595959;
+	outline: none;
+	text-align: center;
+}
+
+.septa-fares input:not([type=radio]),
+.septa-fares select {
+	border-radius: 10px;
+	width: 100%;
+}
+
+.septa-fares input[type=radio] {
+	height: 1em;
+	width: 1em;
+}
