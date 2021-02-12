@@ -1,0 +1,33 @@
+.fare-widget-header{
+	background-color:gray;
+	color:white;
+	padding-left: 5%;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#main{
+	width:20%;
+	margin:0 auto;
+	border-radius: 1px;
+	border-color: gray;
+	border-style: solid;
+}
+
+.center{
+	margin:0 auto;
+	text-align: center;
+}
+
+.fare-widget-bottom{
+	background-color:gray;
+	color:white;
+	padding-left: 5%;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+}

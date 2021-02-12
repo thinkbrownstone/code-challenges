@@ -4,7 +4,45 @@
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
 </head>
+
 <body>
-	
+    <div ng-app="FareWidget">
+        <div id="main" ng-controller="FareWidgetCtrl">
+        <div>
+            <h2 class="fare-widget-header center">Regional Rail Fares</h2>
+            <div class="center">Where are you going?</div>
+            <div class="center">
+            <select ng-model="where" ng-options="zones.name for zones in fares.zones">
+            </select>
+            </div>
+          </div>
+            <hr>
+            <div class="center">When are you riding?</div>
+            <div class="center">
+            <select ng-model="when">
+                <option  ng-repeat="time in times" value="{{time}}">{{time}}</option>
+            </select>
+            </div>
+            <div class="center">Helper Text</div>
+            <hr>
+            <div class="center">Where will you purchase the fare</div>
+            <div class="center">
+                <input type="radio" name="purchaseLocation" value="advance_purchase" ng-model="purchaseLocation" checked> Station Kiosk
+                <br>
+                <input type="radio" name="purchaseLocation" value="onboard_purchase" ng-model="purchaseLocation"> Onboard
+                <br>
+               </div>
+            
+            <div class="center">How many rides will you need
+
+            <input type="text" class="center" ng-model="amount"></div>
+            <div class="fare-widget-bottom center">{{ finalCost| currency}}
+            </div>
+        </div>
+    </div>
 </body>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
 </html>
