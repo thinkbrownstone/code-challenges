@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEPTA Regional Rail Fare Calculator</title>
+  <link href="./css/normalize.css" type="text/css" media="screen" />
 </head>
+
 <body>
-	
+  <form class="" action="index.html" method="post" id="septa-regional-rail-fare-calculator">
+    <legend>
+      <img src="./img/32px-SEPTA.svg.png" /> Regional Rail Fares
+    </legend>
+    <p>
+      <label for="srrfc-zone">Where are you going?</label>
+      <select class="" name="srrfc-zone" id="srrfc-zone">
+        <option value="1">CCP/1</option>
+        <option value="2">Zone 2</option>
+        <option value="3">Zone 3</option>
+        <option value="4">Zone 4</option>
+        <option value="5">NJ</option>
+      </select>
+    </p>
+    <p>
+      <label for="srrfc-timeframe">When are you riding?</label>
+      <select class="" name="srrfc-timeframe" id="srrfc-timeframe">
+        <option value="weekday" selected="true">Weekday</option>
+        <option value="evening_weekend">Evening/Weekend</option>
+        <option value="anytime">Anytime</option>
+      </select>
+      <span id="srrfc-timeframe-text">
+         Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station
+      </span>
+    </p>
+    <fieldset>
+      <legend>Where will you purchase the fare?</legend>
+      <p>
+        <input type="radio" name="srrfc-radio-purchase-location" value="advance_purchase" id="srrfc-radio-advance-purchase" checked />
+        <label for="srrfc-radio-advance-purchase">Station Kiosk</label>
+      </p>
+      <p>
+        <input type="radio" name="srrfc-radio-purchase-location" value="onboard_purchase" id="srrfc-radio-onboard-purchase" />
+        <label for="srrfc-radio-onboard-purchase">Onboard</label>
+      </p>
+    </fieldset>
+    <p>
+      <label for="srrfc-ride-count">How many rides will you need?</label>
+      <input type="number" id="srrfc-ride-count" value="1" />
+      <!--
+
+      -->
+    </p>
+    <p>
+      Your fare will cost $<span id="srrfc-fare-cost">0.00</span>
+    </p>
+  </form>
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
+
 </html>
