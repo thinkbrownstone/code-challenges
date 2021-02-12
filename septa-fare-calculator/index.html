@@ -3,8 +3,62 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+
 </head>
 <body>
+	<div id="fare-calculator-widget">
+		<div class="fc-widget-header">
+			<img src="./img/1024px-SEPTA.png" alt="">Regional Rail Fares
+		</div>
+		<div class="fc-container">
+			<div class="fc-title">Where are you going?</div>
+			<select class="fc-dropdown" id="fc-zone">
+				<option value="1">Zone 1</option>
+				<option value="2">Zone 2</option>
+				<option value="3">Zone 3</option>
+				<option value="4">Zone 4</option>
+			</select>
+		</div>
+		<div class="fc-container">
+			<div class="fc-title">When are you riding?</div>
+			<select class="fc-dropdown" id="fc-time">
+				<option value="weekday">Weekday</option>
+				<option value="evening_weekend">Evening_weekend</option>
+				<option value="anytime">Anytime</option>
+			</select>
+
+		</div>
+		<div class="fc-container fc-where-container">
+			<div class="fc-title">Where will you purchase the fare?</div>
+			<table class="fc-where-table">
+				<tr>
+					<td><input type="radio" name="fc-where" value="advance_purchase" checked></td>
+					<td>Station Kiosk</td>
+				</tr>
+				<tr>
+					<td><input type="radio" name="fc-where" value="onboard_purchase"></td>
+					<td>Onboard</td>
+				</tr>
+			</table>
+			 <br>
+			 
+
+		</div>
+		<div class="fc-container">
+			<div class="fc-title">How many rides will you need?</div>
+			<input type="text" type="number" value="1" id="fc-quantity">
+
+		</div>
+		<div class="fc-fare-total-container">
+			<div class="fc-fare-header">Your fare will cost</div>
+			<div class="fc-fare-total"></div>
+		</div>
+	</div>
 	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="./js/main.js"></script>
 </body>
 </html>

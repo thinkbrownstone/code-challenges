@@ -1,0 +1,139 @@
+/******************************************************************************/
+/* RESET 																	***/
+/******************************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/******************************************************************************/
+/* Main Styles																***/
+/******************************************************************************/
+
+#fare-calculator-widget {
+	max-width: 500px;
+	border: 6px solid #ccc;
+	/*min-height: 600px;*/
+	margin: 0 auto;
+	margin-top: 3rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+#fare-calculator-widget .fc-widget-header {
+	background-color: #595959;
+	color: #fff;
+	font-size: 36px;
+	padding: 18px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#fare-calculator-widget .fc-widget-header img {
+	max-width: 50px;
+	margin-right: 1rem;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+
+
+
+.fc-container {
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.fc-title {
+	font-size: 22px;
+	margin-bottom: 0.5rem;
+}
+
+.fc-where-table {
+	margin: 0 auto;
+	width: 50%;
+	position: relative;
+	left: 50px;
+}
+
+.fc-where-table td:nth-child(1) {
+	width: 50px;
+	padding: 0.15rem;
+}
+
+.fc-where-table td:nth-child(2) {
+	width: 250px;
+	padding-left: 0.5rem;
+	text-align: left;
+}
+
+
+.fc-fare-total-container {
+	background-color: #595959;
+	font-size: 48px;
+	padding: 24px;
+	color: #fff;
+	text-align: center;
+}
+
+#fc-quantity {
+	text-align: center;
+	font-size: 1.4rem;
+	width: 100px;
+	border-radius: 4px;
+	margin-top: 1rem;
+}
+
+.fc-fare-header {
+	font-size: 28px;
+}
+
+.fc-fare-total {
+	min-height: 48px;
+}
+
