@@ -3,8 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css" media="screen">
 </head>
 <body>
+	<!-- Main div to contain all form items -->
+	<div id="fare_menu_frame">
+	<form id="fare_menu">
+
+		<!-- Divs for each form item named with section_frame class. -->
+		<div class="section_frame" id="banner_frame">
+			<h2><span><img src="./img/64px-SEPTA.svg.png"></span><span>Regional Rail Fares</span>
+		</div>
+
+		<div class="section_frame" id="zone_frame">
+			<div>
+				<h3>Where are you going?
+			</div>
+			<div>
+				<select name="zone" id="zone"></select>
+			</div>
+		</div>
+
+		<div class="section_frame" id="type_frame">
+			<div>
+                                <h3>When are you riding?
+                        </div>
+                        <div>  
+				<!-- Evening_weekend value applies to both categories for pricing. --> 
+                                <select name="type" id="type">
+					<option value="weekday">Weekdays</option>
+					<option value="evening_weekend">Evening</option>
+					<option value="evening_weekend">Weekend</option>
+				</select>
+                        </div>
+		</div>
+
+		<div class="section_frame" id="purchase_frame">
+			<div>
+				<h3>Where will you purchase the fare?
+			</div>
+			<div id="purchase_container">
+				<!-- At ten rides, advance purchase will automatically be selected-->
+				<div id="purchase_options">
+				<div>
+					<h3><input type="radio" name="purchase" id="purchase_choice1" value="advance_purchase" checked="checked">
+					<label for="purchase_choice1">Station Kiosk</label>
+				</div>			
 	
+				<div>	
+					<h3><input type="radio" name="purchase" id="purchase_choice2" value="onboard_purchase">
+					<label for="purchase_choice2">Onboard</label>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Max 10 rides as a temporary solution.-->
+		<div class="section_frame" id="trips_frame">
+			<div>
+				<h3>How many rides will you need?
+			</div>
+			<div>
+				<input name="trips" id="trips" type="number" min="1" max="10" value="1">
+			</div>
+		</div>
+
+		<div class="section_frame" id="price_frame">
+			<div>
+				<h3>Your fare will cost
+			</div>
+			<div>
+				<div id="price"></div>
+			</div>
+		</div>
+	</form>
+	</div>	
+<script src="index.js"></script>
 </body>
 </html>

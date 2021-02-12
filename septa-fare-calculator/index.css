@@ -1,0 +1,39 @@
+/*
+
+This CSS file is quite basic due to time constraints, 
+but I wanted to at least get started with a general
+template.
+
+*/
+#fare_menu_frame{
+	text-align: center;
+	border: 2px solid #cccccc;
+	margin-left: 30%;
+	width: 40%;
+}
+
+#banner_frame span{
+	margin-right: 20px;
+}
+
+#banner_frame, #price_frame{
+	color:white;
+	background-color: #595959;
+}
+
+.section_frame{
+	border: 1px solid #cccccc;
+}
+
+.section_frame input, select{
+	margin-bottom: 10px;
+}
+
+.section_frame {
+	font-family: "Helvetica";
+}
+
+#price{
+	font-size: 2em;
+	margin-top: 1px;
+}
