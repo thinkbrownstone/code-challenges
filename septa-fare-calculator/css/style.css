@@ -1,0 +1,82 @@
+
+#containter{
+	
+	height:180%;
+	width:100%;
+	max-width:500px;
+	margin: 0 auto;
+	
+}
+.header{
+	background-color:#595959;
+	color:white;
+	height:10%;
+	font-size:3em;
+	text-align:center;
+}
+.interface{
+	height:70%;
+}
+
+
+.selection-header{
+	text-align:center;
+	padding:5%;
+	font-size:1.5em;
+}
+.footer{
+	background-color:#595959;
+	color:white;
+	height:20%;
+	
+	text-align:center;
+	font-weight:bold;
+}
+.footer-text{
+	padding-top:5%;
+	font-size:2em;
+}
+.total{
+
+	font-size:6em;
+}
+.componenet{
+	height:25%;
+	border-style:solid;
+	border-width:1px 2px 0px 2px;
+	border-color:#808080;
+
+}
+.selector{
+	text-align:center;
+	padding-bottom:5%;
+}
+.selector select{
+	width:75%;
+	height:50px;
+	font-size:1.5em;
+
+
+}
+.info{
+	text-align:center;
+	color:#808080;
+	padding: 5%;
+
+}
+.selector input{
+	height:50px;
+	width:20%;
+	text-align:center;
+	font-size:2em;
+}
+.radio-selector{
+	padding-bottom:10%;
+}
+.radio{
+	padding-left:40%;
+	font-size:1.5em;
+}
+.header-title{
+	padding-left:5%;
+}

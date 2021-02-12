@@ -3,8 +3,103 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body>
+<body ng-app="fare">
+	<div id="containter" ng-controller="fareCtrl">
+		
+		<div class="header">
+			<label><img src="img/septa.png"><span class="header-title">Regional Rail Fares</span></label>
+			<!-- <div><img src="img/septa.png"><h1 class="header-title">Regional Rail Fares</h1></div> -->
+
+		</div>
+		<!-- Magic happens here! -->
+		<div class="interface">
+
+			<!-- Zone selection -->
+			<div class="componenet">
+
+				<div class="selection-header">
+					Where are you going?
+				</div>
+				<div class="selector">
+					<select ng-model="formData.zone" ng-change="changeZone()">
+						<option ng-repeat="zone in zones" value="{{$index}}">{{zone.name}}</option>
+					</select>
+				</div>
+
+
+			</div>
+
+			<!-- Time selection -->
+			<div class="componenet">
+				<div class="selection-header">
+					When are you riding?
+				</div>
+				<div class="selector">
+					<select ng-model="formData.type" ng-change="changeType()">
+						<option ng-repeat="type in types" value="{{type.id}}">{{type.name}}</option>
+					</select>
+					<div class="info">
+						<span>{{selectedInfo}}</span>
+					</div>
+				</div>
+
+
+			</div>
+
+			<!-- Purchase Selection -->
+			<div class="componenet">
+				<div class="selection-header">
+					Where will you purchase the fare?
+				</div>
+				<div class="radio-selector">
+					<div class="radio">
+						<input type="radio" align="center" ng-model="formData.purchase" value="advance_purchase" ng-change="changePurchase()"/>
+
+						<label>
+							Station Kiosk
+						<label/>
+					</div>
+					<div class="radio">
+						<input type="radio" align="center" ng-model="formData.purchase" value="onboard_purchase" ng-change="changePurchase()" ng-disabled="disableForSpecialCases" />
+						
+						<label>
+							Onboard
+						<label/>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Trips Number Selection -->
+			<div class="componenet">
+				<div class="selection-header">
+					How many rides will you need?
+				</div>
+				<div class="selector">
+					<input type="number" min="0"  ng-model="formData.trip" ng-change="changeTrips()" ng-disabled="disableForSpecialCases"/>
+				</div>
+
+			</div>
+		
+
+		</div>
+
+		<div class="footer">
+			<div class="footer-text">Your fare will cost</div>
+			<div class="total">${{total}}</div>
+
+		</div>
+
+		
+
+
+
+	</div>
 	
 </body>
 </html>
