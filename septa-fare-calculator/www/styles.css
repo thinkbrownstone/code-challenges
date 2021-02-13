@@ -1,0 +1,125 @@
+/* reset some basic elements */
+
+body {
+    background-color: white;
+    box-sizing: border-box;
+    color: #4d4d4d;
+    font-family: helvetica, arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* module-specific styles */
+
+.logo {
+    margin-right: 10px;
+}
+
+.module-title {
+    padding: 10px;
+}
+.module-fare-calculator {
+    border: 2px solid #c9c9c9;
+    display: flex;
+    flex-direction: column;
+    max-width: 315px;
+}
+
+.module-section {
+	border-bottom: 1px solid #c9c9c9;
+	padding: 15px 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* utility classes */
+
+.dark {
+    background-color: #595959;
+    color: white;
+}
+
+.large-type {
+	font-size: 42px;
+    font-weight: bold;
+}
+
+.no-border {
+    border: none;
+}
+.section-header {
+	padding: 5px 0 12px 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.small-type {
+	font-size: 10px;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.title {
+    font-size: 22px;
+}
+
+/* input-related styles */
+
+.disabled label {
+    opacity: .5;
+}
+
+input[type=number],
+select {
+    -moz-appearance:none;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+    box-sizing: border-box;
+    color: #4d4d4d;
+    font-size: 16px;
+    padding: 12px;
+}
+
+input[type=number] {
+    text-align: center;
+}
+
+input[type=radio]+label {
+    margin-left: 5px;
+}
+
+.radio-set {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.radio-set-option {
+    margin: 5px 0;
+}
+
+select {
+    background-image: url('arrow-down.svg');
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    padding-right: 32px;
+    width: 100%;
+}

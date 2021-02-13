@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="472px" height="341px" viewBox="0 0 472 341" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="SEPTA_text" fill-rule="nonzero">
+            <rect id="Rectangle-path" fill="#FFFFFF" x="39.167" y="0.5" width="393.333" height="340.335"></rect>
+            <path d="M427.775,0.654 L326.441,0.654 L166.889,113.229 L315.553,113.229 L431.332,228.469 L319.556,340.82 L427.776,340.82 C453.332,340.82 471.998,315.508 471.998,297.524 L471.998,44.173 C471.997,25.965 453.331,0.654 427.775,0.654 L427.775,0.654 Z" id="path2578" fill="#F14728"></path>
+            <path d="M44.666,340.82 L145.778,340.82 L305.331,228.691 L156.888,228.691 L40.666,113.229 L153.11,0.654 L44.666,0.654 C18.888,0.654 0.666,25.965 0.666,44.395 L0.666,297.746 C0.667,315.509 18.888,340.82 44.666,340.82 L44.666,340.82 Z" id="path2580" fill="#1F4FA3"></path>
+            <path d="M192.444,123.886 L178.22,123.886 L265.331,210.923 C269.332,214.258 272.441,218.253 279.331,217.81 L294.221,217.81 L206.665,130.991 C202.666,126.55 199.776,123.886 192.444,123.886 L192.444,123.886 Z" id="path2582" fill="#F14728"></path>
+        </g>
+    </g>
+</svg>
