@@ -1,0 +1,130 @@
+/* reset some basic elements */
+
+body {
+	background-color: white;
+	font-family: helvetica, arial, sans-serif;
+	color: #4d4d4d;
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+/* utility classes */
+
+.bg-dark {
+	background-color: #595959;
+	color: white;
+}
+
+.block-label {
+	display: block;
+	padding: 5px 0 12px 0;
+}
+
+.center {
+	text-align: center;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.inline {
+	display: inline;
+}
+
+.no-border {
+	border: none;
+}
+
+.padding-right-sm {
+	padding: 0 10px 0 0;
+}
+
+.padding-bottom-sm {
+	padding-bottom: 10px;
+}
+
+.padding-vertical-m {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.section {
+	border-bottom: 1px solid #c9c9c9;
+	padding: 10px 5px;
+}
+
+.text-lg {
+	font-size: 42px;
+}
+
+.text-sm {
+	font-size: 10px;
+	margin-bottom: 0;
+}
+
+/* module-specific styles */
+
+.logo {
+	position: relative;
+	top: 3px;
+}
+
+.module-fare-calculator {
+	border: 2px solid #c9c9c9;
+	margin: auto;
+	max-width: 315px;
+}
+
+.module-title {
+	padding: 10px;
+}
+
+/* input-related styles */
+
+.radio-set {
+	list-style: none;
+	padding: 0;
+	margin: 15px auto;
+	white-space: nowrap;
+	width: 125px;
+}
+
+.radio-set-option {
+	margin: 10px 0;
+}
+
+input[type=text],
+input[type=number],
+select {
+	-moz-appearance:none;
+	-webkit-appearance: none;
+	border-radius: 5px;
+	border: 1px solid #c9c9c9;
+	box-sizing: border-box;
+	color: #4d4d4d;
+	font-size: 16px;
+	padding: 12px;
+}
+
+select {
+	display: block;
+	background-image: url('img/arrow-down.gif');
+	background-position: right 10px center;
+	background-repeat: no-repeat;
+	background-size: 12px;
+}
+
+/* ie-specific styling for select menu */
+
+.ie select {
+	background-image: none;
+}

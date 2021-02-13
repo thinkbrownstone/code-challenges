@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+
+<!--[if lte IE 8]>
+  <html class="ie" lang="en">
+<![endif]-->
+<!--[if (!IE)|(gt IE 8)]>
+	<html lang="en">
+<![endif]-->
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<title>SEPTA Regional Rail Fare Calculator</title>
+		<link rel="stylesheet" href="style.css" media="all">
+	</head>
+	<body>
+		<div class="module-fare-calculator">
+			<div class="section module-title bg-dark center">
+				<img class="logo padding-right-sm" src="img/septa-logo.gif" width="30" alt="SEPTA logo" />
+				<h2 class="inline">Regional Rail Fares</h2>
+			</div>
+			<div class="section">
+				<fieldset class="no-border center">
+					<label class="block-label" for="zone-select">Where are you going?</label>
+					<select id="zone-select" class="full-width"></select>
+				</fieldset>
+			</div>
+			<div class="section">
+				<fieldset class="no-border center">
+					<label class="block-label" for="when-select">When are you riding?</label>
+					<select id="when-select" class="full-width">
+						<option value="weekday">Weekday</option>
+						<option value="evening_weekend">Evening/Weekend</option>
+						<option value="anytime">Anytime</option>
+					</select>
+					<p class="text-sm center" id="when-helper">
+						Helper text that explains the options above.
+					</p>
+				</fieldset>
+			</div>
+			<div class="section purchase-location">
+				<fieldset class="no-border">
+					<div class="center">
+						<span>Where will you purchase the fare?</span>
+					</div>
+					<ul class="radio-set">
+						<li class="radio-set-option">
+							<input type="radio" name="purchase-location" value="advance_purchase" id="kiosk-radio" checked />
+							<label for="kiosk-radio">Station Kiosk</label>
+						</li>
+						<li class="radio-set-option">
+							<input type="radio" name="purchase-location" value="onboard_purchase" id="onboard-radio" />
+							<label for="onboard-radio">Onboard</label>
+						</li>
+					</ul>
+					<p class="text-sm center" id="where-helper">
+						Helper text that explains the options above.
+					</p>
+				</fieldset>
+			</div>
+			<div class="section ride-count no-border">
+				<fieldset class="no-border center">
+					<label class="block-label" for="ride-count-input">How many rides will you need?</label>
+					<input class="center" type="number" value="1" min="1" max="100" id="ride-count-input" />
+				</fieldset>
+			</div>
+			<div class="padding-vertical-m cost bg-dark no-border center">
+				<label class="block-label">Your fare will cost</label>
+				<div class="text-lg">
+					<strong id="cost">$0.00</strong>
+				</div>
+			</div>
+		</div>
+		<script src="index.js"></script>
+	</body>
 </html>
