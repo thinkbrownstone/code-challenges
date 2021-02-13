@@ -1,0 +1,103 @@
+/* Custom SCSS Starts Here! Hello Think Brownstone! */
+
+/*----------------------------------------------*\
+    #SEPTA Fare Widget
+\*----------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+}
+
+$gray: #535353;
+$textGray: #4a4a4a;
+$lightGray: #c9c9c9;
+
+input, select, textarea {
+	border: 1px solid $gray;
+	max-width: 90%;
+	height: 40px;
+	padding: 4px;
+}
+
+select {
+	width: 90%;
+}
+
+input[type="radio"] {
+	width: 14px;
+	height: 14px;
+}
+
+.radio-label {
+	display: block;
+	text-align: left;
+	width: 70%;
+	margin: 12px auto;
+
+	input {
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+
+	span {
+		vertical-align: middle;
+	}
+}
+
+
+
+.septa-fare-widget {
+
+	text-align: center;
+	color: $textGray;
+	border: 1px solid $lightGray;
+	max-width: 320px;
+	margin: 0 auto;
+
+	.logo {
+		background-image: url('/img/septa.svg');
+		height: 20px;
+	    width: 27px;
+	    display: inline-block;
+	    background-size: cover;
+	    vertical-align: middle;
+	}
+
+	.septa-fare-widget__header {
+		padding: 12px 30px;
+		background-color: $gray;
+		color: white;
+
+		h3 {
+			margin: 0;
+		    display: inline-block;
+		    vertical-align: top;
+		}
+	}
+
+	.septa-fare-widget__section {
+		padding: 20px 22px;
+		border-bottom: 1px solid $lightGray;
+
+		h4 {
+			margin-top: 0;
+		}
+	}
+
+	.ride-count {
+		max-width: 94px;
+		text-align: center;
+	}
+
+	.septa-fare-widget__total {
+		color: white;
+		background-color: $gray;
+		padding: 12px 30px;
+
+		h4 {
+			margin-top: 0;
+		}
+	}
+}
+
+

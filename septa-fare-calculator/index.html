@@ -3,8 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" type="text/css" href="destination/css/all.css">
 </head>
 <body>
+
+<div class="septa-fare-widget">
+	<div class="septa-fare-widget__header">
+		<span class="logo"></span>
+		<h3>Regional Rail Fares</h3>
+	</div>
+	<form>
+		<div class="septa-fare-widget__section">
+			<h4>Where are you going?</h4>
+			<select data-bind="options: availableZones, value: selectedZone"></select>
+		</div>
+		<div class="septa-fare-widget__section">
+			<h4>When are you riding?</h4>
+			<select data-bind="options: timesOptions, value: selectedTime"></select>
+			<p class="helper-text" data-bind="text: timeHelperText"></p>
+		</div>
+		<div class="septa-fare-widget__section">
+			<h4>Where will you purchase the fare?</h4>
+			<label class="radio-label"><input type="radio" name="location" value="advance_purchase" data-bind="checked: selectedPurchaseMethod" /><span>Station Kiosk</span></label>
+			<label class="radio-label"><input type="radio" name="location" value="onboard_purchase" data-bind="checked: selectedPurchaseMethod"/><span>Onboard</span></label>
+
+			<p class="helper-text" data-bind="text: purchaseHelperText"></p>
+		</div>
+		<div class="septa-fare-widget__section">
+			<h4>How many rides will you need?</h4>
+			<input type="text" class="ride-count"  pattern="\d*" data-bind="textInput: rideCountRaw"/>
+		</div>		
+	</form>
+	<div class="septa-fare-widget__total">
+		<h4>Your fare will cost</h4>
+		<!-- ko if: isAnytime -->
+		<h2 class="cost" data-bind="text: 'Weekdays: ' + fareResult()[0]"></h2>
+		<h2 class="cost" data-bind="text: 'Evenings/Weekends: ' + fareResult()[1]"></h2>
+		<!-- /ko -->
+		<!-- ko ifnot: isAnytime -->
+			<h2 class="cost" data-bind="text: fareResult"></h2>
+		<!-- /ko -->
+		
+	</div>
+</div>
 	
+	<script type="text/javascript" src="destination/js/lib.js"></script>
+	<script type="text/javascript" src="destination/js/app.js"></script>
 </body>
 </html>
