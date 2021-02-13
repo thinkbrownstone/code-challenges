@@ -1,0 +1,53 @@
+/* Styles for the Septa Fare Calculator Widget */
+
+
+.septa-calculator{
+  font-family: "Arial";
+  font-size:16px;
+  width:80%;
+  margin:0 auto;
+  border:3px solid #C3C3C3;
+  box-sizing:border-box;
+}
+
+.septa-calculator select{
+  background: transparent;
+  border: none;
+  width:80%;
+  height:50px;
+  border:1px solid #C3C3C3;
+  border-radius:4px;
+  font-size:1.3rem;
+  margin:10px;
+
+}
+
+.septa-calculator-header{
+  background:#474747;
+  color:#fff;
+}
+
+.septa-calculator-header h1{
+  margin:0;
+  text-align:center;
+}
+
+.septa-caluclator-zone{
+    border:3px solid #C3C3C3;
+}
+
+.septa-caluclator-time{
+    border:3px solid #C3C3C3;
+}
+
+.septa-calculator-purchase-method{
+  
+}
+
+.septa-caluclator-number-of-rides{
+  
+}
+
+.septa-calculator-total-fare{
+  
+}

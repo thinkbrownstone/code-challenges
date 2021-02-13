@@ -1,0 +1,12 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "Hello, hopeful Think Brownstone development team member!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "lite-server"
+  },
+  "author": "",
+  "license": "ISC"
+}

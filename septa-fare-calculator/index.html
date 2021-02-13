@@ -3,8 +3,63 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="css/septa-fare-calculator.css" type="text/css">
 </head>
+
 <body>
-	
+	<div class='septa-calculator'>
+		<form id="calculate-septa-form" action="calculate-septa-fare" method="POST">
+			<div class='septa-calculator-header'>
+				<h1>Regional Rail Fares</h1>				
+			</div>
+		
+			<div class='septa-calculator-zone'>
+				<select name='septa-calculator-zone-select' id='septa-calculator-zone-select'>
+					<option value='1'>Zone 1</option>
+					<option value='2'>Zone 2</option>
+					<option value='3'>Zone 3</option>
+					<option value='4'>Zone 4</option>				
+				</select>
+			</div>
+		
+			<div class='septa-calculator-time'>
+				<select name='septa-calculator-time-select' id='septa-calculator-time'>
+					<option value='anytime'>Anytime</option>
+					<option value='weekday'>Weekday</option>
+					<option value='evening-weekend'>Evening Weekend</option>
+				</select>
+				<label><p class='help-text'>Helper text that explains the options above</p></label>
+			</div>
+		
+			<div class='septa-calculator-purchase-method'>
+				<fieldset>
+					<legend>Where will you purchase the fare?</legend>
+					<p>
+						<input id='station-kiosk' type='radio' name='purchase-method' value='station-kiosk'>
+						<label for='station-kiosk'>Station Kiosk</label>
+					</p>
+			
+					<p>
+						<input id='onboard' type='radio' name='purchase-method' value='onboard'>
+						<label for='onboard'>Onboard</label><br>
+					</p>
+				</fieldset>
+			</div>
+		
+			<div class='septa-calculator-number-of-rides'>
+				<label>How many rides will you need?</label>
+				<input type='number' name='number-of-rides' value='1' id='number-of-rides'>
+			</div>
+		
+			<div class='septa-calculator-total-fare'>
+				<h2>Your fare will cost</h2>
+				<p class='septa-calculator-total'>$0.00</p>
+			</div>
+		</form>
+	</div>
+
+  <script src="js/lib/jquery-3.2.1.min.js"></script>  
+  <script src="js/septa-fare-calculator.js"></script>
 </body>
 </html>
