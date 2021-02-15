@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+  <title>SEPTA Regional Rail Fare Calculator</title>
+    <!-- 
+      For the sake of ease, this styling is here for now. However, in production, I would likely move this into it's
+      own file and inject it dynamically during the initialization phase of our calculator component. 
+    -->
+    <style>
+      .septa-fare-calculator { width: 300px; background: white; border: 1px solid gray; font-family: Arial, Helvetica, sans-serif; font-weight: 400; font-size: 16px; }
+      .septa-fare-calculator .hidden { height: 1px; width: 1px; margin: -1px; overflow: hidden; }
+      .septa-fare-calculator select { width: 80%; margin: 15px auto; height: 40px; display: block; font-size: 14px; }
+      .septa-fare-calculator #fare-type-helper-text { font-weight: 100; font-size: 13px; padding: 0 10px; text-align: center; }
+      .septa-fare-calculator h1 { color: white; text-align:center; padding: 5px 0; background: gray; margin: 0; }
+      .septa-fare-calculator .full-width { display: block; width: 100%; margin: 10px 0; text-align: center; }
+      .septa-fare-calculator #trips { display: block; margin: 0 auto; text-align: center; width: 70px; height: 35px; font-size: 14px; }
+      .septa-fare-calculator .error { margin: auto auto 0; text-align: center; }
+    </style>
 </head>
 <body>
-	
+	<section class="septa-fare-calculator">
+    <h1>Regional Rail Fares</h1>
+    <form id="fare-options-form">
+      <label class="full-width" for="zones">Where are you going?</label>
+      <select id="zones"></select>
+      <hr>
+      <label class="full-width" for="type">When are you riding?</label>
+      <select id="type">
+        <option value="weekday" selected>Weekday</option>
+        <option value="evening_weekend">Evening/Weekend</option>
+        <option value="anytime">Anytime</option>
+      </select>
+      <p id="fare-type-helper-text"></p>
+      <hr>
+      <label class="full-width" for="vendor">Where will you purchase the fare?</label>
+      <div class="full-width">
+        <input type="radio" id="kiosk" name="vendor" value="advance_purchase" checked/>
+        <label for="kiosk">Station Kiosk</label>
+      </div>
+      <div class="full-width">
+        <input type="radio" id="onboard" name="vendor" value="onboard_purchase" />
+        <label for="onboard">Onboard</label>
+      </div>
+      <hr>
+      <label class="full-width" for="trips">How many rides will you need?</label>
+      <input type="text" id="trips" name="trips" placeholder="0"></select>
+      <hr>
+      <p class="full-width" id="fare-total-placeholder">Your fare will cost:</p>
+      <p class="full-width" id="fare-total">$0</p>
+      <p id="live-region" class="hidden" aria-hidden="true" aria-live="polite"></p>
+    </form>
+  </div>
 </body>
+  <!-- with the right browser support, we could defer this script instead of placing it at the bottom of the page. -->
+	<script src="septa-fare-widget.js"></script>
 </html>
