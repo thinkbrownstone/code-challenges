@@ -1,0 +1,83 @@
+.App {
+  text-align: center
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+header {
+  text-align: center;
+  background: #595959;
+  color: white;
+  text-emphasis: bold;
+  font-size: 1.5em;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 16px;
+  color: grey;
+}
+
+.question-heading {
+  font-size: 20px;
+  margin-bottom: 10px 0;
+}
+
+input[type=number] {
+  border-radius: 5px;
+  border: 2px lightgray solid;
+  text-align: center;
+  font-size: 20px;
+  width: 5em;
+  padding: 10px 0 10px 10px;
+  margin: 10px;
+}
+
+
+footer {
+  text-align: center;
+  background: #595959;
+  color: white;
+  text-emphasis: bold;
+  font-size: 1.5em;
+  padding: 10px 20px;
+}
+
+fieldset {
+  text-align: center;
+  border: 0;
+  border-bottom: grey solid 1px;
+  padding: 10px 0;
+}
+
+select {
+  width: 10em;
+  font-size: 20px;
+  height: 2em;
+  margin: 10px 0
+}
+.container {
+  width: 40%;
+  border: lightgrey 3px solid;
+  margin: 20px 40px;
+}
+
+.total {
+  font-size: 30px;
+}
+.logo {
+  height: 20px;
+  border-radius: 3px;
+}
+
+.invalid {
+  color: lightsalmon;
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+      width: 80%;
+  }
+}
