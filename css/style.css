@@ -1,0 +1,99 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  width: 375px;
+  margin: 20px auto;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #595959;
+  height: 50px;
+  display: flex;
+  flex-direction: row;  
+  justify-content: center;
+}
+
+header img {
+  margin-right: 10px;
+  width: 40px;  
+}
+
+header h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+.form-field {  
+  margin-top: 15px;
+  padding: 20px 0;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.form-field legend {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.form-field select {
+  width: 90%;
+  height: 40px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #E4E4E4;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; 
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8em;
+  color: gray;
+  margin: 5px 5px 0px 5px;
+  line-height: 16px;
+  height: 50px;
+}
+
+.radio-buttons-wrapper{  
+  text-align: left;
+  margin-left: 130px;
+  line-height: 20px;
+}
+
+.num-rides {
+  width: 20%;
+  height: 40px;
+  text-align: center;
+  font-size: 1em;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #E4E4E4;
+}
+
+.total {
+  background: #595959;
+  text-align: center;
+  color: white;
+  padding: 15px 0;
+}
+
+.total p {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.total #fare-total {
+  font-size: 3em;
+}

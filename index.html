@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>SEPTA Regional Rail Fare Calculator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<img src="img\logo.svg" alt="Septa Logo">
+			<h1>Regional Rail Fares</h1>
+		</header>
+
+		<form action="" class="calculator-form" role="form">
+			<fieldset class="form-field">
+				<legend class="form-field-header" for="zone-select"> Where are you going?</legend>
+				<select id="zones" name="zone-select" required></select>
+			</fieldset>
+
+			<fieldset class="form-field">
+				<legend class="form-field-header" for="type-select">When are you riding?</legend>
+				<select id="types" name="type-select" required>
+					<option value="">Select One</option>
+					<option value="weekday">Weekday</option>
+					<option value="evening_weekend">Evenings/Weekend</option>
+					<option value="anytime">Anytime</option>
+				</select>
+				<div class="info">Choose option to see details</div>
+			</fieldset>
+
+			<fieldset class="form-field" role="radiogroup" aria-required="true">
+				<legend class="form-field-header" for="purchase-location">Where will you purchase the fare?</legend>
+				<div class="radio-buttons-wrapper">
+						<input type="radio" name="purchase-location" value="advance_purchase" id="advance_purchase" checked="checked"/>
+						<label for="advance_purchase">Station Kiosk</label><br />
+						<input type="radio" name="purchase-location" value="onboard_purchase" id="onboard_purchase" />
+						<label for="onboard_purchase">Onboard</label><br />						
+				</div>
+			</fieldset>
+
+			<fieldset class="form-field">
+				<legend class="form-field-header" for="num-rides">How many rides will you need?</legend>
+				<input class="num-rides" type="number" value="1" min="1" id="num-rides" name="num-rides">
+			</fieldset>
+
+			<section class="total">
+				<p>Your fare will cost</p>
+				<div id="fare-total">---</div>
+			</section>
+		</form>
+	</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</html>
