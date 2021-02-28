@@ -3,8 +3,79 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
-	
+	<header>
+		<img src="img/500px-SEPTA.svg.png" alt="SEPTA logo" />
+		<h1>Regional Rail Fares</h1>
+	</header>
+	<section class="input-section">
+		<h2>Where are you going?</h2>
+		<form>
+			<select class="septa-combo" data-section="location-combo">
+				<option id="CCP/1" value="CCP/1">
+					<label for="CCP/1">Zone 1</label>
+				</option>				
+				<option id="Zone 2" value="Zone 2">
+					<label for="Zone 2">Zone 2</label>
+				</option>
+				<option id="Zone 3" value="Zone 3">
+					<label for="Zone 3">Zone 3</label>
+				</option>
+				<option id="Zone 4" value="Zone 4">
+					<label for="Zone 4">Zone 4</label>
+				</option>
+				<option id="NJ" value="NJ">
+					<label for="NJ">New Jersey</label>
+				</option>
+			</select>
+		</form>
+	</section>
+	<section class="input-section">
+		<h2>When are you riding?</h2>
+		<form>
+			<select class="septa-combo" data-section="time-combo">
+				<option id="weekday" value="weekday">
+					<label for="weekday">Weekday</label>
+				</option>
+				<option id="evening_weekend" value="evening_weekend">					
+					<label for="evening_weekend">Weekend Evenings</label>
+				</option>
+				<option id="anytime" value="anytime">			
+					<label for="anytime">Anytime</label>
+				</option>
+			</select>
+		</form>
+		<p class="helper-text" data-section="time-helper">Valid Monday through Friday, 4:00 a.m. - 7:00 p.m. On trains arriving or departing 30th Street Station, Suburban and Jefferson Station.</p>
+	</section>
+	<section class="input-section">
+		<h2>Where will you purchase the fare?</h2>
+		<form>
+			<fieldset class="radio-grouping">
+				<div>
+					<input class="form-radio" id="advance-purchase" name="purchase-location" data-section="purchase-type" type="radio" value="advance_purchase" checked="checked" />
+					<label for="advance-purchase">Station Kiosk</label>
+				</div>
+				<div>					
+					<input class="form-radio" id="onboard" name="purchase-location" data-section="purchase-type" type="radio" value="onboard_purchase" />
+					<label for="onboard">Onboard</label>
+				</div>
+			</fieldset>
+		</form>
+	</section>
+	<section class="input-section">
+		<h2>How many rides will you need?</h2>
+		<form>
+			<input class="form-number" data-section="rides" type="number" />
+		</form>
+		<p class="helper-text" data-section="rides-helper"></p>
+	</section>
+	<section class="price-display">
+		<h2>Your fare will cost</h2>
+		<p data-selector-name="price-display"></p>
+	</section>
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/fare-calc.js"></script>
 </body>
 </html>
