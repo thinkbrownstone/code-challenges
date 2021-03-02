@@ -1,10 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+    <meta charset="UTF-8">
+    <title>SEPTA Regional Rail Fare Calculator</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="noindex, nofollow" name="robots">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/septa_fares.css">
 </head>
 <body>
-	
+
+    <!-- Please Note: I ran this on http-server via npm to test -- pointed browser to localhost:8080 -->
+    <!-- Also: You can see the calculations in the console log! - at least the numerical values WOMP WOMP -->
+
+<form id="septaform" action="#">
+    <section>
+        <header>
+            <h2><span><img src="img/SEPTA.png" alt="SEPTA logo" title="SEPTA Regional Rail Fares"></span>Regional Rail Fares</h2>
+        </header>
+        <div>
+            <label id="Zonechoice" for="zonedrop">Where are you going?</label>
+            <div>
+                <select id="zonedrop" class="dropdown" name="zonedrop" tabindex="1" aria-label="Zone Dropdown">
+                    <option value="">Please Choose a Zone</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <label id="Rideloc" for="locdrop">When are you riding?</label>
+            <div>
+                <select id="locdrop" class="dropdown" name="locdrop" tabindex="2" aria-label="Timeframe Dropdown"></select>
+                <small id="helper-text"></small>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <fieldset>
+                <legend id="WhereFare">Where will you purchase the fare?</legend>
+                <div class="clearfix">
+                    <div>
+                        <input id="purchaseRadios_0" name="purchaseRadios" type="radio" value="Station_advanced_purchase" tabindex="3" aria-label="Advanced Purchase at Station">
+                        <label class="choice" for="purchaseRadios_0">Station - advanced purchase</label>
+                    </div>
+                    <div>
+                        <input id="purchaseRadios_1" name="purchaseRadios" type="radio" value="Onboard_purchase" tabindex="4" aria-label="Onboard Purchase on Train" >
+                        <label class="choice" for="purchaseRadios_1">Onboard - onboard purchase</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <hr />
+        <div>
+            <label id="howmanyrides" for="Field_howmany">
+                How many rides will you need?
+            </label>
+            <div id="ridesneeded">
+                <input id="Field_howmany" name="Field1" type="text" class="" value="0" size="3" tabindex="5" aria-label="Number of Rides">
+            </div>
+        </div>
+
+        <footer class="cost-range">
+            <label id="price-totals" for="total_amt">
+                Your fare will cost
+            </label>
+            <div class="fare-total-cost">
+                <div id="total_amt">&#36;0</div>
+                <div id="fulltotal"></div>
+            </div>
+        </footer>
+    </section>
+
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="js/fares.js"></script>
 </body>
 </html>

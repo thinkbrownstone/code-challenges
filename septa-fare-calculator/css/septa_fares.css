@@ -1,0 +1,157 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    color: #2b2b2b;
+    font-size: .85em;
+    line-height: 1.6;
+    font-family: Avenir, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border-top: .1rem solid #c3c3c3;
+    display: block;
+    height: .1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+header {
+    margin-bottom: .5rem;
+    padding: 0.5em;
+}
+
+header, footer {
+    text-align: center;
+    background-color: #595959;
+    color: #ffffff;
+}
+
+header div {
+    font-size: 90%;
+    color: #999;
+}
+
+header img { 
+    width: 1em; 
+    margin-right: 1rem;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: .2rem;
+    color: #ffffff;
+}
+
+section {
+    border: .35rem solid #cccccc;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+section div {
+    padding: 0.25rem 1rem;
+}
+
+form {
+    margin: 3rem;
+    max-width: 24em;
+}
+
+form > div {
+    clear: both;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+legend {
+    width: 100%;
+    margin-bottom: .25rem;
+    text-align: center;
+}
+
+label[for=total_amt]{
+    padding-top: .5rem;
+}
+
+fieldset {
+    border: none;
+}
+input {
+    margin-bottom: .5rem;
+}
+
+text {
+    display: block;
+    margin: 0 auto;
+    padding: .25rem;
+    font-size: 2rem;
+}
+
+#Field_howmany, .dropdown {
+    padding: .5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.3) ;
+    user-select: none;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.dropdown {
+    width: 80%;
+}
+
+#Field_howmany {
+    width: 40%;
+}
+
+#output-stuff {
+    padding: 13px 15px 13px 15px;
+    font-size: larger;
+    background-color: #ffffbb;
+    border: 2px dashed red;
+    margin-top: 16px;
+    display: inline-block;
+}
+
+#total_amt, #fulltotal {
+    font-size: 2.25rem;
+}
+
+#total_amt span {
+    display: block;
+}
+
+#fulltotal {
+    display: block;
+}
+
+@supports (display: grid) {
+    form {
+        display: grid;
+        margin: 10vh auto;
+    }
+}
+
+@media screen and (max-width: 30em) {
+    section div {
+        padding: 0.25rem .25rem;
+    }
+    header img { 
+        display: block; 
+        margin: 0 auto;
+    }
+    .dropdown {
+        width: 100%;
+    }
+    #Field_howmany {
+        width: 80%;
+    }
+}
