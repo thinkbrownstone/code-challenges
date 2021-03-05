@@ -1,0 +1,126 @@
+.purchase-widget {
+  font-size: 1em;
+  background-color: #ffffff;
+  color: #4d4d4d;
+  border: 0.2rem solid #ccc;
+  width: 320px;
+}
+
+.head, .foot {
+  background-color: #595959;
+  color: #ffffff;
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4em;
+  font-weight: 800;
+  padding: 0.5em;
+}
+
+.foot {
+  padding: 1em;
+}
+
+.septa-logo {
+  width: 1.4em;
+  height: 1.1em;
+  margin-right: 0.5em;
+}
+
+.section {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 1em;
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.select-label, .input-label, .section p {
+  font-weight: bold;
+  display: block;
+  color: #4d4d4d;
+  margin: 0 0.8em 0.8em;
+}
+
+.selectDiv {
+  position: relative;
+}
+
+.selectDiv:after {
+  position: absolute;
+  content: url(./caret-down.png);
+  top: 0.7em;
+  right: 0.8em;
+  pointer-events: none;
+}
+
+.select {
+  font-size: 1em;
+  padding: 0.7em;
+  border: 2px solid #bfbfbf;
+  border-radius: 0.25em;
+  width: 100%;
+  color: #4d4d4d;
+  appearance: none;
+}
+
+/* remove button from IE11 */
+.select::-ms-expand {
+  display: none;
+}
+
+p.when-helper {
+  font-weight: normal;
+  font-size: 0.8em;
+  margin-top: 0.5em;
+  line-height: 1.3;
+}
+
+.radio-group {
+  width: 8em;
+  margin: 0 auto;
+}
+
+.radio-option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 18em;
+  margin: 0 auto 0.5em;
+}
+
+.radio-option input {
+  font-size: 1em;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.5em;
+}
+
+.radio-option label {
+  display: inline;
+}
+
+.input-text {
+  font-size: 1.3em;
+  color: #4d4d4d;
+  padding: 0.6em;
+  border: 2px solid #bfbfbf;
+  border-radius: 0.25em;
+  width: 4em;
+  text-align: center;
+}
+
+.cost-heading {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.cost {
+  font-weight: 900;
+  font-size: 2.8em;
+  margin: 0.1em 1em 0;
+}
