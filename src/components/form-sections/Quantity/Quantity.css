@@ -1,0 +1,32 @@
+.quantity-section {
+  height: 14%;
+  padding: 20px 20px 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4D4D4D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.quantity-section-input {
+  height: 40px;
+  width: 105px;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  appearance: auto;
+}
+
+/* Removing arrows from input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}

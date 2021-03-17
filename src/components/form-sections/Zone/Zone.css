@@ -1,0 +1,30 @@
+.zone-section {
+  height: 14%;
+  padding: 20px 20px 10px 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4D4D4D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.zone-select-div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zone-section-select {
+  width: 350px;
+  height: 50px;
+  padding-left: 10px;
+  font-size: 18px;
+  color: #4D4D4D;
+  border: 2px solid #cccccc;
+  border-radius: 5px;
+}
