@@ -1,3 +1,23 @@
+##  Notes by Chethtra Yen
+How to run:  
+    1. npm install  
+    2. npm start  
+    3.(Optional) Open browser and go to localhos:3000/  
+
+Stack:   
+    -React
+
+Mindset:  
+    -Divide each sections then developed them indiviually as components.  
+    -Uiltizing ancestor component to accmulate data and render components.  
+
+Source Code:  
+    -src/App.js  
+    -src/App.css  
+
+Ending Note:
+    -Thank you for the opportunity. Even thought it took me an extra 30 minutes. It was fun learning Reactjs, developing a new mindset, and learning something new (which is cool).
+
 # SEPTA Rail Fare Calculator Challenge
 
 Hello, hopeful Think Company development team member! 

@@ -1,0 +1,36 @@
+#widget {
+  text-align: center;
+  width: 40%;
+  border: 1px black solid;
+  font-size: 18px;
+}
+
+#widget select{
+  font-size: 25px;
+  width: 60%;
+}
+
+.ride-input{
+  font-size: 30px;
+  width: 20%;
+  text-align: center;
+}
+
+.gray-section{
+  color: white;
+  background-color: rgb(108, 122, 137);
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.gray-info{
+  color: gray;
+}
+
+#total-header{
+  padding-top: 16px;
+  font-size: 30px;
+}
+#total{
+  font-size: 60px;
+}
