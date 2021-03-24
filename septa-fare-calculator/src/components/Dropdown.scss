@@ -1,0 +1,132 @@
+*,
+:after,
+:before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.uid {
+  display: flex;
+  flex-direction: column;
+
+  &.formd {
+    font-size: 1rem;
+    position: relative;
+    max-width: 100%;
+    & .fieldd {
+      clear: both;
+      margin: 0 0 1rem;
+    }
+  }
+}
+.dropdown {
+  &.icon {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    height: auto;
+    line-height: 1.21428571em;
+    top: 0.78571429em;
+    right: 1em;
+    z-index: 3;
+    margin: -0.78571429em;
+    padding: 0.91666667em;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.1s ease;
+    transition: opacity 0.1s ease;
+  }
+  &-selection {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 2rem 0.75rem 0;
+
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: 0.28571429rem;
+    &.visible {
+      border: #96c8da 1px solid;
+      border-bottom-width: 0 !important;
+      border-radius: 0.28571429rem 0.28571429rem 0 0;
+    }
+  }
+  &-text{
+      padding:0 1rem;
+      text-align:left;
+      display:flex;
+      justify-content:space-between;
+  }
+  &-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+
+    background: #fff;
+    font-size: 1em;
+    text-shadow: none;
+    text-align: left;
+    z-index: 11;
+    will-change: transform, opacity;
+
+    width: 100%;
+    border-radius: 0 0 0.28571429rem 0.28571429rem;
+    border: #96c8da 1px solid;
+
+    // box-shadow: 0 2px 3px 0 rgb(34 36 38 / 15%);
+    border-top-width: 0 !important;
+  }
+  &-item {
+    border-top: 1px solid #fafafa;
+    padding: 0.78571429rem 1.14285714rem 0.78571429rem 1rem;
+
+    white-space: normal;
+    word-wrap: normal;
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      color: rgba(0, 0, 0, 0.95);
+      z-index: 13;
+    }
+  }
+}
+  .visible {
+    display: flex;
+  }
+  .visible.transition {
+    display: block!important;
+    visibility: visible!important;
+}
+.transition {
+ 
+  animation-iteration-count: 1;
+ 
+  animation-duration: .3s;
+ 
+  animation-timing-function: ease;
+
+  animation-fill-mode: both;
+}
+.dropdown-icon{
+
+
+&::after{
+  border-width: 0 2px 2px 0;
+  top: calc(0px - (1rem / 4));
+  transform: rotate(
+45deg
+);
+background: transparent;
+    border-color: var(--c);
+    border-style: solid;
+    box-sizing: border-box;
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    margin: 0;
+    position: relative;
+    width: 1rem;
+}
+&::after, &::before{
+  transform-origin: 50% 50%;
+  transition: all 0.3s ease-in;
+}
+}
+
