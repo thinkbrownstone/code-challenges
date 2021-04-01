@@ -1,0 +1,150 @@
+/* ------------------------------------------
+
+        #GENERAL
+        Use for default tag selector styling
+
+-------------------------------------------*/
+
+/* Use 'border-box' box model, so padding will not affect the width of an element's parent. */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Remove default border that shows when an <img> is nested inside an <a> tag */
+a img {
+  border: 0;
+}
+
+fieldset {
+  border: 0 none;
+  border-bottom: 1px solid #999;
+  padding: 15px;
+}
+
+fieldset:last-child {
+  border-bottom: 0 none;
+}
+
+select {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.25em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #999;
+  background: #fff;
+}
+
+/* ------------------------------------------
+
+        #TYPOGRAPHY
+        Adjust font settings here; Only typographic elements here
+            - Note from dev:
+              "Typographic elements" (<p>,<hx>, <span>, etc.) was arbitrarily chosen and named. And defined, for that matter. Oi.
+              I don't want to have too many copies of selectors, so unsure whether to put things
+              like <body> (which I wouldn't consider a "typographic element") font-size, -family, etc.
+              Lacking an immediate clear solution, I will put all typographic styles at the tag level here, regardless of use.
+
+-------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+}
+
+h1{
+  color:#FFF;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+/* ------------------------------------------
+
+        #ID's and Classes
+
+-------------------------------------------*/
+.fare-calculator-holder {
+  border: 2px solid #999;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#ticketQuantity {
+  max-width: 100%;
+  font-size: 1.25em;
+  padding: 15px;
+  border-radius: 5px;
+  border: 2px solid #999;
+  background: #fff;
+  text-align:center;
+}
+
+#whenRidingNote {
+  color: #666;
+  margin: 15px auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+.fare-calculator-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  background: #666;
+  padding: 15px;
+}
+
+.fare-calculator-header h1 {
+    
+}
+
+.fare-calculator-header img {
+    margin-right:15px;
+    width: 50px;
+}
+
+.price-outer
+{
+  background: #666;
+  color:#FFF;
+  padding: 15px;
+}
+
+.price-outer h3
+{
+  margin-bottom:0;
+}
+
+.price
+{
+  font-size:4em;
+  font-weight:700;
+  margin:0 auto 15px;
+}
+
+@media(max-width:400px)
+{
+  h1
+  {
+    font-size:1.4em;
+  }
+}
