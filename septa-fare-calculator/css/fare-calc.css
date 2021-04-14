@@ -1,0 +1,137 @@
+html,
+body {
+  box-sizing: border-box;
+  height: 100%; }
+
+body {
+  background: #595959;
+  display: flex;
+  font-family: 'Montserrat', sans-serif;
+  justify-content: center; }
+  @media (min-width: 750px) and (min-height: 750px) {
+    body {
+      align-items: center;
+      background: #eee; } }
+
+.fare-calc {
+  background: #595959;
+  width: 100%; }
+  @media (min-width: 750px) and (min-height: 750px) {
+    .fare-calc {
+      width: 550px;
+      border: 2px solid #cccccc; } }
+  .fare-calc__header {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .fare-calc__header h1 {
+      font-size: 1.3em; }
+      @media (min-width: 750px) and (min-height: 1000px) {
+        .fare-calc__header h1 {
+          font-size: 2.2em; } }
+    .fare-calc__header img {
+      margin-bottom: -.2em;
+      margin-right: .2em;
+      max-width: 30px; }
+      @media (min-width: 750px) and (min-height: 1000px) {
+        .fare-calc__header img {
+          max-width: 50px; } }
+  .fare-calc__status {
+    text-align: center;
+    padding: 3em;
+    margin: 0; }
+  .fare-calc__main {
+    background: #fff; }
+  .fare-calc__form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    .fare-calc__form__field {
+      border-bottom: 1px solid #e6e6e6;
+      text-align: center;
+      padding: 1.5em;
+      width: 100%; }
+      @media (min-width: 750px) and (max-height: 749px) {
+        .fare-calc__form__field {
+          width: calc(50% - 3em - 1px); }
+          .fare-calc__form__field:nth-child(even) {
+            border-left: 1px solid #e6e6e6; } }
+    .fare-calc__form__helper {
+      color: #808080;
+      font-size: .8em;
+      font-weight: 300;
+      line-height: 1.5em;
+      padding: 1em 1em 0; }
+    .fare-calc__form label,
+    .fare-calc__form legend {
+      color: #4d4d4d;
+      display: block;
+      margin-bottom: 1em; }
+      @media (min-width: 750px) and (min-height: 1000px) {
+        .fare-calc__form label,
+        .fare-calc__form legend {
+          font-size: 1.4em; } }
+    .fare-calc__form select,
+    .fare-calc__form input[type="number"] {
+      -webkit-appearance: none;
+      background: #fff;
+      border: 1px solid #bfbfbf;
+      border-radius: 5px;
+      font-size: 1.2em;
+      font-weight: 300;
+      padding: .6em .8em;
+      text-align: center;
+      transition: border-color .3s ease;
+      width: 30%; }
+      @media (min-width: 750px) and (min-height: 1000px) {
+        .fare-calc__form select,
+        .fare-calc__form input[type="number"] {
+          font-size: 1.5em; } }
+      .fare-calc__form select:hover, .fare-calc__form select:focus,
+      .fare-calc__form input[type="number"]:hover,
+      .fare-calc__form input[type="number"]:focus {
+        border: 1px solid #555; }
+    .fare-calc__form__select {
+      position: relative; }
+      .fare-calc__form__select:after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 12px solid #737373;
+        content: "";
+        pointer-events: none;
+        display: block;
+        height: 0;
+        position: absolute;
+        right: 1.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0; }
+    .fare-calc__form select {
+      width: 100%; }
+    .fare-calc__form fieldset {
+      border: none;
+      text-align: center; }
+      .fare-calc__form fieldset input[type="radio"] {
+        margin-right: .5em; }
+      .fare-calc__form fieldset label {
+        align-items: center;
+        display: flex;
+        font-weight: 300;
+        margin: 0 auto .3em;
+        width: 40%; }
+  .fare-calc__footer {
+    color: #fff;
+    text-align: center;
+    padding: 1em 0; }
+    .fare-calc__footer strong {
+      font-size: 2em;
+      font-weight: 700; }
+      @media (min-width: 750px) and (min-height: 1000px) {
+        .fare-calc__footer strong {
+          font-size: 4em; } }
+    .fare-calc__footer small {
+      display: block;
+      font-weight: 300; }
+
+/*# sourceMappingURL=fare-calc.css.map */

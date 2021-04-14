@@ -1,0 +1,180 @@
+$fakeWidget: 750px;
+
+html,
+body {
+	box-sizing:border-box;
+	height:100%;
+}
+
+body {
+	background:#595959;
+	display:flex;
+	font-family:'Montserrat', sans-serif; // Proxima Nova alternative
+	justify-content:center;
+
+	@media(min-width: $fakeWidget) and (min-height:750px) {
+		align-items:center;
+		background:#eee;
+	}
+}
+
+// ID as namespace for widget
+.fare-calc {
+	background:#595959;
+	width:100%;
+
+	@media(min-width: $fakeWidget) and (min-height:750px) {
+		width:550px;
+		border:2px solid #cccccc;
+	}
+
+	&__header {
+		color:#fff;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+
+		h1 {
+			font-size:1.3em;
+
+			@media(min-width: $fakeWidget) and (min-height:1000px) {
+				font-size:2.2em;
+			}
+		}
+		img {
+			margin-bottom:-.2em;
+			margin-right:.2em;
+			max-width:30px;
+
+			@media(min-width: $fakeWidget) and (min-height:1000px) {
+				max-width:50px;
+			}
+		}
+	}
+
+	&__status {
+		text-align:center;
+		padding:3em;
+		margin:0;
+	}
+
+	&__main {
+		background:#fff;
+	}
+
+	&__form {
+		display:flex;
+		flex-wrap:wrap;
+		width:100%;
+
+		&__field {
+			border-bottom:1px solid #e6e6e6;
+			text-align:center;
+			padding:1.5em;
+			width:100%;
+
+			@media(min-width: $fakeWidget) and (max-height:749px) {
+				width:calc(50% - 3em - 1px);
+
+				&:nth-child(even) {
+					border-left:1px solid #e6e6e6;
+				}
+			}
+		}
+		&__helper {
+			color:#808080;
+			font-size:.8em;
+			font-weight:300;
+			line-height:1.5em;
+			padding:1em 1em 0;
+		}
+		label,
+		legend {
+			color:#4d4d4d;
+			display:block;
+			margin-bottom:1em;
+
+			@media(min-width: $fakeWidget) and (min-height:1000px) {
+				font-size:1.4em;
+			}
+		}
+		select,
+		input[type="number"] {
+			// With a full build system I'd use gulp autoprefix or simialar here
+			-webkit-appearance:none;
+			background:#fff;
+			border:1px solid #bfbfbf;
+			border-radius:5px;
+			font-size:1.2em;
+			font-weight:300;
+			padding:.6em .8em;
+			text-align:center;
+			transition:border-color .3s ease;
+			width:30%;
+
+			@media(min-width: $fakeWidget) and (min-height:1000px) {
+				font-size:1.5em;
+			}
+
+			&:hover,
+			&:focus {
+				border:1px solid #555;
+			}
+		}
+		&__select {
+			position:relative;
+
+			&:after {
+				border-left:8px solid transparent;
+				border-right:8px solid transparent;
+				border-top:12px solid #737373;
+				content:"";
+				pointer-events:none;
+				display:block;
+				height:0;
+				position:absolute;
+				right:1.5em;
+				top:50%;
+				transform:translateY(-50%);
+				width:0;
+			}
+		}
+		select {
+			width:100%;
+		}
+		fieldset {
+			border:none;
+			text-align:center;
+
+			input[type="radio"] {
+				margin-right:.5em;
+			}
+			label {
+				align-items:center;
+				display:flex;
+				font-weight:300;
+				margin:0 auto .3em;
+				width:40%;
+			}
+		}
+	}
+
+	&__footer {
+		color:#fff;
+		text-align:center;
+		padding:1em 0;
+
+		strong {
+			font-size:2em;
+			font-weight:700;
+
+			@media(min-width: $fakeWidget) and (min-height:1000px) {
+				font-size:4em;
+			}
+		}
+		small {
+			display:block;
+			font-weight:300;
+		}
+	}
+}

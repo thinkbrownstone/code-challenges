@@ -3,8 +3,73 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="https://unpkg.com/normalizecss@3.0.0/normalize.css" />
+	<link rel="stylesheet" href="./css/fare-calc.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700">
 </head>
 <body>
-	
+
+	<section class="fare-calc">
+		<header class="fare-calc__header">
+			<h1>
+				<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/SEPTA.svg" alt="SEPTA Logo">
+				Regional Rail Fares
+			</h1>
+		</header>
+		<main class="fare-calc__main">
+			<p class="fare-calc__status" v-if="!ready">
+				{{ statusMessage }}
+			</p>
+			<form v-if="ready" class="fare-calc__form">
+				<div class="fare-calc__form__field">
+					<label for="user-zone">Where are you going?</label>
+					<div class="fare-calc__form__select">
+						<select id="user-zone" v-model="user.zone">
+							<option v-for="(zone, key, index) in fareData.zones" v-bind:value="key">{{ zone.name }}</option>
+						</select>
+					</div>
+				</div>
+				<div class="fare-calc__form__field">
+					<label for="user-travel-time">When are you riding?</label>
+					<div class="fare-calc__form__select">
+						<select id="user-travel-time" v-model="user.travelTime">
+							<option v-for="(value, key) in travelTimeOptions" v-bind:value="key">{{ value }}</option>
+						</select>
+					</div>
+					<p class="fare-calc__form__helper">
+						{{ travelTimeHint }}
+					</p>
+				</div>
+				<div class="fare-calc__form__field">
+					<fieldset>
+						<legend>
+							Where will you purchase the fare?
+						</legend>
+						<label v-for="(value, key) in purchaseLocationOptions">
+						<input type="radio" name="" v-bind:value="key" v-model="user.purchaseLocation">{{ value }}</label>
+					</fieldset>
+				</div>
+				<div class="fare-calc__form__field">
+					<label for="user-ticket-count">How many rides will you need?</label>
+					<input id="user-ticket-count" type="number" v-model="user.ticketCount" min="0" v-bind:step="ticketStep">
+				</div>
+			</form>
+		</main>
+		<footer v-if="ready" class="fare-calc__footer">
+			<p v-if="cost">
+				Your fare will cost<br>
+				<strong>${{cost.toFixed(2)}}</strong>
+				<small v-if="costHint">{{ costHint }}</small>
+			</p>
+			<p v-if="!cost">
+				{{ statusMessage }}
+			</p>
+		</footer>
+	</section>
+
+	<script src="https://unpkg.com/vue@2.2.6/dist/vue.min.js"></script>
+	<script src="https://unpkg.com/vue-resource@1.2.1/dist/vue-resource.min.js"></script>
+	<script src="./js/fare-calc.js"></script>
+
 </body>
 </html>
