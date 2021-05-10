@@ -1,10 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- angularize the page -->
+<html lang="en" ng-app='Septa'>
 <head>
 	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+<!-- load up all my external goodies -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous"> <!-- where would I be without bootstrap? -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <!-- Don't really use jquery much anymore. Still love it, though. Only loaded
+    it here because it's bootstrap dependency -->
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <!-- I kind of hated angular when I was first introduced to it at work. Now, I really
+    love it even though it frustrates me at times. Sort of like a coder's
+    stockholm syndrome. -->
+  <script src="https://cdn.rawgit.com/dreamerslab/node.inflection/master/inflection.min.js"></script>
+  <!-- loaded this to get the snake case to humanize. But Angular humanized all
+    instances of that variable on scope instead of just on the element which I
+    wanted adjust in the view. Frustrating. -->
+  <script src="http://konsumer.github.io/ngInflection/dist/ngInflection.min.js"></script>
+  <script src="septa.js"></script>
 </head>
 <body>
-	
+
+  <div class='container'>
+    <div class="row">
+      <form class="col-sm-offset-3 col-md-6 col-sm-offset-3"
+            ng-controller='FormController' ng-cloak>
+
+        <legend>Regional Rail Fares</legend>
+
+        <fieldset>
+          <label>Where are you gooing?
+            <select class="form-control" ng-model='destination' ng-change='updatePrice()'>
+              <option ng-repeat="zone in zones" ng-value="zone.zone">{{zone.name}}</option>
+            </select>
+          </label>
+
+          <hr />
+
+          <label>When are you riding?
+            <select id='type' class="form-control" ng-model='type' ng-change='updatePrice()'>
+              <option ng-repeat="time in times" ng-value="{{time}}">{{time}}</option>
+            </select>
+          </label>
+
+          <hr />
+
+          <div class='form-group'>
+            <p>Where will you purchase the fare?</p>
+            <label for='standard'>
+            <input id="standard" class="form-control" type='radio' ng-model='purchase'
+              value='advance_purchase' ng-change='updatePrice()'> Standard
+            </label>
+            <br />
+            <label for='onboard'>
+            <input id='onboard' class="form-control" type='radio' ng-model='purchase'
+              value='onboard_purchase' ng-change='updatePrice()'> Onboard
+            </label>
+          </div>
+
+          <hr />
+
+          <label for='trips'>How many rides will you need?</label>
+          <input id='trips' class="form-control" type='text' ng-model='trips' ng-change='updatePrice()'  />
+
+          <hr />
+
+        </fieldset>
+
+        <div>
+          <p>Your fare will cost</p>
+          <p id="price">{{ price }}</p>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
 </body>
 </html>
