@@ -2,9 +2,91 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<link rel="stylesheet" href="./index.css">
 </head>
 <body>
+
+	<div class="container">
+
+		
+
+		<!-- main start -->
+		<main class="main">
+
+			<!-- header start -->
+			<header class="header">
+				<figure class="logo-container">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/SEPTA.svg" alt="septa-logo" class="logo">
+				</figure>
+				<h1 class="heading">Regional Rail Fares</h1>
+			</header>
+		<!-- header end -->
+			
+			<!-- form start -->
+			<form method="POST" class="form">
+				
+				<div class="individual-input">
+					<label for="zone" class="form-label">Where are you going?</label>
+
+					<!-- options will be populated upon page load -->
+					<select class="form-input" name="zone" id="zone" aria-required required>
+						<option value=null selected disabled aria-disabled=""> - </option>
+					</select>
+				</div>
+
+				<div class="individual-input">
+					<label for="schedule" class="form-label">When are you riding?</label>
+
+					<!-- options will be populated upon page load -->
+					<select class="form-input" name="schedule" id="schedule" aria-required required>
+						<option value=null selected disabled aria-disabled=""> - </option>
+					</select>
+
+					<!-- info will be populated upon page load -->
+					<ul class="helper-info"></ul>
+				</div>
+
+				<div class="individual-input radio-input">
+					<label for="origin" class="form-label">Where will you purchase the fare?</label>
+					
+					<div class="radio-group">
+						<input class="form-input" type="radio" name="origin" value="advance_purchase" id="station-kiosk"/>
+						<label for="station-kiosk" class="radio-label">Station Kiosk</label>
+					</div>
+
+					<div class="radio-group">
+						<input class="form-input" type="radio" name="origin" value="onboard_purchase" id="onboard"/>
+						<label for="onboard" class="radio-label">Onboard</label>
+					</div>
+
+					
+				</div>
+
+				<div class="individual-input">
+					<label for="num-of-rides" class="form-label">How many rides will you need?</label>
+					<input class="form-input" type="number" name="num-of-rides" id="num-of-rides" aria-required required value="1" min=1 aria-valuemin="1">
+				</div>
+				
+			</form>
+			<!-- form end -->
+
+			<!-- result start -->
+			<section class="result-container">
+				<p class="result-text">Your fare will cost</p>
+				<p class="result-price"></p>
+			</section>
+			<!-- result end -->
+
+		</main>
+		<!-- main-end -->
+
+	</div>
+
 	
+	<!-- scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="./index.js"></script>
 </body>
 </html>
