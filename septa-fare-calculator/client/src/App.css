@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* ------------- */
+/* Global Styles */
+/* ------------- */
+
+body {
+  background-color: #03091f;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-wrapper {
+  background-color: #F1F1F1;
+  border: 2px solid #686868;
+  border-radius: 5px;
+  max-width: 375px;
+  margin-top: 32px;
+  filter: drop-shadow(0 0 0.75rem #63647c);
+}
+
+.main-wrapper, .card-content, .content-section, .fare-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----------- */
+/* Card Header */
+/* ----------- */
+
+.top-header {
+  background-color: #686868;
+  display: flex;
+  width: 100%;
+}
+
+svg.septa-logo {
+  width: 60px;
+  height: 45px;
+  padding: 8px;
+}
+
+/* SVG fill color overrides */
+svg.septa-logo path#path2578, svg.septa-logo path#path2582 {
+  fill: #A23535;
+}
+svg.septa-logo path#path2580 {
+  fill: #203689;
+}
+
+.header-text {
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  text-shadow: 4px 3px 16px #a9a9a9;
+}
+
+/* ----------- */
+/* Card Styles */
+/* ----------- */
+
+.content-section {
+  padding: 12px 16px;
+}
+
+.content-heading {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ------ */
+/* Footer */
+/* ------ */
+
+.fare-footer {
+  background-color: #686868;
+  color: white;
+  text-shadow: 4px 3px 16px #a5a5a5;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.footer-text {
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.final-price {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+/* ---------- */
+/* Micro Copy */
+/* ---------- */
+
+.timeslot-info, .discount-info {
+  font-size: 14px;
+  width: 241px;
+  margin-top: 10px;
+  color: #686868;
+  text-align: center;
+}
+
+/* ----------- */
+/* Form styles */
+/* ----------- */
+
+select {
+  box-shadow: 3px 3px 3px #bdbdbd;
+  padding: 5px;
+  border-radius: 12px;
+  border-top: 3px solid #A23535;
+  border-right: 3px solid #A23535;
+  border-left: 3px solid #203689;
+  border-bottom: 3px solid #203689;
+}
+
+select:hover {
+  cursor: pointer;
+  border-top: 3px solid #203689;
+  border-right: 3px solid #203689;
+  border-left: 3px solid #A23535;
+  border-bottom: 3px solid #A23535;
+}
+
+select:active, select:focus { outline: none; }
+
+input.num-rides-input {
+  padding: 4px 4px 4px 14px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px #bdbdbd;
+  font-size: 24px;
+  text-align: center;
+  border-top: 3px solid #A23535;
+  border-right: 3px solid #A23535;
+  border-left: 3px solid #203689;
+  border-bottom: 3px solid #203689;
+}
+
+input.num-rides-input:hover {
+  border-top: 3px solid #203689;
+  border-right: 3px solid #203689;
+  border-left: 3px solid #A23535;
+  border-bottom: 3px solid #A23535;
+}
+
+input.num-rides-input:active, input.num-rides-input:focus { outline: none; }
+
+select, .num-rides-input {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* -------------------- */
+/* Custom Radio Buttons */
+/* -------------------- */
+
+label > input[type="radio"] {
+  display: none;
+}
+
+label > input[type="radio"] + *::before {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #686868;
+}
+
+label > input[type="radio"]:checked + *::before {
+  background: radial-gradient(#203689 0%, #203689 40%, transparent 50%, transparent);
+  border-color: #203689;
+}
+
+label.radio-button:hover {
+  cursor: pointer;
+}
+label.radio-button:hover > input[type="radio"] + *::before {
+  border-color: #203689;
+}
