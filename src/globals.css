@@ -1,0 +1,62 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.flex {
+  flex: 1;
+}
+
+label {
+  line-height: 1rem;
+  padding: 1rem 0;
+}
+
+.septa-calc-widget {
+  width: 400px;
+  margin: auto;
+  border: 3px solid #cdcdcd;
+}
+
+/* section */
+.section {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4D4D4D;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.with-bottom-border {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* header */
+.septa-calc-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 8%;
+  color: white;
+  background-color: #666666;
+}
+
+.septa-calc-widget-header-logo {
+  height: 40px;
+}
+
+.info-helper-text {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  color: #666666;
+  padding: 10px 20px;
+  text-align: center;
+} 

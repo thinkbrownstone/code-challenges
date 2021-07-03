@@ -1,0 +1,20 @@
+.septa-calc-widget-result {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  background-color: #666666;
+  min-height: 150px;
+  box-sizing: border-box;
+}
+
+.fare-cost-label {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.fare-cost {
+  font-size: 4rem;
+  font-weight: 800;
+}
