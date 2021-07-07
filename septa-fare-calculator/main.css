@@ -1,0 +1,55 @@
+
+body{
+	text-align: center;
+	font-family: sans-serif;
+}
+.fare-calculator {
+	border: 4px solid silver;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 500px;
+}
+
+.septa-img{
+	height: 1.2em;
+	width: 1.5;
+	margin: 10px 10px 0 0;
+}
+
+
+.title-bar{
+	background:  #595959;
+	border: 1px solid silver;
+	font-size: xx-large;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+
+}
+
+.fare-zones,
+.fare-time-of-day,
+.fare-location,
+.fare-ride-amount,
+.fare-total {
+	border: 1px solid silver;
+	color: gray;
+}
+
+.fare-location{
+	text-align: center;
+		
+}
+
+select {
+ 	width: 80%;
+ 	margin-bottom: 20px;
+	font-size: x-large;
+ }
+
+ .day-pricing{
+ 	font-size: .8em;
+ 	color: black;
+
+ }

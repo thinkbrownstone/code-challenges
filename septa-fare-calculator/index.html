@@ -1,10 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="SeptaCalculator">
 <head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
+
+	<link rel="stylesheet" type="text/css" href="fares.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="controllers.js"></script>
+	<title>Septa Fare Calculator</title>
 </head>
 <body>
+
+<div class="fare-calculator" ng-controller="SeptaCalculatorController">
+
+	<form class="fare-form" name="fareCalc">
+
+		<header>
+			<div class="title-bar">
+				<img src="img/500px-SEPTA.svg.png" class="septa-img">&nbsp;Regional Rail Fares
+			</div>
+		</header>
+
+		<div class="fare-zones">
+			<h2>Where are you going?</h2>
+			<select id="zone" name="zone" ng-model="transaction.travel_zone" ng-required="true">
+				<option>-- Choose Zone --</option> 
+				<!-- pulled zone names from fares.json directly -->
+				<option data-ng-repeat="zone in fare_data.zones" value="{{zone.zone}}" ng-required="true">{{zone.name}}</option>
+			</select>
+		</div>
+
+		<div class="fare-time-of-day">
+			<h2>When are you riding?</h2>
+			<select ng-model="transaction.time_of_purchase" ng-required="true">
+				<option value="weekday">Weekday</option>
+				<option value="evening_weekend">Evening/Weekend</option>
+			</select>
+			<p class="day-pricing">
+			*Weekday hours are Monday through Friday, between 4:00 a.m. and 7:00 p.m.</p>
+			<p class="day-pricing">*Evening & Weekend hours are Monday through Friday after 7:00 p.m.; and all day Saturday, Sunday or major holidays.</p>
+		</div>
+
+		<div class="fare-location">
+			<h2>Where will you purchase your fare?</h2>
+			<fieldset id="box" class="field radio_field">
+				<label class="station" for="kiosk-purchase">
+					<input type="radio" name="purchase_location" value="advance_purchase" ng-model="transaction.purchase_location" ng-required="true">
+					Station Kiosk
+				</label>
+				<br>
+				<label class="onboard" for="onb-purchase"><input type="radio" name="purchase_location" value="onboard_purchase" ng-model="transaction.purchase_location">Onboard</label>
+			</fieldset>
+		</div>
+
+		<div class="fare-ride-amount">
+			<h2>How many rides will you need?</h2>
+			<input type="text" name="ride_amount" ng-model="transaction.ride_amount">
+		</div>
+
+		<div class="fare-total">
+			<p>Your fare will cost</p>
+			
+			<!-- ng-if statements allow me to cycle through the multiple calculations depending on time of purchase 
+				(weekday or evening/weekend) and purchase location (kiosk(advanced purchase) or onboard) -->
+			
+			<h2 ng-if="(transaction.time_of_purchase == 'weekday' && transaction.purchase_location == 'advance_purchase' )">
+				{{transaction.ride_amount * fare_data.zones[(transaction.travel_zone - 1)].fares[0].price || 0.00 | currency}} 
+			</h2>
+			
+			<h2 ng-if="(transaction.time_of_purchase == 'weekday' && transaction.purchase_location == 'onboard_purchase' )">
+				{{transaction.ride_amount * fare_data.zones[(transaction.travel_zone - 1)].fares[1].price || 0.00 | currency}} 
+			</h2>
+			
+			<h2 ng-if="(transaction.time_of_purchase == 'evening_weekend' && transaction.purchase_location == 'advance_purchase' )">
+				{{transaction.ride_amount * fare_data.zones[(transaction.travel_zone - 1)].fares[2].price || 0.00 | currency}} 
+			</h2>
+			
+			<h2 ng-if="(transaction.time_of_purchase == 'evening_weekend' && transaction.purchase_location == 'onboard_purchase' )">
+				{{transaction.ride_amount * fare_data.zones[(transaction.travel_zone - 1)].fares[3].price || 0.00 | currency}} 
+			</h2>
+			
+			<h2 data-ng-if="!transaction.time_of_purchase || !transaction.purchase_location">
+				{{0.00 | currency}}
+			</h2>
+		</div>
 	
+	</form>
+</div>
+
 </body>
 </html>
