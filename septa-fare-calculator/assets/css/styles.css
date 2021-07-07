@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 32.5%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #4d4d4d;
+}
+
+main {
+  padding: 2rem;
+}
+
+.widget-calculator {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  border: 0.4rem solid #ccc;
+}
+.widget-calculator header {
+  background: #595959;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.widget-calculator header img {
+  width: 6.2rem;
+  margin: 0 3rem 0 0;
+}
+.widget-calculator header h2 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  margin: 0;
+}
+.widget-calculator form > div {
+  padding: 4rem;
+  border-bottom: 0.2rem solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.widget-calculator form > div:last-child {
+  border-bottom: none;
+}
+.widget-calculator form > div label, .widget-calculator form > div .label {
+  font-size: 2.4rem;
+  display: block;
+  margin: 0 0 3.4rem;
+  font-weight: 700;
+}
+.widget-calculator form > div select {
+  width: 100%;
+  padding: 2.4rem;
+  font-size: 2.4rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
+}
+.widget-calculator form > div .helper-txt {
+  font-size: 1.6rem;
+  margin: 2.8rem 0 0;
+}
+.widget-calculator form > div .radios > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 2.2rem;
+}
+.widget-calculator form > div .radios > div:last-child {
+  margin: 0;
+}
+.widget-calculator form > div .radios > div input[type=radio] {
+  height: 3rem;
+  width: 3rem;
+  border-width: 0.2rem;
+}
+.widget-calculator form > div .radios > div label {
+  font-weight: 400;
+  margin: 0 0 0 2rem;
+}
+.widget-calculator form > div input[type=text] {
+  width: 100%;
+  max-width: 20rem;
+  padding: 2.4rem;
+  font-size: 2.4rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+.widget-calculator footer {
+  color: white;
+  background: #595959;
+  padding: 4rem;
+  text-align: center;
+}
+.widget-calculator footer span {
+  font-size: 2.4rem;
+  display: block;
+  margin: 0 0 0.4rem;
+}
+.widget-calculator footer div {
+  font-weight: 700;
+  font-size: 8rem;
+}

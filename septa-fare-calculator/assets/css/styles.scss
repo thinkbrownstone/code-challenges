@@ -1,0 +1,149 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+//Mixins
+@mixin srOnly {
+    position: absolute;
+    width: 1px !important;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+}
+@mixin hover {
+    &:hover, &:focus {
+        @content;
+    }
+}
+
+//Color Variables
+$primary: #4d4d4d;
+$secondary: #595959;
+$tertiary: #ccc;
+$black: #000;
+$white: #fff;
+$neutral-1: #e6e6e6;
+
+//Media Queries
+$mediaMd: " (min-width: 768px)";
+$mediaLg: " (min-width: 992px)";
+
+//Styles
+* {
+    box-sizing: border-box;
+}
+html {
+    //I built this out at 62.5% to match the sizing of the design but decided to cut it in half after seeing how large it was in browser.
+    font-size: 32.5%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color:$primary;
+}
+main {
+    padding:2rem;
+}
+.widget-calculator {
+    width:100%;
+    max-width:64rem;
+    margin:0 auto;
+    border:.4rem solid $tertiary;
+    header {
+        background:$secondary;
+        color:$white;
+        text-align:center;
+        padding:2rem;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+        img {
+            width:6.2rem;
+            margin:0 3rem 0 0;
+        }
+        h2 {
+            font-weight:700;
+            font-size:3.2rem;
+            margin:0;
+        }
+    }
+    form {
+        > div {
+            padding:4rem;
+            border-bottom:.2rem solid $neutral-1;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            &:last-child {
+                border-bottom:none;
+            }
+            label, .label {
+                font-size:2.4rem;
+                display:block;
+                margin:0 0 3.4rem;
+                font-weight:700;
+            }
+            select {
+                width:100%;
+                padding:2.4rem;
+                font-size:2.4rem;
+                border:.1rem solid $tertiary;
+                border-radius:.6rem;
+            }
+            .helper-txt {
+                font-size:1.6rem;
+                margin:2.8rem 0 0;
+            }
+            .radios {
+                > div {
+                    display:flex;
+                    flex-direction:row;
+                    align-items:center;
+                    justify-content:flex-start;
+                    margin:0 0 2.2rem;
+                    &:last-child{
+                        margin:0;
+                    }
+                    input[type="radio"] {
+                        height:3rem;
+                        width:3rem;
+                        border-width:.2rem;
+                    }
+                    label {
+                        font-weight:400;
+                        margin:0 0 0 2rem;
+                    }
+                }
+            }
+            input[type="text"] {
+                width:100%;
+                max-width:20rem;
+                padding:2.4rem;
+                font-size:2.4rem;
+                border:.1rem solid $tertiary;
+                border-radius:.6rem;
+                text-align:center;
+            }
+        }
+    }
+    footer {
+        color:white;
+        background:$secondary;
+        padding:4rem;
+        text-align:center;
+        span {
+            font-size:2.4rem;
+            display:block;
+            margin:0 0 .4rem;
+        }
+        div {
+            font-weight:700;
+            font-size:8rem;
+        }
+    }
+}

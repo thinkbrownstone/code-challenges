@@ -1,10 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>SEPTA Regional Rail Fare Calculator</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<title>SEPTA Regional Rail Fare Calculator</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	</head>
+	<body>
+		<main>
+			<div class="widget-calculator">
+				<header>
+					<img src="assets/img/septa-logo.svg" alt="SEPTA Logo">
+					<h2>Regional Rail Fares</h2>
+				</header>
+				<form>
+					<div>
+						<label for="whatZone">Where are you going?</label>
+						<select id="whatZone" name="zone"></select>
+					</div>
+					<div class="what-time">
+						<label for="whatTime">When are you riding?</label>
+						<select id="whatTime" name="time">
+							<option value="anytime">Anytime</option>
+							<option value="weekday">Weekday</option>
+							<option value="evening_weekend">Evening Weekend</option>
+						</select>
+					</div>
+					<div class="where-purchase">
+						<span class="label">Where will you purchase the fare?</span>
+						<div class="radios">
+							<div>
+								<input type="radio" id="radioStationKiosk" name="purchaseLocation" value="advance_purchase" checked>
+								<label for="radioStationKiosk">Station Kiosk</label>
+							</div>
+							<div>
+								<input type="radio" id="radioOnboard" name="purchaseLocation" value="onboard_purchase">
+								<label for="radioOnboard">Onboard</label>
+							</div>
+						</div>
+					</div>
+					<div>
+						<label for="numberOfRides">How many rides will you need?</label>
+						<input type="text" id="numberOfRides" inputmode="numeric" pattern="[0-9]*">
+					</div>
+				</form>
+				<footer>
+					<span>Your fare will cost</span>
+					<div id="wcFareTotal"></div>
+				</footer>
+			</div>
+		</main>
+		<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="assets/js/custom.js"></script>
+	</body>
 </html>
