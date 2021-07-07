@@ -1,0 +1,38 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thinkcompany/code-challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thinkcompany/code-challenges/septa-fare-calculator/issues"
+  },
+  "homepage": "https://github.com/thinkcompany/code-challenges/septa-fare-calculator#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "normalize.css": "^5.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-sprite": "^1.3.1",
+    "gulp-watch": "^4.3.10",
+    "postcss-hexrgba": "^0.2.1",
+    "postcss-import": "^8.2.0",
+    "postcss-mixins": "^5.4.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.1.0"
+  }
+}

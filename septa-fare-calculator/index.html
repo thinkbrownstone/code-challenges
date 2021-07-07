@@ -3,8 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>SEPTA Regional Rail Fare Calculator</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="assets/temp/styles/style.css">
 </head>
 <body>
+
+<div class="widget-container wrapper">
+	<div class="row">
+		<picture>
+      		<img srcset="img/widget-logo.png" alt="Septa Logo" class="logo__image">
+    	</picture>
+	</div>
+	<div class="row row--main">
+		<h2 class="widget-container--heading">Where are you going?</h2>
+		<div class="select-style">
+			<select id="zone"></select>
+		</div>
+	</div>
+	<div class="row row--main">
+		<h2 class="widget-container--heading">When are you riding?</h2>
+		<div class="select-style">
+			<select id="time"></select>
+		</div>
+		<p class="widget-container--helper">Helper text that explains the options above.</p>
+	</div>
+	<div class="row row--main">
+		<h2 class="widget-container--heading">Where will you purchase the fare?</h2>
+		<form id="radio" class="widget-container--radio">
+  			<input type="radio" name="purchase" value="advance_purchase"> Station Kiosk<br>
+ 		    <input type="radio" name="purchase" value="onboard_purchase"> Onboard<br>
+        </form>
+	</div>
+	<div class="row row--main">
+		<h2 class="widget-container--heading">How many rides will you need?</h2>
+		<form>
+  			<input type="number" name="firstname" class="widget-container--quantity"><br>
+		</form>
+	</div>
+	<div class="row row--bottom">
+		<p class="widget-container--cost">Your fare will cost</p>
+		<div id="fare-total" class="widget-container--fare"></div>
+	</div>
+</div>
+
+<script src="assets/scripts/app.js"></script>
 	
 </body>
 </html>

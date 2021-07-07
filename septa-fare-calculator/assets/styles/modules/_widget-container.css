@@ -1,0 +1,73 @@
+.widget-container {
+    background-color: #eee;
+    width: 100%;
+    max-width: 530px;
+    padding-left: 0px;
+    padding-right: 0px;
+    border: solid 2px #dddddd;
+    border-radius: 10px;
+    text-align:center;
+    
+    &--heading {
+    	font-weight: 200;
+    }
+    
+    &--helper {
+    	font-weight: 100;
+    	font-style: italic;
+    }
+    
+    &--radio {
+    	max-width: 200px;
+    	width: 100%;
+    	margin: 0 auto;
+    	padding: 0 0 0 50px;
+    	text-align: left;
+    }
+    
+    &--cost {
+    	color:#fff;
+    	font-size: 2rem;
+    	margin: 10px 0 0 0;
+    }
+    
+    &--fare {
+    	color:#fff;
+    	font-size: 3.5rem;
+    	margin: 0;
+    }
+    &--fare h2 {
+    	margin: 0;
+    }
+}
+
+.logo__image {
+	display:block;
+}
+
+.select-style {
+    border: 1px solid #ccc;
+    height: 45px;
+    max-width: 250px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("../../../img/arrow.jpg") no-repeat 90% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    max-width: 250px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    height: 45px;
+}
+
+.select-style select:focus {
+    outline: none;
+}
