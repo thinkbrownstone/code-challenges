@@ -1,0 +1,55 @@
+<div class="fare-widget-container" ng-if="$ctrl.gotData">
+    <div class="fare-widget-zones">
+        Where are you going? <br />
+        <select class="fare-widget-zones-select" 
+        ng-options="zone as zone.name for zone in $ctrl.zones" 
+        ng-model="$ctrl.selectedZone" 
+        ng-change="$ctrl.filterTimes()">
+        <option value="">-- Select a Zone --</option>
+        </select>
+    </div>
+    <div ng-if="!$ctrl.selectedZone">Choose a zone to continue.</div>
+    <div class="fare-widget-calculate-fields" ng-if="$ctrl.selectedZone">
+        <div class="fare-widget-times">
+            When are you riding? <br />
+                <select class="fare-widget-zones-select" 
+                ng-options="time as time for time in $ctrl.times" 
+                ng-model="$ctrl.selectedTime"
+                ng-change="$ctrl.calculate('time')">
+                <option value="">-- Select a Time --</option>
+            </select>
+            <br />
+            <span class="fare-widget-helper-text" ng-if="$ctrl.selectedTime">
+                {{ $ctrl.timeHelperText }}
+            </span>
+        </div>
+        <div class="fare-purchase-place">
+            Where will you purchase the fare? <br />
+            <input type="radio"
+                ng-model="$ctrl.purchasePlace"
+                value="advance_purchase"
+                ng-change="$ctrl.calculate()" 
+                title="{{$ctrl.info.advance_purchase}}" />
+                Station Kiosk
+            <br />
+            <span ng-if="$ctrl.selectedTime !== 'Anytime'">
+            <input type="radio"
+                ng-model="$ctrl.purchasePlace"
+                value="onboard_purchase"
+                ng-change="$ctrl.calculate()" 
+                title="{{$ctrl.info.onboard_purchase}} "/>
+                Onboard
+            </span>
+        </div>
+        <div class="fare-purchase-count">
+            How many rides will you need? <br />
+            <input type="text"
+                ng-model="$ctrl.purchaseCount"
+                ng-change="$ctrl.calculate()" />
+        </div>
+        <div class="fare-purchase-price">
+            Your fare will cost <br />
+            ${{ $ctrl.purchaseTotal }}
+        </div>
+    <div>
+</div>

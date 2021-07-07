@@ -1,0 +1,8 @@
+.fare-widget-container div {
+  padding-bottom: 10px;
+}
+
+.fare-widget-helper-text {
+  font-size: smaller;
+  color: grey;
+}
