@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Septa Fare Calculator</title>
+
+    <!-- Normalize css -->
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Regional Rail Fares</h1>
+        <div id="calculator">
+            <form>
+                <label>
+                    Where are you going?<br>
+                    <select id="zones">
+                        <option disabled selected value="0">-- Choose an option --</option>
+                        <option value="ccp_1">CCP/1</option>
+                        <option value="zone_2">Zone 2</option>
+                        <option value="zone_4">Zone 3</option>
+                        <option value="zone_4">Zone 4</option>
+                        <option value="nj">NJ</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    When are you riding?<br>
+                    <select id="travelTime">
+                        <option disabled selected value="0">-- Choose an option --</option>
+                        <option value="weekday">Weekdays</option>
+                        <option value="evening-weekends">Evening/Weekends</option>
+                        <option value="anytime">Anytime</option>
+                    </select>
+                </label>
+                <br>
+                <label>
+                    Where will you purchase the fare?<br>
+                    <input type="radio" name="place" value="advance_purchase"> Station Kiosk<br>
+                    <input type="radio" name="place" value="onboard_purchase" checked> Onboard<br>
+                </label>
+                <br>
+                <label>
+                    How many rides will you need?<br>
+                    <input type="numRides" id="numRides">
+                </label>
+            </form>
+        </div><!-- calculator -->
+        <div id="totalFare">
+            <sup>$</sup><span id="fare">0.00</span>
+        </div><!--totalFare-->
+    </div><!-- container -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
