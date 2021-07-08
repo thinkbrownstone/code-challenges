@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Weekday",
+        "keyword": "weekday"
+    },
+
+    {
+        "name": "Anytime",
+        "keyword": "anytime"
+    },
+
+    {
+        "name": "Evening / Weekend",
+        "keyword": "evening_weekend"
+    }
+]
