@@ -1,0 +1,13 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "Hello, hopeful Think Company development team member!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}

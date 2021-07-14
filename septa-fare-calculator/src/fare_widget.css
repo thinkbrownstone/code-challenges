@@ -1,0 +1,61 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+* {
+    font-family: 'Roboto', sans-serif;
+}
+.fare_widget {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+}
+
+.header {
+    background-color: #595959;
+    color: #ffffff;
+    display: flex;
+    width: 428px;
+    padding: 1em;
+    border: 1px solid #cccccc;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    background-color: #595959;
+    color: #ffffff;
+    display: flex;
+    width: 428px;
+    padding: 1em;
+    border: 1px solid #cccccc;
+    margin: auto;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.form_field {
+    display: flex;
+    width: 428px;
+    padding: 1em;
+    border: 1px solid #cccccc;
+    margin: auto;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: center;
+    flex-wrap: wrap;
+}
+  select {
+    width: 100%;
+    padding:10px;
+    border-radius:10px;
+  }
+
+  .total_cost {
+      font-size: 96px;
+  }
